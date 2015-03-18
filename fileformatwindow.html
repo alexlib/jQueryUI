@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery UI Example Page</title>
+		<link href="jquery-ui.css" rel="stylesheet">
+		<style>
+			#FileFormatWindow{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:  530px;
+				height: 300px;
+				border: 1px solid black;
+			}
+			#layoutWidget{
+				position: absolute;
+				top:    120px;
+				left:    40px;
+				width:  233px;
+				height:  25px;
+			}
+			#zeroLabel{
+			}
+			#numberZeros{
+			}
+			#layoutWidget{
+				position: absolute;
+				top:    172px;
+				left:    40px;
+				width:  302px;
+				height:  55px;
+			}
+			#label_5{
+			}
+			#startingImage{
+			}
+			#label_6{
+			}
+			#totImages{
+			}
+			#layoutWidget{
+				position: absolute;
+				top:    250px;
+				left:    40px;
+				width:  471px;
+				height:  29px;
+			}
+			#applyButton{
+			}
+			#cancelButton{
+			}
+			#label{
+				position: absolute;
+				top:     11px;
+				left:    41px;
+				width:  469px;
+				height:  18px;
+			}
+			#label_2{
+				position: absolute;
+				top:     55px;
+				left:    41px;
+				width:  100px;
+				height:  18px;
+			}
+			#firstFrameText{
+				position: absolute;
+				top:     34px;
+				left:    41px;
+				width:  469px;
+				height:  16px;
+			}
+			#secondFrameText{
+				position: absolute;
+				top:     78px;
+				left:    41px;
+				width:  469px;
+				height:  16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="FileFormatWindow" class="QDialog">
+			<div id="layoutWidget" class="QWidget">
+				<div id="zeroLabel" class="QLabel">Number of zeros</div>
+				<input type="text" id="numberZeros" class="QLineEdit">
+			</div>
+			<div id="layoutWidget" class="QWidget">
+				<div id="label_5" class="QLabel">Starting Number</div>
+				<input type="text" id="startingImage" class="QLineEdit">
+				<div id="label_6" class="QLabel">Total Number of Image Pairs</div>
+				<input type="text" id="totImages" class="QLineEdit">
+			</div>
+			<div id="layoutWidget" class="QWidget">
+				<button id="applyButton" class="QPushButton">Apply</button>
+				<button id="cancelButton" class="QPushButton">Cancel</button>
+			</div>
+			<div id="label" class="QLabel">First Frame</div>
+			<div id="label_2" class="QLabel">Second Frame</div>
+			<div id="firstFrameText" class="QLabel"></div>
+			<div id="secondFrameText" class="QLabel"></div>
+		</div>
+		<script src="external/jquery/jquery.js"></script>
+		<script src="jquery-ui.js"></script>
+	</body>
+</html>

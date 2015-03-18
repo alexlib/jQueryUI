@@ -1,0 +1,853 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>OpenPIV Main Window</title>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script src="js/mainwindow.js"></script>
+		<link href="css/cupertino/jquery-ui.css" rel="stylesheet">
+		<style>
+			#MainWindow{
+				position: absolute;
+				top:      2px;
+				left:     2px;
+				width:  840px;
+				height: 650px;
+				border: 1px solid black;
+			}
+			#marker{
+				position: absolute;
+				top:    200px;
+				left:   200px;
+				color:    white;
+				font-size: 10pt;
+				z-index: 6;
+			}
+			#menubar{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:  815px;
+				height:  25px;
+			}
+			#filemenu{
+				position: absolute;
+				top:     20px;
+				left:     0px;
+				width:   90px;
+				font-size: 10pt;
+				visibility: show;
+			}
+			#filemenu_label{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:   90px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#viewmenu{
+				position: absolute;
+				top:     20px;
+				left:    60px;
+				width:   90px;
+				font-size: 10pt;
+				visibility: show;
+			}
+			#viewmenu_label{
+				position: absolute;
+				top:      0px;
+				left:    60px;
+				width:   90px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#toolsmenu{
+				position: absolute;
+				top:     20px;
+				left:   120px;
+				width:  133px;
+				font-size: 10pt;
+				visibility: show;
+			}
+			#toolsmenu_label{
+				position: absolute;
+				top:      0px;
+				left:   120px;
+				width:  133px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#helpmenu{
+				position: absolute;
+				top:     20px;
+				left:   180px;
+				width:   61px;
+				font-weight: normal;
+				font-size: 10pt;
+				visibility: show;
+			}
+			#helpmenu_label{
+				position: absolute;
+				top:      0px;
+				left:   180px;
+				width:   61px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#toolBar{
+				position: absolute;
+				left:     0px;
+				top:     20px;
+				width:  815px;
+				height:  34px;
+			}
+			#actionNew{
+				width:   32px;
+				height:  32px;
+			}
+			#actionOpen{
+				width:   32px;
+				height:  32px;
+			}
+			#actionSave{
+				width:   32px;
+				height:  32px;
+			}
+			#actionImageIn{
+				width:   32px;
+				height:  32px;
+			}
+			#actionZoomIn{
+				width:   32px;
+				height:  32px;
+			}
+			#actionZoomOut{
+				width:   32px;
+				height:  32px;
+			}
+			#actionSetup{
+				width:   32px;
+				height:  32px;
+			}
+			#actionProcessImages{
+				width:   32px;
+				height:  32px;
+			}
+			#actionFilterSet{
+				width:   32px;
+				height:  32px;
+			}
+			#actionFilter{
+				width:   32px;
+				height:  32px;
+			}
+			#centralwidget{
+				position: absolute;
+				left:     0px;
+				top:     54px;
+			}
+			#central_layout{
+			}
+			#lr_panel{
+			}
+			#left_panel{
+				position: absolute;
+				left:     0px;
+				top:      0px;
+				width:  318px;
+				height: 538px;
+			}
+			#topCombo{
+				left:     1px;
+				top:      1px;
+				width:  316px;
+				height:  29px;
+			}
+			#topGraphicsView{
+				left:     1px;
+				top:     36px;
+				width:  316px;
+				height: 230px;
+				border: 1px solid black;
+			}
+			#bottomCombo{
+				left:     1px;
+				top:    272px;
+				width:  316px;
+				height:  29px;
+			}
+			#statsTable{
+				left:     1px;
+				top:    307px;
+				width:  316px;
+				height: 229px;
+				border: 1px solid black;
+			}
+			#right_panel{
+				position: absolute;
+				left:   320px;
+				top:      0px;
+				width:  318px;
+				height: 538px;
+			}
+			#top_buttons{
+				position: absolute;
+				left:     0px;
+				top:      0px;
+				width:  470px;
+				height:  36px;
+			}
+			#aFrameButton{
+				position: absolute;
+				left:     1px;
+				top:      2px;
+				width:   85px;
+				height:  31px;
+			}
+			#bFrameButton{
+				position: absolute;
+				left:    92px;
+				top:      2px;
+				width:   85px;
+				height:  31px;
+			}
+			#redrawButton{
+				position: absolute;
+				right:    1px;
+				top:      1px;
+				width:   98px;
+				height:  34px;
+			}
+			#graphicsView{
+				position: absolute;
+				left:     1px;
+				top:     43px;
+				width:  511px;
+				height: 369px;
+				border: 1px solid black;
+			}
+			#graphicsViewPort{
+				position: absolute;
+				left:     0px;
+				top:      0px;
+			}
+			#frameA{
+				position: absolute;
+				left:     0px;
+				top:      0px;
+			}
+			#frameB{
+				position: absolute;
+				left:     0px;
+				top:      0px;
+			}
+			#bottom_buttons{
+				position: absolute;
+				left:     0px;
+				top:    500px;
+				width:  470px;
+				height:  42px;
+			}
+			#startButton{
+				position: absolute;
+				left:    32px;
+				top:      1px;
+				width:   38px;
+				height:  40px;
+			}
+			#backButton{
+				position: absolute;
+				left:   107px;
+				top:      1px;
+				width:   38px;
+				height:  40px;
+			}
+			#frameSpinBoxDiv{
+				position: absolute;
+				left:   182px;
+				top:      4px;
+				width:  100px;
+				height:  31px;
+			}
+			#frameSpinBox{
+				width:   70px;
+				height:  24px;
+			}
+			#forwardButton{
+				position: absolute;
+				left:   319px;
+				top:      1px;
+				width:   38px;
+				height:  40px;
+			}
+			#endButton{
+				position: absolute;
+				left:   394px;
+				top:      1px;
+				width:   38px;
+				height:  40px;
+			}
+			#statusbar{
+			}
+			.QMenu{
+				float:left;
+			}
+
+			#filter_dialogx{
+				width:  639px;
+				height: 419px;
+				border: 1px solid black;
+			}
+			#filter_global_label{
+				position: absolute;
+				top:     10px;
+				left:    20px;
+				width:   56px;
+				height:  18px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#filter_rangeBox{
+				position: absolute;
+				top:     40px;
+				left:    20px;
+				width:  141px;
+				height:  22px;
+			}
+			#filter_rangeBox_label{
+				position: absolute;
+				top:     40px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#filter_minLayout{
+				position: absolute;
+				top:     40px;
+				left:   150px;
+				width:  234px;
+				height:  25px;
+			}
+			#filter_minLabel{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				height:  25px;
+				font-size: 11pt;
+			}
+			#filter_minEdit{
+				position: absolute;
+				top:      0px;
+				left:    32px;
+				width:  167px;
+				height:  25px;
+			}
+			#filter_maxLayout{
+				position: absolute;
+				top:     40px;
+				left:   393px;
+				width:  207px;
+				height:  25px;
+			}
+			#filter_maxLabel{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				height:  25px;
+				font-size: 11pt;
+			}
+			#filter_maxEdit{
+				position: absolute;
+				top:      0px;
+				left:    32px;
+				width:  167px;
+				height:  25px;
+			}
+			#filter_stdBox{
+				position: absolute;
+				top:     70px;
+				left:    20px;
+				width:  141px;
+				height:  22px;
+			}
+			#filter_stdBox_label{
+				position: absolute;
+				top:     70px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#filter_stdEdit{
+				position: absolute;
+				top:     70px;
+				left:   179px;
+				width:  207px;
+				height:  23px;
+			}
+			#filter_local_label{
+				position: absolute;
+				top:    106px;
+				left:    20px;
+				width:   56px;
+				height:  18px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#filter_medianBox{
+				position: absolute;
+				top:    130px;
+				left:    20px;
+				width:  131px;
+				height:  22px;
+			}
+			#filter_medianBox_label{
+				position: absolute;
+				top:    130px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#filter_medianEdit{
+				position: absolute;
+				top:    130px;
+				left:   179px;
+				width:  207px;
+				height:  23px;
+			}
+			#filter_medianCombo{
+				position: absolute;
+				top:    130px;
+				left:   393px;
+				width:  207px;
+				height:  22px;
+				font-weight: normal;
+				font-size: 10pt;
+			}
+			#filter_meanBox{
+				position: absolute;
+				top:    160px;
+				left:    20px;
+				width:  131px;
+				height:  22px;
+			}
+			#filter_meanBox_label{
+				position: absolute;
+				top:    160px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#filter_meanEdit{
+				position: absolute;
+				top:    160px;
+				left:   179px;
+				width:  207px;
+				height:  23px;
+			}
+			#filter_meanCombo{
+				position: absolute;
+				top:    160px;
+				left:   393px;
+				width:  207px;
+				height:  22px;
+				font-weight: normal;
+				font-size: 10pt;
+			}
+			#filter_interpolation_label{
+				position: absolute;
+				top:    200px;
+				left:    20px;
+				width:   91px;
+				height:  18px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#filter_bilinearBox{
+				position: absolute;
+				top:    220px;
+				left:    20px;
+				width:  131px;
+				height:  22px;
+			}
+			#filter_bilinearBox_label{
+				position: absolute;
+				top:    220px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#filter_bilinearCombo{
+				position: absolute;
+				top:    220px;
+				left:   180px;
+				width:  207px;
+				height:  22px;
+				font-weight: normal;
+				font-size: 10pt;
+			}
+			#filter_smoothing_label{
+				position: absolute;
+				top:    260px;
+				left:    20px;
+				width:   81px;
+				height:  18px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#filter_gaussianBox{
+				position: absolute;
+				top:    280px;
+				left:    20px;
+				width:  131px;
+				height:  22px;
+			}
+			#filter_gaussianBox_label{
+				position: absolute;
+				top:    280px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#filter_gaussianEdit{
+				position: absolute;
+				top:    280px;
+				left:   179px;
+				width:  207px;
+				height:  23px;
+			}
+			#filter_gaussianCombo{
+				position: absolute;
+				top:    280px;
+				left:   393px;
+				width:  207px;
+				height:  22px;
+				font-weight: normal;
+				font-size: 10pt;
+			}
+			#filter_appliedLayout{
+				position: absolute;
+				top:    330px;
+				left:    20px;
+				width:  501px;
+				height:  29px;
+			}
+			#filter_userRadio{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+			}
+			#filter_userRadio_label{
+				position: absolute;
+				top:      0px;
+				left:    22px;
+				font-size: 11pt;
+			}
+			#filter_processRadio{
+				position: absolute;
+				top:      0px;
+				left:   140px;
+			}
+			#filter_processRadio_label{
+				position: absolute;
+				top:      0px;
+				left:   162px;
+				font-size: 11pt;
+			}
+			#filter_actionLayout{
+				position: absolute;
+				top:    330px;
+				left:   430px;
+				width:  148px;
+				height:  29px;
+			}
+			#filter_okButton{
+				position: absolute;
+				top:    0px;
+				left:   0px;
+				width:   63px;
+				height:  31px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#filter_cancelButton{
+				position: absolute;
+				top:      0px;
+				right:    0px;
+				width:   63px;
+				height:  31px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#AboutWindow{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:  395px;
+				height: 268px;
+				border: 1px solid black;
+			}
+			#aboutLayoutWidget{
+				position: absolute;
+				top:     4px;
+				left:    10px;
+				width:  379px;
+				height: 237px;
+			}
+			#about_001{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:  395px;
+				height:  46px;
+				text-align: center;
+			}
+			#about_002{
+				position: absolute;
+				top:     46px;
+				left:     0px;
+				width:  395px;
+				height:  30px;
+				text-align: center;
+			}
+			#aboutlogo{
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#about_003{
+				position: absolute;
+				top:     92px;
+				left:     0px;
+				width:  395px;
+				height:  30px;
+				text-align: center;
+			}
+			#aboutlabel_1{
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#about_004{
+				position: absolute;
+				top:    138px;
+				left:     0px;
+				width:  395px;
+				height:  30px;
+				text-align: center;
+			}
+			#aboutlabel_3{
+				font-weight: bold;
+				font-size: 10pt;
+			}
+			#about_005{
+				position: absolute;
+				top:    184px;
+				left:     0px;
+				width:  395px;
+				height:  30px;
+				text-align: center;
+			}
+			#aboutlabel_4{
+				font-weight: bold;
+				font-size: 10pt;
+			}
+			#buttonBox{
+				position: absolute;
+				top:    220px;
+				left:     0px;
+				width:  395px;
+				height:  30px;
+				text-align: center;
+			}
+			#about_cancelButton{
+				position: absolute;
+				top:      0px;
+				right:    0px;
+				width:   63px;
+				height:  31px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+		</style>
+		<script>
+			$(function() {
+				var frameSpinBox = $( "#frameSpinBox" ).spinner();
+				$( "#filemenu" ).menu();
+				$( "#viewmenu" ).menu();
+				$( "#toolsmenu" ).menu();
+				$( "#helpmenu" ).menu();
+				$( "#filter_dialog" ).dialog({
+					autoOpen: false,
+					width: 639,
+					height: 419
+				});
+				$( "#about_dialog" ).dialog({
+					autoOpen: false,
+					width: 395,
+					height: 268
+				});
+			});
+		</script>
+		<!--style>
+			.ui-menu {
+				width: 150px;
+			}
+		</style-->
+	</head>
+	<body>
+		<div id="marker">Marker</div>
+		<div id="MainWindow" class="QMainWindow">
+			<div id="toolBar" class="QToolBar">
+				<img id="actionNew" src="icons/filenew.png" />
+				<img id="actionOpen" src="icons/fileopen.png" />
+				<img id="actionSave" src="icons/filesave.png" />
+				<img id="actionImageIn" src="icons/import_image.png" />
+				<img id="actionZoomIn" src="icons/viewmag+.png" />
+				<img id="actionZoomOut" src="icons/viewmag-.png" />
+				<img id="actionSetup" src="icons/configure.png" />
+				<img id="actionProcessImages" src="icons/kcmsystem.png" />
+				<img id="actionFilterSet" src="icons/filtersettings.png" />
+				<img id="actionFilter" src="icons/filter.png" />
+			</div>
+			<div id="centralwidget" class="QWidget">
+				<div id="central_layout" class="QGridLayout">
+					<div id="lr_panel" class="QHBoxLayout">
+						<div id="left_panel" class="QVBoxLayout">
+							<select id="topCombo" class="QComboBox">
+							<option>--</option>
+							</select>
+							<div id="topGraphicsView" class="QGraphicsView">
+							</div>
+							<select id="bottomCombo" class="QComboBox">
+							<option>--</option>
+							</select>
+							<div id="statsTable" class="QTableWidget">
+							</div>
+						</div>
+						<div id="right_panel" class="QVBoxLayout">
+							<div id="top_buttons" class="QHBoxLayout">
+								<button id="aFrameButton" class="QPushButton">Frame A</button>
+								<button id="bFrameButton" class="QPushButton">Frame B</button>
+								<!--input type="radio" name="frames" id="aFrameButton" class="QPushButton">Frame A
+								<input type="radio" name="frames" id="bFrameButton" class="QPushButton">Frame B-->
+								<button id="redrawButton" class="QPushButton">Redraw</button>
+							</div>
+							<div id="graphicsView" class="QGraphicsView">
+								<div id="graphicsViewPort">
+									<div id="frameB"></div>
+									<div id="frameA"></div>
+								</div>
+							</div>
+							<div id="bottom_buttons" class="QHBoxLayout">
+								<!--button id="startButton" class="QToolButton"><img src="icons/player_start.png" /></button>
+								<button id="backButton" class="QToolButton"><img src="icons/player_rew.png" /></button-->
+								<img id="startButton" class="QToolButton" src="icons/player_start.png" />
+								<img id="backButton" class="QToolButton" src="icons/player_rew.png" />
+								<div id="frameSpinBoxDiv"><input id="frameSpinBox" class="QSpinBox" name="frameSpinBox"></div>
+								<!--div id="frameSpinBox" class="QSpinBox" name="frameSpinBox"></div-->
+								<!--button id="forwardButton" class="QToolButton"><img src="icons/player_fwd.png" /></button>
+								<button id="endButton" class="QToolButton"><img src="icons/player_end.png" /></button-->
+								<img id="forwardButton" class="QToolButton" src="icons/player_fwd.png" />
+								<img id="endButton" class="QToolButton" src="icons/player_end.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="statusbar" class="QStatusBar">
+			</div>
+			<div id="filter_dialog" title="Filter Settings">
+			<!--div id="filter_FilterWindow" class="QDialog"-->
+				<div id="filter_global_label" class="QLabel">Global</div>
+				<input type="checkbox" id="filter_rangeBox" class="QCheckBox"><label for="rangeBox" id="filter_rangeBox_label">Range</label>
+				<div id="filter_minLayout" class="QWidget">
+					<div id="filter_minLabel" class="QLabel">Min</div>
+					<input type="text" id="filter_minEdit" class="QLineEdit">
+				</div>
+				<div id="filter_maxLayout" class="QWidget">
+					<div id="filter_maxLabel" class="QLabel">Max</div>
+					<input type="text" id="filter_maxEdit" class="QLineEdit">
+				</div>
+				<input type="checkbox" id="filter_stdBox" class="QCheckBox"><label for="stdBox" id="filter_stdBox_label">Standard Deviation</label>
+				<input type="text" id="filter_stdEdit" class="QLineEdit">
+				<div id="filter_local_label" class="QLabel">Local</div>
+				<input type="checkbox" id="filter_medianBox" class="QCheckBox"><label for="medianBox" id="filter_medianBox_label">Median</label>
+				<input type="text" id="filter_medianEdit" class="QLineEdit">
+				<select id="filter_medianCombo" class="QComboBox">
+				<option>--</option>
+				</select>
+				<input type="checkbox" id="filter_meanBox" class="QCheckBox"><label for="meanBox" id="filter_meanBox_label">Mean</label>
+				<input type="text" id="filter_meanEdit" class="QLineEdit">
+				<select id="filter_meanCombo" class="QComboBox">
+				<option>--</option>
+				</select>
+				<div id="filter_interpolation_label" class="QLabel">Interpolation</div>
+				<input type="checkbox" id="filter_bilinearBox" class="QCheckBox"><label for="bilinearBox" id="filter_bilinearBox_label">Bilinear</label>
+				<select id="filter_bilinearCombo" class="QComboBox">
+				<option>--</option>
+				</select>
+				<div id="filter_smoothing_label" class="QLabel">Smoothing</div>
+				<input type="checkbox" id="filter_gaussianBox" class="QCheckBox"><label for="gaussianBox" id="filter_gaussianBox_label">Gaussian Kernel</label>
+				<input type="text" id="filter_gaussianEdit" class="QLineEdit">
+				<select id="filter_gaussianCombo" class="QComboBox">
+				<option>--</option>
+				</select>
+				<div id="filter_appliedLayout" class="QWidget">
+					<input type="radio" id="filter_userRadio" name="applied" class="QRadioButton"><label for="userRadio" id="filter_userRadio_label">User applied</label>
+					<input type="radio" id="filter_processRadio" name="applied" class="QRadioButton"><label for="processRadio" id="filter_processRadio_label">Applied to processing step</label>
+				</div>
+				<div id="filter_actionLayout" class="QWidget">
+					<button id="filter_okButton" class="QPushButton">OK</button>
+					<button id="filter_cancelButton" class="QPushButton">Cancel</button>
+				</div>
+			</div>
+			<!--/div-->
+			<div id="about_dialog" title="About OpenPIV">
+				<div id="aboutLayoutWidget" class="QWidget">
+					<div id="about_001" class="QVBoxLayout">
+						<div id="about_002" class="QHBoxLayout">
+							<div id="aboutlogo" class="QLabel"><img id="urapiv_logo" src="icons/urapiv_small.png" /></div>
+						</div>
+						<div id="about_003" class="QHBoxLayout">
+							<div id="aboutlabel_1" class="QLabel">URAPIV for HTML - Version 0.0</div>
+						</div>
+						<div id="about_004" class="QHBoxLayout">
+							<div id="aboutlabel_3" class="QLabel">Adapted to HTML by Brian Ames</div>
+						</div>
+						<div id="about_005" class="QHBoxLayout">
+							<div id="aboutlabel_4" class="QLabel">Original version by Alex Liberzon and Roi Gurka</div>
+						</div>
+						<div id="buttonBox" class="QDialogButtonBox">
+						<button id="about_okButton" class="QPushButton">OK</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="menubar" class="QMenuBar">
+				<div id="filemenu_label">File</div>
+				<ul id="filemenu" class="QMenu">
+					<li id="newmenuitem" class="QMenuItem">New...</li>
+					<li id="openmenuitem" class="QMenuItem">Open...</li>
+					<li id="savemenuitem" class="QMenuItem">Save</li>
+					<li id="saveasmenuitem" class="QMenuItem">Save As...</li>
+					<li id="quitmenuitem" class="QMenuItem">Quit</li>
+				</ul>
+				<div id="viewmenu_label">View</div>
+				<ul id="viewmenu" class="QMenu">
+					<li id="zoominmenuitem" class="QMenuItem">Zoom In</li> <!-- class="ui-state-disabled"-->
+					<li id="zoomoutmenuitem" class="QMenuItem">Zoom Out</li>
+				</ul>
+				<div id="toolsmenu_label">Tools</div>
+				<ul id="toolsmenu" class="QMenu">
+					<li id="importmenuitem" class="QMenuItem">Import Image...</li>
+					<li id="setupmenuitem" class="QMenuItem">Setup...</li>
+					<li id="processmenuitem" class="QMenuItem">Process Images</li>
+				</ul>
+				<div id="helpmenu_label">Help</div>
+				<ul id="helpmenu" class="QMenu">
+					<li id="helpmenuitem" class="QMenuItem">Help</li>
+					<li id="aboutmenuitem" class="QMenuItem">About</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

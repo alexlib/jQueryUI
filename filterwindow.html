@@ -1,0 +1,334 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>OpenPIV Filter</title>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script src="js/filterwindow.js"></script>
+		<link href="css/cupertino/jquery-ui-1.9.0.custom.css" rel="stylesheet">
+		<style>
+			#FilterWindow{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:  639px;
+				height: 419px;
+				border: 1px solid black;
+			}
+			#global_label{
+				position: absolute;
+				top:     40px;
+				left:    20px;
+				width:   56px;
+				height:  18px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#rangeBox{
+				position: absolute;
+				top:     70px;
+				left:    20px;
+				width:  141px;
+				height:  22px;
+			}
+			#rangeBox_label{
+				position: absolute;
+				top:     70px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#minLayout{
+				position: absolute;
+				top:     70px;
+				left:   150px;
+				width:  234px;
+				height:  25px;
+			}
+			#minLabel{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				height:  25px;
+				font-size: 11pt;
+			}
+			#minEdit{
+				position: absolute;
+				top:      0px;
+				left:    32px;
+				width:  167px;
+				height:  25px;
+			}
+			#maxLayout{
+				position: absolute;
+				top:     70px;
+				left:   393px;
+				width:  207px;
+				height:  25px;
+			}
+			#maxLabel{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				height:  25px;
+				font-size: 11pt;
+			}
+			#maxEdit{
+				position: absolute;
+				top:      0px;
+				left:    32px;
+				width:  167px;
+				height:  25px;
+			}
+			#stdBox{
+				position: absolute;
+				top:    100px;
+				left:    20px;
+				width:  141px;
+				height:  22px;
+			}
+			#stdBox_label{
+				position: absolute;
+				top:    100px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#stdEdit{
+				position: absolute;
+				top:    100px;
+				left:   179px;
+				width:  207px;
+				height:  23px;
+			}
+			#local_label{
+				position: absolute;
+				top:    136px;
+				left:    20px;
+				width:   56px;
+				height:  18px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#medianBox{
+				position: absolute;
+				top:    160px;
+				left:    20px;
+				width:  131px;
+				height:  22px;
+			}
+			#medianBox_label{
+				position: absolute;
+				top:    160px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#medianEdit{
+				position: absolute;
+				top:    160px;
+				left:   179px;
+				width:  207px;
+				height:  23px;
+			}
+			#medianCombo{
+				position: absolute;
+				top:    160px;
+				left:   393px;
+				width:  207px;
+				height:  22px;
+			}
+			#meanBox{
+				position: absolute;
+				top:    190px;
+				left:    20px;
+				width:  131px;
+				height:  22px;
+			}
+			#meanBox_label{
+				position: absolute;
+				top:    190px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#meanEdit{
+				position: absolute;
+				top:    190px;
+				left:   179px;
+				width:  207px;
+				height:  23px;
+			}
+			#meanCombo{
+				position: absolute;
+				top:    190px;
+				left:   393px;
+				width:  207px;
+				height:  22px;
+			}
+			#interpolation_label{
+				position: absolute;
+				top:    230px;
+				left:    20px;
+				width:   91px;
+				height:  18px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#bilinearBox{
+				position: absolute;
+				top:    250px;
+				left:    20px;
+				width:  131px;
+				height:  22px;
+			}
+			#bilinearBox_label{
+				position: absolute;
+				top:    250px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#bilinearCombo{
+				position: absolute;
+				top:    250px;
+				left:   180px;
+				width:  207px;
+				height:  22px;
+			}
+			#smoothing_label{
+				position: absolute;
+				top:    290px;
+				left:    20px;
+				width:   81px;
+				height:  18px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#gaussianBox{
+				position: absolute;
+				top:    310px;
+				left:    20px;
+				width:  131px;
+				height:  22px;
+			}
+			#gaussianBox_label{
+				position: absolute;
+				top:    310px;
+				left:    44px;
+				height:  22px;
+				font-size: 11pt;
+			}
+			#gaussianEdit{
+				position: absolute;
+				top:    310px;
+				left:   179px;
+				width:  207px;
+				height:  23px;
+			}
+			#gaussianCombo{
+				position: absolute;
+				top:    310px;
+				left:   393px;
+				width:  207px;
+				height:  22px;
+			}
+			#appliedLayout{
+				position: absolute;
+				top:    360px;
+				left:    20px;
+				width:  501px;
+				height:  29px;
+			}
+			#userRadio{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+			}
+			#userRadio_label{
+				position: absolute;
+				top:      0px;
+				left:    22px;
+				font-size: 11pt;
+			}
+			#processRadio{
+				position: absolute;
+				top:      0px;
+				left:   140px;
+			}
+			#processRadio_label{
+				position: absolute;
+				top:      0px;
+				left:   162px;
+				font-size: 11pt;
+			}
+			#actionLayout{
+				position: absolute;
+				top:    360px;
+				left:   430px;
+				width:  148px;
+				height:  29px;
+			}
+			#okButton{
+				position: absolute;
+				top:    0px;
+				left:   0px;
+				width:   57px;
+				height:  31px;
+			}
+			#cancelButton{
+				position: absolute;
+				top:      0px;
+				right:    0px;
+				width:   57px;
+				height:  31px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="FilterWindow" class="QDialog">
+			<div id="global_label" class="QLabel">Global</div>
+			<input type="checkbox" id="rangeBox" class="QCheckBox"><label for="rangeBox" id="rangeBox_label">Range</label>
+			<div id="minLayout" class="QWidget">
+				<div id="minLabel" class="QLabel">Min</div>
+				<input type="text" id="minEdit" class="QLineEdit">
+			</div>
+			<div id="maxLayout" class="QWidget">
+				<div id="maxLabel" class="QLabel">Max</div>
+				<input type="text" id="maxEdit" class="QLineEdit">
+			</div>
+			<input type="checkbox" id="stdBox" class="QCheckBox"><label for="stdBox" id="stdBox_label">Standard Deviation</label>
+			<input type="text" id="stdEdit" class="QLineEdit">
+			<div id="local_label" class="QLabel">Local</div>
+			<input type="checkbox" id="medianBox" class="QCheckBox"><label for="medianBox" id="medianBox_label">Median</label>
+			<input type="text" id="medianEdit" class="QLineEdit">
+			<select id="medianCombo" class="QComboBox">
+			<option>--</option>
+			</select>
+			<input type="checkbox" id="meanBox" class="QCheckBox"><label for="meanBox" id="meanBox_label">Mean</label>
+			<input type="text" id="meanEdit" class="QLineEdit">
+			<select id="meanCombo" class="QComboBox">
+			<option>--</option>
+			</select>
+			<div id="interpolation_label" class="QLabel">Interpolation</div>
+			<input type="checkbox" id="bilinearBox" class="QCheckBox"><label for="bilinearBox" id="bilinearBox_label">Bilinear</label>
+			<select id="bilinearCombo" class="QComboBox">
+			<option>--</option>
+			</select>
+			<div id="smoothing_label" class="QLabel">Smoothing</div>
+			<input type="checkbox" id="gaussianBox" class="QCheckBox"><label for="gaussianBox" id="gaussianBox_label">Gaussian Kernel</label>
+			<input type="text" id="gaussianEdit" class="QLineEdit">
+			<select id="gaussianCombo" class="QComboBox">
+			<option>--</option>
+			</select>
+			<div id="appliedLayout" class="QWidget">
+				<input type="radio" id="userRadio" name="applied" class="QRadioButton"><label for="userRadio" id="userRadio_label">User applied</label>
+				<input type="radio" id="processRadio" name="applied" class="QRadioButton"><label for="processRadio" id="processRadio_label">Applied to processing step</label>
+			</div>
+			<div id="actionLayout" class="QWidget">
+				<button id="okButton" class="QPushButton">OK</button>
+				<button id="cancelButton" class="QPushButton">Cancel</button>
+			</div>
+		</div>
+	</body>
+</html>

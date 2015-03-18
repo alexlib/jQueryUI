@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery UI Example Page</title>
+		<link href="jquery-ui.css" rel="stylesheet">
+		<style>
+			#FrameListWindow{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:  640px;
+				height: 480px;
+				border: 1px solid black;
+			}
+			#importButton{
+				position: absolute;
+				top:    440px;
+				left:   430px;
+				width:   80px;
+				height:  27px;
+			}
+			#cancelButton{
+				position: absolute;
+				top:    440px;
+				left:   520px;
+				width:   80px;
+				height:  27px;
+			}
+			#frame1List{
+				position: absolute;
+				top:     40px;
+				left:    16px;
+				width:  296px;
+				height: 385px;
+			}
+			#frame2List{
+				position: absolute;
+				top:     40px;
+				left:   328px;
+				width:  296px;
+				height: 385px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="FrameListWindow" class="QDialog">
+			<button id="importButton" class="QPushButton">Import...</button>
+			<button id="cancelButton" class="QPushButton">Cancel</button>
+			<div id="frame1List" class="QListWidget">
+			</div>
+			<div id="frame2List" class="QListWidget">
+			</div>
+		</div>
+		<script src="external/jquery/jquery.js"></script>
+		<script src="jquery-ui.js"></script>
+	</body>
+</html>

@@ -1,0 +1,237 @@
+/*! CTS Cascading Style Sheet
+  This style sheet contains the styles for the GUI html pages for the
+CTS GUI Controller.
+ */
+/* Special Font Upload */
+@font-face {
+  font-family: "Lekton";
+  font-weight: italic;
+  src: url(../font/Lekton-Italic.ttf);
+}
+@font-face {
+  font-family: "Lekton";
+  font-weight: bold;
+  src: url(../font/Lekton-Bold.ttf);
+}
+@font-face {
+  font-family: "Lekton";
+  font-weight: normal;
+  src: url(../font/Lekton-Regular.ttf);
+}
+
+/* Some formatting for the basic look and feel */
+html, body {
+  font-family: "Lekton";
+  font-size: 12px;
+  margin: 0px;
+  padding: 0px;
+  border-spacing: 0px;
+  overflow-x: hidden; /* turn off right to left scroll because of trays */
+}
+
+textarea {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  border-top: #aaaaaa 2px solid;
+  border-bottom: #aaaaaa 2px solid;
+  border-left: #aaaaaa 2px solid;
+  border-right: #aaaaaa 2px solid;
+  font-family: "Lekton";
+  font-size: 12px;
+  border-color: #888888;
+}
+
+select {
+  font-family: "Lekton";
+  font-size: 13px;
+}
+
+input[type="text"] {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px;
+  border-top: #aaaaaa 2px solid;
+  border-bottom: #aaaaaa 2px solid;
+  border-left: #aaaaaa 2px solid;
+  border-right: #aaaaaa 2px solid;
+  font-family: "Lekton";
+  font-size: 13px;
+}
+
+input[type="button"] {
+  font-family: "Lekton";
+  font-size: 13px;
+  font-weight: bold;
+}
+
+input[type="submit"] {
+  font-family: "Lekton";
+  font-size: 13px;
+  font-weight: bold;
+}
+
+input[type="file"] {
+  font-family: "Lekton";
+  font-size: 13px;
+  font-weight: bold;
+}
+
+button {
+  font-family: "Lekton";
+  font-size: 13px;
+  font-weight: bold;
+}
+
+table {
+  font-family: "Lekton";
+  font-size: 13px;
+}
+
+
+/* The TraySlider */
+#ctsTray {
+  position: absolute;
+  /* border-spacing: 0px 0px; */
+  margin: 0px;
+  padding: 0px;
+  background: #efefef;
+  background: -webkit-linear-gradient(
+      180deg, 
+      #efddef 0%,  
+      #ddddef 33%,
+      #efdddd 66%,
+      #efefdd 100%);
+  background: -moz-linear-gradient(
+      180deg, 
+      #efddef 0%,  
+      #ddddef 33%,
+      #efdddd 66%,
+      #efefdd 100%);
+  background: -ms-linear-gradient(
+      180deg, 
+      #efddef 0%,  
+      #ddddef 33%,
+      #efdddd 66%,
+      #efefdd 100%);
+}
+
+.ctsTray {
+  position:absolute;
+  vertical-align: top;
+  background-color: rgba(0,0,0,0);
+}
+
+#ctsTraySliderButtons {
+  position: absolute;
+  left: 0px;
+  height: 65px;
+  vertical-align: middle;
+  margin: 0px;
+  padding: 0px;
+  border-spacing: 0px;
+  background-color: rgba(200, 200, 200, 1.0);
+  border-top: 1px solid black;
+}
+/* Menus */
+ 
+/* Special Input and Select formating */
+/*
+.ctsSelect {
+  font-family: "Lekton";
+  font-size: 12px;
+  border-color: #888888;
+  background-color: #cccccc;
+  width:200px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.serviceListLabels {
+  padding: 5px;
+  border-spacing: 0px;
+  background-color: #cccccc;
+}
+
+.serviceListTable {
+  padding: 5px;
+  border-spacing: 0px;
+}
+
+.uploadFrame {
+  width: 250px;
+  height: 90px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border-top: #aaaaaa 2px solid;
+  border-bottom: #aaaaaa 2px solid;
+  border-left: #aaaaaa 2px solid;
+  border-right: #aaaaaa 2px solid;
+}
+
+.ctsButton {
+  width: 100px;
+  height: 25px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #cccccc;
+} 
+*/
+
+.ctsSpinner {
+  position:relative;
+  width: 100px;
+  height: 24px;
+}
+
+.ctsSpinnerInput {
+  position: absolute;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px;
+  border-top: #aaaaaa 2px solid;
+  border-bottom: #aaaaaa 2px solid;
+  border-left: #aaaaaa 2px solid;
+  font-family: "Lekton";
+  font-size: 13px;
+  width: 84px;
+  height: 16px;
+  top:0;
+  left:0;
+}
+.ctsTopSpinnerButton {
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+}
+.ctsBottomSpinnerButton {
+  position: absolute;
+  top:12px;
+  right: 0;
+  width: 12px;
+  height: 12px;
+}
+
+.ctsSpinnerImage {
+  width:12px;
+  height: 12px;
+}
+
+.toggle_img {
+  width: 15px;
+  height: 15px;
+}
+
+.panelRounded { background-color:#DDDDDD; border:1px solid #BBBBBB; border-radius:2px;
+  margin:2px; padding:2px }
+.panelRounded h5 { padding:2px; }
+.panelRounded select { width: 100% }
+

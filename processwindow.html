@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery UI Example Page</title>
+		<link href="jquery-ui.css" rel="stylesheet">
+		<style>
+			#ProcessWindow{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:  321px;
+				height: 143px;
+				border: 1px solid black;
+			}
+			#{
+				position: absolute;
+				top:     16px;
+				left:    21px;
+				width:  281px;
+				height: 131px;
+			}
+			#allRadio{
+			}
+			#singleRadio{
+			}
+			#okButton{
+			}
+			#cancelButton{
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ProcessWindow" class="QDialog">
+			<div id="" class="QWidget">
+				<input type="radio" id="allRadio" class="QRadioButton">Process all imported image pairs
+				<input type="radio" id="singleRadio" class="QRadioButton">Process current image pair
+				<button id="okButton" class="QPushButton">Go</button>
+				<button id="cancelButton" class="QPushButton">Cancel</button>
+			</div>
+		</div>
+		<script src="external/jquery/jquery.js"></script>
+		<script src="jquery-ui.js"></script>
+	</body>
+</html>
