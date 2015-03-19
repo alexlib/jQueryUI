@@ -17,8 +17,14 @@ class Status(object):
 		self.mainwindow   = MainWindow()
 		self.mainwindow2  = MainWindow2()
 		self.process      = Process()
-		self.setup        = Setup()
+		self.setup   = Setup()
 		self.frame_info   = FrameInfo()
+
+#-------------------------------------------------------------------------------
+	def grayscale(self,x,y):
+		'''Return the grayscale intensity of the pixel at x,y.'''
+		#TODO
+		return (x*y) % 256
 
 #-------------------------------------------------------------------------------
 	@property
@@ -371,8 +377,158 @@ class Process(object):
 #===============================================================================
 class Setup(object):
 #-------------------------------------------------------------------------------
+#	def __init__(self,signalMean,signalPeak,interrogationArea,xSpacing,ySpacing,deltaTime,scale,pixel,velocity,directory,template,xMin,yMin,xMax,yMax):
 	def __init__(self):
-		pass
+		self.signalMean        = None
+		self.signalPeak        = None
+		self.interrogationArea = None
+		self.xSpacing          = None
+		self.ySpacing          = None
+		self.deltaTime         = None
+		self.scale             = None
+		self.pixel             = None
+		self.velocity          = None
+		self.directory         = None
+		self.template          = None
+		self.xMin              = None
+		self.yMin              = None
+		self.xMax              = None
+		self.yMax              = None
+
+#-------------------------------------------------------------------------------
+	@property
+	def signalMean(self):
+		return self._signalMean
+
+	@signalMean.setter
+	def signalMean(self,signalMean):
+		self._signalMean = signalMean
+
+#-------------------------------------------------------------------------------
+	@property
+	def signalPeak(self):
+		return self._signalPeak
+
+	@signalPeak.setter
+	def signalPeak(self,signalPeak):
+		self._signalPeak = signalPeak
+
+#-------------------------------------------------------------------------------
+	@property
+	def interrogationArea(self):
+		return self._interrogationArea
+
+	@interrogationArea.setter
+	def interrogationArea(self,interrogationArea):
+		self._interrogationArea = interrogationArea
+
+#-------------------------------------------------------------------------------
+	@property
+	def xSpacing(self):
+		return self._xSpacing
+
+	@xSpacing.setter
+	def xSpacing(self,xSpacing):
+		self._xSpacing = xSpacing
+
+#-------------------------------------------------------------------------------
+	@property
+	def ySpacing(self):
+		return self._ySpacing
+
+	@ySpacing.setter
+	def ySpacing(self,ySpacing):
+		self._ySpacing = ySpacing
+
+#-------------------------------------------------------------------------------
+	@property
+	def deltaTime(self):
+		return self._deltaTime
+
+	@deltaTime.setter
+	def deltaTime(self,deltaTime):
+		self._deltaTime = deltaTime
+
+#-------------------------------------------------------------------------------
+	@property
+	def scale(self):
+		return self._scale
+
+	@scale.setter
+	def scale(self,scale):
+		self._scale = scale
+
+#-------------------------------------------------------------------------------
+	@property
+	def pixel(self):
+		return self._pixel
+
+	@pixel.setter
+	def pixel(self,pixel):
+		self._pixel = pixel
+
+#-------------------------------------------------------------------------------
+	@property
+	def velocity(self):
+		return self._velocity
+
+	@velocity.setter
+	def velocity(self,velocity):
+		self._velocity = velocity
+
+#-------------------------------------------------------------------------------
+	@property
+	def directory(self):
+		return self._directory
+
+	@directory.setter
+	def directory(self,directory):
+		self._directory = directory
+
+#-------------------------------------------------------------------------------
+	@property
+	def template(self):
+		return self._template
+
+	@template.setter
+	def template(self,template):
+		self._template = template
+
+#-------------------------------------------------------------------------------
+	@property
+	def xMin(self):
+		return self._xMin
+
+	@xMin.setter
+	def xMin(self,xMin):
+		self._xMin = xMin
+
+#-------------------------------------------------------------------------------
+	@property
+	def yMin(self):
+		return self._yMin
+
+	@yMin.setter
+	def yMin(self,yMin):
+		self._yMin = yMin
+
+#-------------------------------------------------------------------------------
+	@property
+	def xMax(self):
+		return self._xMax
+
+	@xMax.setter
+	def xMax(self,xMax):
+		self._xMax = xMax
+
+#-------------------------------------------------------------------------------
+	@property
+	def yMax(self):
+		return self._yMax
+
+	@yMax.setter
+	def yMax(self,yMax):
+		self._yMax = yMax
 
 #===============================================================================
 class FrameInfo(object):

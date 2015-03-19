@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>AboutWindow</class>
- <widget class="QDialog" name="AboutWindow" >
-  <property name="geometry" >
+ <widget class="QDialog" name="AboutWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,32 +10,33 @@
     <height>268</height>
    </rect>
   </property>
-  <property name="sizePolicy" >
-   <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>395</width>
     <height>268</height>
    </size>
   </property>
-  <property name="maximumSize" >
+  <property name="maximumSize">
    <size>
     <width>395</width>
     <height>268</height>
    </size>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>About URAPIV</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="../share/images/images.qrc" >:/urapiv_icon.png</iconset>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/urapiv_icon.png</normaloff>:/urapiv_icon.png</iconset>
   </property>
-  <widget class="QWidget" name="layoutWidget" >
-   <property name="geometry" >
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
@@ -42,15 +44,15 @@
      <height>237</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" >
+   <layout class="QVBoxLayout">
     <item>
-     <layout class="QHBoxLayout" >
+     <layout class="QHBoxLayout">
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
           <height>20</height>
@@ -59,21 +61,21 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label" >
-        <property name="text" >
+       <widget class="QLabel" name="label">
+        <property name="text">
          <string/>
         </property>
-        <property name="pixmap" >
-         <pixmap resource="../share/images/images.qrc" >:/urapiv_small.png</pixmap>
+        <property name="pixmap">
+         <pixmap>:/urapiv_small.png</pixmap>
         </property>
        </widget>
       </item>
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
           <height>20</height>
@@ -84,13 +86,13 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" >
+     <layout class="QHBoxLayout">
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
           <height>20</height>
@@ -99,21 +101,21 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label_2" >
-        <property name="text" >
+       <widget class="QLabel" name="label_2">
+        <property name="text">
          <string>URAPIV for Qt 4 - Version 0.0</string>
         </property>
-        <property name="alignment" >
+        <property name="alignment">
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
           <height>20</height>
@@ -124,13 +126,13 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" >
+     <layout class="QHBoxLayout">
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
           <height>20</height>
@@ -139,18 +141,18 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label_3" >
-        <property name="text" >
+       <widget class="QLabel" name="label_3">
+        <property name="text">
          <string>Adapted to Qt 4 by Zachary Taylor</string>
         </property>
        </widget>
       </item>
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
           <height>20</height>
@@ -161,13 +163,13 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" >
+     <layout class="QHBoxLayout">
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
           <height>20</height>
@@ -176,18 +178,18 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label_4" >
-        <property name="text" >
+       <widget class="QLabel" name="label_4">
+        <property name="text">
          <string>Original version by Alex Liberzon and Roi Gurka</string>
         </property>
        </widget>
       </item>
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
           <height>20</height>
@@ -198,14 +200,14 @@
      </layout>
     </item>
     <item>
-     <widget class="QDialogButtonBox" name="buttonBox" >
-      <property name="orientation" >
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <property name="standardButtons" >
+      <property name="standardButtons">
        <set>QDialogButtonBox::Ok</set>
       </property>
-      <property name="centerButtons" >
+      <property name="centerButtons">
        <bool>true</bool>
       </property>
      </widget>
@@ -214,7 +216,8 @@
   </widget>
  </widget>
  <resources>
-  <include location="../share/images/images.qrc" />
+  <include location="../ui_resources.qrc"/>
+  <include location="../share/images/images.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -223,11 +226,11 @@
    <receiver>AboutWindow</receiver>
    <slot>reject()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>316</x>
      <y>260</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
     </hint>
@@ -239,11 +242,11 @@
    <receiver>AboutWindow</receiver>
    <slot>accept()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>248</x>
      <y>254</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>157</x>
      <y>274</y>
     </hint>

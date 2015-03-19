@@ -17,6 +17,12 @@ bottomDict = {
 	2:'Bottom Option B',
 }
 
+setup_interrogationAreaDict = {
+	0:'None',
+	1:'Int Area Option A',
+	2:'Int Area Option B',
+}
+
 filter_medianDict = {
 	0:'None',
 	1:'Median Option A',

@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>FrameListWindow</class>
- <widget class="QDialog" name="FrameListWindow" >
-  <property name="geometry" >
+ <widget class="QDialog" name="FrameListWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,26 +10,27 @@
     <height>480</height>
    </rect>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>640</width>
     <height>480</height>
    </size>
   </property>
-  <property name="maximumSize" >
+  <property name="maximumSize">
    <size>
     <width>640</width>
     <height>480</height>
    </size>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Frame List</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="../share/images/images.qrc" >:/urapiv_icon.png</iconset>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/urapiv_icon.png</normaloff>:/urapiv_icon.png</iconset>
   </property>
-  <widget class="QPushButton" name="importButton" >
-   <property name="geometry" >
+  <widget class="QPushButton" name="importButton">
+   <property name="geometry">
     <rect>
      <x>430</x>
      <y>440</y>
@@ -36,12 +38,12 @@
      <height>27</height>
     </rect>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Import...</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="cancelButton" >
-   <property name="geometry" >
+  <widget class="QPushButton" name="cancelButton">
+   <property name="geometry">
     <rect>
      <x>520</x>
      <y>440</y>
@@ -49,12 +51,12 @@
      <height>27</height>
     </rect>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Cancel</string>
    </property>
   </widget>
-  <widget class="QListWidget" name="frame1List" >
-   <property name="geometry" >
+  <widget class="QListWidget" name="frame1List">
+   <property name="geometry">
     <rect>
      <x>16</x>
      <y>40</y>
@@ -63,8 +65,8 @@
     </rect>
    </property>
   </widget>
-  <widget class="QListWidget" name="frame2List" >
-   <property name="geometry" >
+  <widget class="QListWidget" name="frame2List">
+   <property name="geometry">
     <rect>
      <x>328</x>
      <y>40</y>
@@ -75,7 +77,8 @@
   </widget>
  </widget>
  <resources>
-  <include location="../share/images/images.qrc" />
+  <include location="../ui_resources.qrc"/>
+  <include location="../share/images/images.qrc"/>
  </resources>
  <connections/>
 </ui>

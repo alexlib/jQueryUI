@@ -6,6 +6,7 @@ var frameBPreload;
 var graphicsView_offset;
 
 function updateView() {
+  setup_updateView();
   filter_updateView();
 } // end updateView
 
@@ -27,8 +28,10 @@ function updateComboBoxes() {
 
 function updateComboBoxesCallBack(jdata) {
 	value_dicts = jdata.values.valueDicts;
+	console.log(value_dicts);
 	updateComboBox($('#topCombo'),value_dicts.topSelect);
 	updateComboBox($('#bottomCombo'),value_dicts.bottomSelect);
+	updateComboBox($('#setup_intAreaCombo'),value_dicts.setup_interrogationAreaSelect);
 	updateComboBox($('#filter_medianCombo'),value_dicts.filter_medianSelect);
 	updateComboBox($('#filter_meanCombo'),value_dicts.filter_meanSelect);
 	updateComboBox($('#filter_bilinearCombo'),value_dicts.filter_bilinearSelect);
@@ -169,24 +172,29 @@ function actionZoomOut_click(event) {
 
 function actionSetup_click(event) {
 	//console.log(event);
-	console.log('actionSetup_click');
+	//console.log('actionSetup_click');
+	$( "#setup_dialog" ).dialog( "open" );
+	event.preventDefault();
 }; // end actionSetup_click
 
 function actionProcessImages_click(event) {
 	//console.log(event);
-	console.log('actionProcessImages_click');
+	//console.log('actionProcessImages_click');
+	$( "#process_dialog" ).dialog( "open" );
+	event.preventDefault();
 }; // end actionProcessImages_click
 
 function actionFilterSet_click(event) {
 	//console.log(event);
-	console.log('actionFilterSet_click');
+	//console.log('actionFilterSet_click');
 	$( "#filter_dialog" ).dialog( "open" );
 	event.preventDefault();
 }; // end actionFilterSet_click
 
 function actionFilter_click(event) {
-//	console.log(event);
-	console.log('actionFilter_click');
+//	console.log('actionFilter_click');
+	$( "#flaunch_dialog" ).dialog( "open" );
+	event.preventDefault();
 }; // end actionFilter_click
 
 function filemenuMouseOver(event) {
@@ -293,15 +301,41 @@ function loadFrameBCallBack(jdata) {
 var marker_locked = false;
 function graphicsViewMouseMove(event) {
 	if (marker_locked) return;
+	var marker = $('#marker');
 	px = event.pageX;
 	py = event.pageY;
 	x = px - graphicsView_offset.left;
 	y = py - graphicsView_offset.top;
-	var marker = $('#marker');
 	marker.css('left',px);
 	marker.css('top',py);
 //	marker.empty();
 	marker.html(x+','+y);
+/*	jdata = {
+					'command' : 'fetchPixelInfo',
+					'x'       : x,
+					'y'       : y,
+					'px'      : px,
+					'py'      : py,
+			};
+//	console.log(jdata);
+  $.post('', jdata,
+      graphicsViewMouseMoveCallBack, 'json');*/
+}
+
+function graphicsViewMouseMoveCallBack(jdata) {
+	var marker = $('#marker');
+	values = jdata.values;
+	x = values.x;
+	y = values.y;
+	px = values.px;
+	py = values.py;
+	grayscale = values.grayscale;
+
+	marker.css('left',px);
+	marker.css('top',py);
+//	marker.empty();
+//	marker.html(x+','+y);
+	marker.html(grayscale);
 //	console.log('x='+x+',y='+y);
 };
 
@@ -316,10 +350,135 @@ function graphicsViewMouseLeave(event) {
 };
 
 function graphicsViewMouseClick(event) {
+//	console.log('graphicsViewMouseClick '+marker_locked);
 	$('#marker').show();
 	marker_locked = !marker_locked;
-	console.log('graphicsViewMouseClick '+marker_locked);
+	if (!marker_locked) return;
+	px = event.pageX;
+	py = event.pageY;
+	x = px - graphicsView_offset.left;
+	y = py - graphicsView_offset.top;
+	jdata = {
+					'command' : 'fetchPixelInfo',
+					'x'       : x,
+					'y'       : y,
+					'px'      : px,
+					'py'      : py,
+			};
+//	console.log(jdata);
+  $.post('', jdata,
+      graphicsViewMouseClickCallBack, 'json');
 };
+
+function graphicsViewMouseClickCallBack(jdata) {
+	var marker = $('#marker');
+	values = jdata.values;
+	x = values.x;
+	y = values.y;
+	px = values.px;
+	py = values.py;
+	grayscale = values.grayscale;
+
+	marker.css('left',px);
+	marker.css('top',py);
+//	marker.empty();
+//	marker.html(x+','+y);
+	marker.html(grayscale);
+//	console.log('x='+x+',y='+y);
+};
+
+function setup_directoryButtonClick() {
+	console.log('directoryButtonClick');
+};
+
+var setup_changed = false;
+function setup_changedAction() {
+	setup_changed = true;
+	$( '#setup_applyButton').css('color','#ff0000');
+}; // end setup_changed
+
+function setup_updateView() {
+  $.post('', {'command':'fetchSetup'},
+  		setup_updateViewCallBack, 'json');
+//	console.log('updateView()')
+}; // end setup_updateView
+
+function setup_updateViewCallBack(jdata) {
+//	console.log(jdata);
+	values = jdata.values;
+	$('#setup_sigMeanText').val(values.sigMean);
+	$('#setup_sigPeakText').val(values.sigPeak);
+	$('#setup_intAreaCombo').val(values.intArea);
+	$('#setup_xSpacing').val(values.xSpacing);
+	$('#setup_ySpacing').val(values.ySpacing);
+	$('#setup_deltaTEdit').val(values.deltaT);
+	$('#setup_scaleEdit').val(values.scale);
+	$('#setup_pixelRadio').prop("checked",values.pixel);
+	$('#setup_velocityRadio').prop("checked",values.velocity);
+	$('#setup_directoryEdit').val(values.directory);
+	$('#setup_templateEdit').val(values.template);
+	$('#setup_xMinEdit').val(values.xMin);
+	$('#setup_yMinEdit').val(values.yMin);
+	$('#setup_xMaxEdit').val(values.xMax);
+	$('#setup_yMaxEdit').val(values.yMax);
+	$('#setup_applyButton').css('color','#000000');
+	setup_changed = false;
+	
+}; // end setup_updateViewCallBack
+
+function setup_applyAction() {
+	jdata = {
+					'command'  : 'storeSetup',
+					'sigMean'  : $('#setup_sigMeanText').val(),
+					'sigPeak'  : $('#setup_sigPeakText').val(),
+					'intArea'  : $('#setup_intAreaCombo').val(),
+					'xSpacing' : $('#setup_xSpacing').val(),
+					'ySpacing' : $('#setup_ySpacing').val(),
+					'deltaT'   : $('#setup_deltaTEdit').val(),
+					'scale'    : $('#setup_scaleEdit').val(),
+					'pixel'    : $('#setup_pixelRadio').prop("checked"),
+					'velocity' : $('#setup_velocityRadio').prop("checked"),
+					'directory': $('#setup_directoryEdit').val(),
+					'template' : $('#setup_templateEdit').val(),
+					'xMin'     : $('#setup_xMinEdit').val(),
+					'yMin'     : $('#setup_yMinEdit').val(),
+					'xMax'     : $('#setup_xMaxEdit').val(),
+					'yMax'     : $('#setup_yMaxEdit').val(),
+			};
+//	$( "#setup_dialog" ).dialog( "close" );
+//	console.log(jdata);
+  $.post('', jdata,
+      setup_applyActionCallBack, 'json');
+}; // end setup_applyAction
+
+function setup_applyActionCallBack(jdata) {
+//	console.log(jdata);
+	$('#setup_applyButton').css('color','#000000');
+}; // end setup_applyActionCallBack
+
+function setup_cancelAction() {
+	$( "#setup_dialog" ).dialog( "close" );
+}; // end setup_applyAction
+
+function process_okAction() {
+	jdata = {
+					'command'      : 'processImages',
+					'all'          : $('#process_allRadio').prop("checked"),
+					'single'       : $('#process_singleRadio').prop("checked"),
+			};
+	$( "#process_dialog" ).dialog( "close" );
+//	console.log(jdata);
+  $.post('', jdata,
+      process_okActionCallBack, 'json');
+}; // end process_okAction
+
+function process_okActionCallBack(jdata) {
+//	console.log(jdata);
+}; // end process_okActionCallBack
+
+function process_cancelAction() {
+	$( "#process_dialog" ).dialog( "close" );
+}; // end process_okAction
 
 var filter_changed = false;
 function filter_changedAction() {
@@ -390,14 +549,33 @@ function filter_okActionCallBack(jdata) {
 //	console.log(jdata);
 	$('#filter_okButton').css('color','#000000');
 	filter_changed = false;
-} // end filter_okActionCallBack
+}; // end filter_okActionCallBack
 
 function filter_cancelAction() {
   filter_updateView();
-} // end filter_cancelAction
+}; // end filter_cancelAction
+
+function flaunch_okAction() {
+	jdata = {
+					'command'      : 'launchFilter',
+					'all'          : $('#flaunch_allRadio').prop("checked"),
+					'single'       : $('#flaunch_singleRadio').prop("checked"),
+			};
+	$( "#flaunch_dialog" ).dialog( "close" );
+//	console.log(jdata);
+  $.post('', jdata,
+      flaunch_okActionCallBack, 'json');
+}; // end flaunch_okAction
+
+function flaunch_okActionCallBack(jdata) {
+//	console.log(jdata);
+}; // end flaunch_okActionCallBack
+
+function flaunch_cancelAction() {
+	$( "#flaunch_dialog" ).dialog( "close" );
+}; // end flaunch_okAction
 
 function about_okAction() {
-//	$( "#about_dialog" ).close();
 	$( "#about_dialog" ).dialog( "close" );
 }
 
@@ -406,6 +584,29 @@ $(document).ready(function() {
   updateView();
 	loadFrameA();
 	loadFrameB();
+
+	$('#setup_directoryButton').click(setup_directoryButtonClick);
+  $('#setup_applyButton').click(setup_applyAction);
+  $('#setup_cancelButton').click(setup_cancelAction);
+	$('#setup_sigMeanText').change(setup_changedAction);
+	$('#setup_sigPeakText').change(setup_changedAction);
+	$('#setup_intAreaCombo').change(setup_changedAction);
+	$('#setup_xSpacing').change(setup_changedAction);
+	$('#setup_ySpacing').change(setup_changedAction);
+	$('#setup_deltaTEdit').change(setup_changedAction);
+	$('#setup_scaleEdit').change(setup_changedAction);
+	$('#setup_pixelRadio').change(setup_changedAction);
+	$('#setup_velocityRadio').change(setup_changedAction);
+	$('#setup_directoryEdit').change(setup_changedAction);
+	$('#setup_templateEdit').change(setup_changedAction);
+	$('#setup_xMinEdit').change(setup_changedAction);
+	$('#setup_yMinEdit').change(setup_changedAction);
+	$('#setup_xMaxEdit').change(setup_changedAction);
+	$('#setup_yMaxEdit').change(setup_changedAction);
+
+  $('#process_okButton').click(process_okAction);
+  $('#process_cancelButton').click(process_cancelAction);
+
   $('#filter_okButton').click(filter_okAction);
   $('#filter_cancelButton').click(filter_cancelAction);
 	$('#filter_rangeBox').change(filter_changedAction);
@@ -426,6 +627,9 @@ $(document).ready(function() {
 	$('#filter_gaussianCombo').change(filter_changedAction);
 	$('#filter_userRadio').change(filter_changedAction);
 	$('#filter_processRadio').change(filter_changedAction);
+
+  $('#flaunch_okButton').click(flaunch_okAction);
+  $('#flaunch_cancelButton').click(flaunch_cancelAction);
 
   $('#about_okButton').click(about_okAction);
 
@@ -478,7 +682,7 @@ $(document).ready(function() {
 	$('#helpmenu').hide();
 	$('#marker').hide();
 	graphicsView_offset = $('#graphicsView').offset();
-	console.log(graphicsView_offset);
+//	console.log(graphicsView_offset);
 }); // end document ready
 
 

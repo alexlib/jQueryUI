@@ -29,6 +29,7 @@
 				left:     0px;
 				width:  815px;
 				height:  25px;
+				z-index: 10;
 			}
 			#filemenu{
 				position: absolute;
@@ -294,10 +295,495 @@
 				float:left;
 			}
 
-			#filter_dialogx{
-				width:  639px;
-				height: 419px;
+			#SetupWindowLayout{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+			}
+			#setup_tabWidget{
+				position: absolute;
+				top:      9px;
+				left:     9px;
+				width:  470px;
+				height: 293px;
+			}
+			#setup_tabList{
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#setup_correlationTab{
+			}
+			#setup_gridLayout{
+				position: absolute;
+				top:     44px;
+				left:     0px;
+				width:  482px;
+			}
+			#setup_signalLevelLabel{
+				position: absolute;
+				top:     15px;
+				left:    59px;
+				width:   96px;
+				height:  21px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#setup_signalLevelLayout{
+				position: absolute;
+				top:     38px;
+				left:   160px;
+				width:  277px;
+				height:  74px;
+			}
+			#setup_sigMeanLabel{
+				position: absolute;
+				top:      1px;
+				left:    34px;
+				width:   97px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_sigMeanText{
+				position: absolute;
+				top:      1px;
+				left:   137px;
+				width:  140px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_sigPeakLabel{
+				position: absolute;
+				top:     40px;
+				left:     1px;
+				width:  130px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_sigPeakText{
+				position: absolute;
+				top:     40px;
+				left:   137px;
+				width:  140px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_gridSetupLabel{
+				position: absolute;
+				top:    128px;
+				left:    59px;
+				width:   86px;
+				height:  21px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#setup_gridSetupLayout{
+				position: absolute;
+				top:    150px;
+				left:    59px;
+				width:  375px;
+				height:  85px;
+			}
+			#setup_intArealLabel{
+				position: absolute;
+				top:      1px;
+				left:   103px;
+				width:  120px;
+				height:  24px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_intAreaCombo{
+				position: absolute;
+				top:      1px;
+				left:   229px;
+				width:  100px;
+				height:  24px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_xSpacinglabel{
+				position: absolute;
+				top:     31px;
+				left:    46px;
+				width:  177px;
+				height:  24px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_xSpacing{
+				position: absolute;
+				top:     31px;
+				left:   229px;
+				width:  177px;
+				height:  24px;
+				width:  146px;
+				height:  24px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_ySpacingLabel{
+				position: absolute;
+				top:     61px;
+				left:    65px;
+				width:  158px;
+				height:  24px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_ySpacing{
+				position: absolute;
+				top:     61px;
+				left:   229px;
+				width:  146px;
+				height:  24px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_scalingTab{
+			}
+			#setup_scalingTabLayout{
+			}
+			#setup_timeScalingLabel{
+				position: absolute;
+				top:      83px;
+				left:    100px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#setup_timeScalingLayout{
+				position: absolute;
+				top:     106px;
+				left:    100px;
+			}
+			#setup_deltaTLabel{
+				position: absolute;
+				top:      6px;
+				left:     1px;
+				width:   76px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_deltaTEdit{
+				position: absolute;
+				top:      1px;
+				left:   157px;
+				width:  146px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_scaleLabel{
+				position: absolute;
+				top:     51px;
+				left:     1px;
+				width:  150px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_scaleEdit{
+				position: absolute;
+				top:     46px;
+				left:   157px;
+				width:  146px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_velocityScalingLabel{
+				position: absolute;
+				top:     208px;
+				left:    100px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#setup_velocityScalingLayout{
+				position: absolute;
+				top:    226px;
+				left:   100px;
+			}
+			#setup_pixelRadio{
+				position: absolute;
+				top:      1px;
+				left:     1px;
+				width:   26px;
+				height:  26px;
+			}
+			#setup_pixelRadioLabel{
+				position: absolute;
+				top:      1px;
+				left:    30px;
+				width:  100px;
+				height:  26px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_velocityRadio{
+				position: absolute;
+				top:     33px;
+				left:     1px;
+				width:   26px;
+				height:  26px;
+			}
+			#setup_velocityRadioLabel{
+				position: absolute;
+				top:     33px;
+				left:    30px;
+				width:  100px;
+				height:  26px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_outputTab{
+			}
+			#setup_outputTabLayout{
+				position: absolute;
+				top:     30px;
+				left:     0px;
+			}
+			#setup_outputDirectoryLabel{
+				position: absolute;
+				top:     45px;
+				left:   114px;
+				width:  251px;
+				height:  21px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_outputLayout{
+				position: absolute;
+				top:     76px;
+				left:   113px;
+			}
+			#setup_directoryEdit{
+				position: absolute;
+				top:      1px;
+				left:     1px;
+				width:  215px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_directoryButton{
+				position: absolute;
+				top:      3px;
+				left:   222px;
+				width:   28px;
+				height:  29px;
+			}
+			#setup_templateLabel{
+				position: absolute;
+				top:    149px;
+				left:   114px;
+				width:  251px;
+				height:  21px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_templateEditLayout{
+				position: absolute;
+				top:    170px;
+				left:   113px;
+			}
+			#setup_templateEdit{
+				position: absolute;
+				top:      1px;
+				left:     1px;
+				width:  146px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_templateNoteLabel{
+				position: absolute;
+				top:      5px;
+				left:   153px;
+				width:  215px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_maskTab{
+			}
+			#setup_maskTabLayout{
+				position: absolute;
+				top:     30px;
+				left:     0px;
+			}
+			#setup_rectangleLabel{
+				position: absolute;
+				top:     58px;
+				left:   142px;
+				width:  194px;
+				height:  21px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#setup_rectangleLayout{
+				position: absolute;
+				top:     80px;
+				left:   142px;
+			}
+			#setup_xMinLabel{
+				position: absolute;
+				top:      5px;
+				left:     1px;
+				width:   36px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_xMinEdit{
+				position: absolute;
+				top:      1px;
+				left:    47px;
+				width:  146px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_yMinLabel{
+				position: absolute;
+				top:     44px;
+				left:     1px;
+				width:   35px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_yMinEdit{
+				position: absolute;
+				top:     40px;
+				left:    47px;
+				width:  146px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_xMaxLabel{
+				position: absolute;
+				top:     83px;
+				left:     1px;
+				width:   40px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_xMaxEdit{
+				position: absolute;
+				top:     79px;
+				left:    47px;
+				width:  146px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_yMaxLabel{
+				position: absolute;
+				top:    122px;
+				left:     1px;
+				width:   39px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_yMaxEdit{
+				position: absolute;
+				top:    118px;
+				left:    47px;
+				width:  146px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#setup_buttons{
+				position: absolute;
+				top:    312px;
+				left:   333px;
+				width:  193px;
+				height:  31px;
+			}
+			#setup_applyButton{
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#setup_cancelButton{
+				font-weight: bold;
+				font-size: 11pt;
+			}
+
+			#ProcessWindow{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:  341px;
+				height: 143px;
 				border: 1px solid black;
+			}
+			#processLayout{
+				position: absolute;
+				top:     16px;
+				left:    21px;
+				width:  301px;
+				height: 131px;
+			}
+			#process_allRadio{
+				position: absolute;
+				top:      1px;
+				left:     1px;
+				width:   26px;
+				height:  26px;
+			}
+			#process_allLabel{
+				position: absolute;
+				top:      2px;
+				left:    26px;
+				width:  301px;
+				height:  26px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#process_singleRadio{
+				position: absolute;
+				top:     33px;
+				left:    1px;
+				width:   26px;
+				height:  26px;
+			}
+			#process_singleLabel{
+				position: absolute;
+				top:     34px;
+				left:    26px;
+				width:  301px;
+				height:  26px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#process_buttons{
+				position: absolute;
+				top:     65px;
+				left:   102px;
+				width:  193px;
+				height:  31px;
+			}
+			#process_okButton{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:   85px;
+				height:  31px;
+			}
+			#process_cancelButton{
+				position: absolute;
+				top:     0px;
+				right:    0px;
+				width:   85px;
+				height:  31px;
 			}
 			#filter_global_label{
 				position: absolute;
@@ -579,6 +1065,66 @@
 				font-weight: bold;
 				font-size: 11pt;
 			}
+			#flaunchLayout{
+				position: absolute;
+				top:     26px;
+				left:    21px;
+				width:  301px;
+				height: 131px;
+			}
+			#flaunch_allRadio{
+				position: absolute;
+				top:      1px;
+				left:     1px;
+				width:   26px;
+				height:  26px;
+			}
+			#flaunch_allLabel{
+				position: absolute;
+				top:      2px;
+				left:    26px;
+				width:  301px;
+				height:  26px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#flaunch_singleRadio{
+				position: absolute;
+				top:     33px;
+				left:    1px;
+				width:   26px;
+				height:  26px;
+			}
+			#flaunch_singleLabel{
+				position: absolute;
+				top:     34px;
+				left:    26px;
+				width:  301px;
+				height:  26px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#flaunch_buttons{
+				position: absolute;
+				top:     65px;
+				left:   102px;
+				width:  193px;
+				height:  31px;
+			}
+			#flaunch_okButton{
+				position: absolute;
+				top:      0px;
+				left:     0px;
+				width:   85px;
+				height:  31px;
+			}
+			#flaunch_cancelButton{
+				position: absolute;
+				top:     0px;
+				right:    0px;
+				width:   85px;
+				height:  31px;
+			}
 			#AboutWindow{
 				position: absolute;
 				top:      0px;
@@ -675,10 +1221,26 @@
 				$( "#viewmenu" ).menu();
 				$( "#toolsmenu" ).menu();
 				$( "#helpmenu" ).menu();
+
+				$( "#setup_dialog" ).dialog({
+					autoOpen: false,
+					width: 536,
+					height: 410
+				});
+				$( "#process_dialog" ).dialog({
+					autoOpen: false,
+					width: 370,
+					height: 210
+				});
 				$( "#filter_dialog" ).dialog({
 					autoOpen: false,
 					width: 639,
 					height: 419
+				});
+				$( "#flaunch_dialog" ).dialog({
+					autoOpen: false,
+					width: 370,
+					height: 210
 				});
 				$( "#about_dialog" ).dialog({
 					autoOpen: false,
@@ -695,6 +1257,32 @@
 	</head>
 	<body>
 		<div id="marker">Marker</div>
+		<div id="menubar" class="QMenuBar">
+			<div id="filemenu_label">File</div>
+			<ul id="filemenu" class="QMenu">
+				<li id="newmenuitem" class="QMenuItem">New...</li>
+				<li id="openmenuitem" class="QMenuItem">Open...</li>
+				<li id="savemenuitem" class="QMenuItem">Save</li>
+				<li id="saveasmenuitem" class="QMenuItem">Save As...</li>
+				<li id="quitmenuitem" class="QMenuItem">Quit</li>
+			</ul>
+			<div id="viewmenu_label">View</div>
+			<ul id="viewmenu" class="QMenu">
+				<li id="zoominmenuitem" class="QMenuItem">Zoom In</li> <!-- class="ui-state-disabled"-->
+				<li id="zoomoutmenuitem" class="QMenuItem">Zoom Out</li>
+			</ul>
+			<div id="toolsmenu_label">Tools</div>
+			<ul id="toolsmenu" class="QMenu">
+				<li id="importmenuitem" class="QMenuItem">Import Image...</li>
+				<li id="setupmenuitem" class="QMenuItem">Setup...</li>
+				<li id="processmenuitem" class="QMenuItem">Process Images</li>
+			</ul>
+			<div id="helpmenu_label">Help</div>
+			<ul id="helpmenu" class="QMenu">
+				<li id="helpmenuitem" class="QMenuItem">Help</li>
+				<li id="aboutmenuitem" class="QMenuItem">About</li>
+			</ul>
+		</div>
 		<div id="MainWindow" class="QMainWindow">
 			<div id="toolBar" class="QToolBar">
 				<img id="actionNew" src="icons/filenew.png" />
@@ -755,6 +1343,98 @@
 			</div>
 			<div id="statusbar" class="QStatusBar">
 			</div>
+			<div id="setup_dialog" title="Setup">
+				<div id="SetupWindowLayout" class="QVBoxLayout">
+					<div id="setup_tabWidget" class="QTabWidget">
+						<ul id="setup_tabList">
+							<li><a href="#setup_correlationTab">Correlation</a></li>
+							<li><a href="#setup_scalingTab">Velocity Scaling</a></li>
+							<li><a href="#setup_outputTab">Output</a></li>
+							<li><a href="#setup_maskTab">Image Mask</a></li>
+						</ul>
+						<div id="setup_correlationTab" class="QWidget">
+							<div id="setup_gridLayout" class="QGridLayout">
+								<div id="setup_signalLevelLabel" class="QLabel">Signal Level</div>
+								<div id="setup_signalLevelLayout" class="QFormLayout">
+									<div id="setup_sigMeanLabel" class="QLabel">Signal to Mean</div>
+									<input type="text" id="setup_sigMeanText" class="QLineEdit">
+									<div id="setup_sigPeakLabel" class="QLabel">Signal to Next Peak</div>
+									<input type="text" id="setup_sigPeakText" class="QLineEdit">
+								</div>
+								<div id="setup_gridSetupLabel" class="QLabel">Grid setup</div>
+								<div id="setup_gridSetupLayout" class="QFormLayout">
+									<div id="setup_intArealLabel" class="QLabel">Interrogation Area</div>
+									<select id="setup_intAreaCombo" class="QComboBox">
+									<option>--</option>
+									</select>
+									<div id="setup_xSpacinglabel" class="QLabel">Horizontal Spacing [pixels]</div>
+									<input type="text" id="setup_xSpacing" class="QLineEdit">
+									<div id="setup_ySpacingLabel" class="QLabel">Vertical Spacing [pixels]</div>
+									<input type="text" id="setup_ySpacing" class="QLineEdit">
+								</div>
+							</div>
+						</div>
+						<div id="setup_scalingTab" class="QWidget">
+							<div id="setup_scalingTabLayout" class="QGridLayout">
+								<div id="setup_timeScalingLabel" class="QLabel">Time delay and scaling factor</div>
+								<div id="setup_timeScalingLayout" class="QFormLayout">
+									<div id="setup_deltaTLabel" class="QLabel">delta t [ms]</div>
+									<input type="text" id="setup_deltaTEdit" class="QLineEdit">
+									<div id="setup_scaleLabel" class="QLabel">scale factor [mm/pixel]</div>
+									<input type="text" id="setup_scaleEdit" class="QLineEdit">
+								</div>
+								<div id="setup_velocityScalingLabel" class="QLabel">Velocity scaling</div>
+								<div id="setup_velocityScalingLayout" class="QVBoxLayout">
+									<input type="radio" id="setup_pixelRadio" name="setup_vscaling" class="QRadioButton"><label id="setup_pixelRadioLabel">Pixel</label>
+									<input type="radio" id="setup_velocityRadio" name="setup_vscaling" class="QRadioButton"><label id="setup_velocityRadioLabel">Velocity</label>
+								</div>
+							</div>
+						</div>
+						<div id="setup_outputTab" class="QWidget">
+							<div id="setup_outputTabLayout" class="QGridLayout">
+								<div id="setup_outputDirectoryLabel" class="QLabel">Output directory</div>
+								<div id="setup_outputLayout" class="QHBoxLayout">
+									<input type="text" id="setup_directoryEdit" class="QLineEdit">
+									<button id="setup_directoryButton" class="QToolButton">...</button>
+								</div>
+								<div id="setup_templateLabel" class="QLabel">File template name</div>
+								<div id="setup_templateEditLayout" class="QHBoxLayout">
+									<input type="text" id="setup_templateEdit" class="QLineEdit">
+									<div id="setup_templateNoteLabel" class="QLabel">e.g. test%d.txt</div>
+								</div>
+							</div>
+						</div>
+						<div id="setup_maskTab" class="QWidget">
+							<div id="setup_maskTabLayout" class="QGridLayout">
+								<div id="setup_rectangleLabel" class="QLabel">Rectangular box mask</div>
+								<div id="setup_rectangleLayout" class="QFormLayout">
+									<div id="setup_xMinLabel" class="QLabel">X Min</div>
+									<input type="text" id="setup_xMinEdit" class="QLineEdit">
+									<div id="setup_yMinLabel" class="QLabel">Y Min</div>
+									<input type="text" id="setup_yMinEdit" class="QLineEdit">
+									<div id="setup_xMaxLabel" class="QLabel">X Max</div>
+									<input type="text" id="setup_xMaxEdit" class="QLineEdit">
+									<div id="setup_yMaxLabel" class="QLabel">Y Max</div>
+									<input type="text" id="setup_yMaxEdit" class="QLineEdit">
+								</div>
+						</div>
+					</div>
+					<div id="setup_buttons" class="QHBoxLayout">
+						<button id="setup_applyButton" class="QPushButton">Apply</button>
+						<button id="setup_cancelButton" class="QPushButton">Cancel</button>
+					</div>
+				</div>
+			</div>
+			<div id="process_dialog" title="Process Images">
+				<div id="processLayout" class="QWidget">
+					<input type="radio" name="process" id="process_allRadio" class="QRadioButton"><label id="process_allLabel">Process all imported image pairs</label>
+					<input type="radio" name="process" id="process_singleRadio" class="QRadioButton"><label id="process_singleLabel">Process current image pair</label>
+					<div id="process_buttons">
+						<button id="process_okButton" class="QPushButton">Go</button>
+						<button id="process_cancelButton" class="QPushButton">Cancel</button>
+					</div>
+				</div>
+			</div>
 			<div id="filter_dialog" title="Filter Settings">
 			<!--div id="filter_FilterWindow" class="QDialog"-->
 				<div id="filter_global_label" class="QLabel">Global</div>
@@ -801,6 +1481,16 @@
 				</div>
 			</div>
 			<!--/div-->
+			<div id="flaunch_dialog" title="Launch Filter">
+				<div id="flaunchLayout" class="QWidget">
+					<input type="radio" name="flaunch" id="flaunch_allRadio" class="QRadioButton"><label id="flaunch_allLabel" for="flaunch_allRadio">Filter all processed image pairs</label>
+					<input type="radio" name="flaunch" id="flaunch_singleRadio" class="QRadioButton"><label id="flaunch_singleLabel" for="flaunch_singleRadio">Filter current processed image pair</label>
+					<div id="flaunch_buttons">
+						<button id="flaunch_okButton" class="QPushButton">Go</button>
+						<button id="flaunch_cancelButton" class="QPushButton">Cancel</button>
+					</div>
+				</div>
+			</div>
 			<div id="about_dialog" title="About OpenPIV">
 				<div id="aboutLayoutWidget" class="QWidget">
 					<div id="about_001" class="QVBoxLayout">
@@ -822,32 +1512,9 @@
 					</div>
 				</div>
 			</div>
-			<div id="menubar" class="QMenuBar">
-				<div id="filemenu_label">File</div>
-				<ul id="filemenu" class="QMenu">
-					<li id="newmenuitem" class="QMenuItem">New...</li>
-					<li id="openmenuitem" class="QMenuItem">Open...</li>
-					<li id="savemenuitem" class="QMenuItem">Save</li>
-					<li id="saveasmenuitem" class="QMenuItem">Save As...</li>
-					<li id="quitmenuitem" class="QMenuItem">Quit</li>
-				</ul>
-				<div id="viewmenu_label">View</div>
-				<ul id="viewmenu" class="QMenu">
-					<li id="zoominmenuitem" class="QMenuItem">Zoom In</li> <!-- class="ui-state-disabled"-->
-					<li id="zoomoutmenuitem" class="QMenuItem">Zoom Out</li>
-				</ul>
-				<div id="toolsmenu_label">Tools</div>
-				<ul id="toolsmenu" class="QMenu">
-					<li id="importmenuitem" class="QMenuItem">Import Image...</li>
-					<li id="setupmenuitem" class="QMenuItem">Setup...</li>
-					<li id="processmenuitem" class="QMenuItem">Process Images</li>
-				</ul>
-				<div id="helpmenu_label">Help</div>
-				<ul id="helpmenu" class="QMenu">
-					<li id="helpmenuitem" class="QMenuItem">Help</li>
-					<li id="aboutmenuitem" class="QMenuItem">About</li>
-				</ul>
-			</div>
 		</div>
+		<script>
+			$( "#setup_tabWidget" ).tabs();
+		</script>
 	</body>
 </html>

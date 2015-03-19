@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>ProcessWindow</class>
- <widget class="QDialog" name="ProcessWindow" >
-  <property name="geometry" >
+ <widget class="QDialog" name="ProcessWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,14 +10,15 @@
     <height>143</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Process</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="../share/images/images.qrc" >:/urapiv_icon.png</iconset>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/urapiv_icon.png</normaloff>:/urapiv_icon.png</iconset>
   </property>
-  <widget class="QWidget" name="" >
-   <property name="geometry" >
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
     <rect>
      <x>21</x>
      <y>16</y>
@@ -24,29 +26,29 @@
      <height>131</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" >
+   <layout class="QVBoxLayout">
     <item>
-     <widget class="QRadioButton" name="allRadio" >
-      <property name="text" >
+     <widget class="QRadioButton" name="allRadio">
+      <property name="text">
        <string>Process all imported image pairs</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="singleRadio" >
-      <property name="text" >
+     <widget class="QRadioButton" name="singleRadio">
+      <property name="text">
        <string>Process current image pair</string>
       </property>
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" >
+     <layout class="QHBoxLayout">
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
           <height>60</height>
@@ -55,15 +57,15 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="okButton" >
-        <property name="text" >
+       <widget class="QPushButton" name="okButton">
+        <property name="text">
          <string>Go</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="cancelButton" >
-        <property name="text" >
+       <widget class="QPushButton" name="cancelButton">
+        <property name="text">
          <string>Cancel</string>
         </property>
        </widget>
@@ -74,7 +76,8 @@
   </widget>
  </widget>
  <resources>
-  <include location="../share/images/images.qrc" />
+  <include location="../ui_resources.qrc"/>
+  <include location="../share/images/images.qrc"/>
  </resources>
  <connections/>
 </ui>

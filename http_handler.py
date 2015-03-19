@@ -63,6 +63,9 @@ class HTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler): #BaseHTTPSe
 				print '\tdef %s(self,form,response):' % command
 				print '\t\t\'\'\'.\'\'\''
 				print '\t\tparameter = form[\'parameter\'].value.strip()'
+				for key in sorted(form.keys()):
+					print "\t\t%-24s = form[\'%s\'].value.strip()" % (key,key)
+				
 				print "\t\tresponse.addValue('parameter',parameter)"
 #				print '		getattr(self.server.proxy, \'%%s.%s\' %% module_name)(channel_name,segment_name)' % command
 				print
@@ -90,6 +93,91 @@ class HTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler): #BaseHTTPSe
 
 	fetchValueDicts.ok = True
 
+#-------------------------------------------------------------------------------
+	## @method fetchSetup
+	# .
+	#
+	# @param form a FieldStorage object containing the data from the request form
+	# @param response a WebServiceResponse object
+	def fetchSetup(self,form,response):
+		setup_info = self.server.status.setup
+		response.addValue('sigMean',setup_info.signalMean)
+		response.addValue('sigPeak',setup_info.signalPeak)
+		response.addValue('intArea',setup_info.interrogationArea)
+		response.addValue('xSpacing',setup_info.xSpacing)
+		response.addValue('ySpacing',setup_info.ySpacing)
+		response.addValue('deltaT',setup_info.deltaTime)
+		response.addValue('scale',setup_info.scale)
+		response.addValue('pixel',setup_info.pixel)
+		response.addValue('velocity',setup_info.velocity)
+		response.addValue('directory',setup_info.directory)
+		response.addValue('template',setup_info.template)
+		response.addValue('xMin',setup_info.xMin)
+		response.addValue('yMin',setup_info.yMin)
+		response.addValue('xMax',setup_info.xMax)
+		response.addValue('yMax',setup_info.yMax)
+
+	fetchSetup.ok = True
+
+#-------------------------------------------------------------------------------
+	## @method storeSetup
+	# .
+	#
+	# @param form a FieldStorage object containing the data from the request form
+	# @param response a WebServiceResponse object
+	def storeSetup(self,form,response):
+		'''.'''
+#		parameter = form['parameter'].value.strip()
+#		response.addValue('parameter',parameter)
+#,signalMean,signalPeak,interrogationArea,xSpacing,ySpacing,deltaTime,scale,pixel,velocity,directory,template,xMin,yMin,xMax,yMax
+		setup_info = self.server.status.setup
+		try: setup_info.signalMean            = form['sigMean'].value.strip()
+		except KeyError: pass
+		try: setup_info.signalPeak            = form['sigPeak'].value.strip()
+		except KeyError: pass
+		try: setup_info.interrogationArea     = form['intArea'].value.strip()
+		except KeyError: pass
+		try: setup_info.xSpacing              = form['xSpacing'].value.strip()
+		except KeyError: pass
+		try: setup_info.ySpacing              = form['ySpacing'].value.strip()
+		except KeyError: pass
+		try: setup_info.deltaTime             = form['deltaT'].value.strip()
+		except KeyError: pass
+		try: setup_info.scale                 = form['scale'].value.strip()
+		except KeyError: pass
+		try: setup_info.pixel                 = form['pixel'].value.strip()
+		except KeyError: pass
+		try: setup_info.velocity              = form['velocity'].value.strip()
+		except KeyError: pass
+		try: setup_info.directory             = form['directory'].value.strip()
+		except KeyError: pass
+		try: setup_info.template              = form['template'].value.strip()
+		except KeyError: pass
+		try: setup_info.xMin                  = form['xMin'].value.strip()
+		except KeyError: pass
+		try: setup_info.yMin                  = form['yMin'].value.strip()
+		except KeyError: pass
+		try: setup_info.xMax                  = form['xMax'].value.strip()
+		except KeyError: pass
+		try: setup_info.yMax                  = form['yMax'].value.strip()
+		except KeyError: pass
+
+	storeSetup.ok = True
+
+#-------------------------------------------------------------------------------
+	## @method processImages
+	# .
+	#
+	# @param form a FieldStorage object containing the data from the request form
+	# @param response a WebServiceResponse object
+	def processImages(self,form,response):
+		'''.'''
+#		parameter = form['parameter'].value.strip()
+#		response.addValue('parameter',parameter)
+		all_                     = form['all'].value.strip()
+		single                   = form['single'].value.strip()
+
+	processImages.ok = True
 #-------------------------------------------------------------------------------
 	## @method fetchFilter
 	# 
@@ -170,6 +258,21 @@ class HTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler): #BaseHTTPSe
 	storeFilter.ok=True
 
 #-------------------------------------------------------------------------------
+	## @method launchFilter
+	# .
+	#
+	# @param form a FieldStorage object containing the data from the request form
+	# @param response a WebServiceResponse object
+	def launchFilter(self,form,response):
+		'''.'''
+		all_                     = form['all'].value.strip()
+		single                   = form['single'].value.strip()
+#		parameter = form['parameter'].value.strip()
+#		response.addValue('parameter',parameter)
+
+	launchFilter.ok = True
+
+#-------------------------------------------------------------------------------
 	def fetchFramePath(self,form,response):
 		'''Return the requested frame.'''
 		try: frame = form['frame'].value.strip()
@@ -200,4 +303,23 @@ class HTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler): #BaseHTTPSe
 
 	fetchFramePath.ok = True
 
+#-------------------------------------------------------------------------------
+	## @method fetchPixelInfo
+	# .
+	#
+	# @param form a FieldStorage object containing the data from the request form
+	# @param response a WebServiceResponse object
+	def fetchPixelInfo(self,form,response):
+		'''.'''
+		px        = int(form['px'].value.strip())
+		py        = int(form['py'].value.strip())
+		x         = int(form['x'].value.strip())
+		y         = int(form['y'].value.strip())
+		response.addValue('px',px)
+		response.addValue('py',py)
+		response.addValue('x',x)
+		response.addValue('y',y)
+		response.addValue('grayscale',self.server.status.grayscale(x,y))
+
+	fetchPixelInfo.ok = True
 

@@ -63,7 +63,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
        <item row="1" column="1">
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="signalLevelLabel">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -82,19 +82,19 @@
         </widget>
        </item>
        <item row="2" column="2">
-        <layout class="QFormLayout" name="formLayout_2">
+        <layout class="QFormLayout" name="signalLevelLayout">
          <property name="labelAlignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_21">
+          <widget class="QLabel" name="sigMeanLabel">
            <property name="text">
             <string>Signal to Mean</string>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLineEdit" name="textSigMean">
+          <widget class="QLineEdit" name="sigMeanText">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -113,14 +113,14 @@
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QLabel" name="label_22">
+          <widget class="QLabel" name="sigPeakLabel">
            <property name="text">
             <string>Signal to Next Peak</string>
            </property>
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QLineEdit" name="textSigPeak">
+          <widget class="QLineEdit" name="sigPeakText">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -141,7 +141,7 @@
         </layout>
        </item>
        <item row="4" column="1">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="gridSetupLabel">
          <property name="font">
           <font>
            <weight>75</weight>
@@ -154,7 +154,7 @@
         </widget>
        </item>
        <item row="5" column="1" colspan="2">
-        <layout class="QFormLayout" name="formLayout">
+        <layout class="QFormLayout" name="gridSetupLayout">
          <property name="labelAlignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
@@ -162,7 +162,7 @@
           <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
          </property>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_16">
+          <widget class="QLabel" name="intArealLabel">
            <property name="text">
             <string>Interrogation Area</string>
            </property>
@@ -185,7 +185,7 @@
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QLabel" name="label_17">
+          <widget class="QLabel" name="xSpacinglabel">
            <property name="text">
             <string>Horizontal Spacing [pixels]</string>
            </property>
@@ -211,7 +211,7 @@
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QLabel" name="label_18">
+          <widget class="QLabel" name="ySpacingLabel">
            <property name="text">
             <string>Vertical Spacing [pixels]</string>
            </property>
@@ -314,19 +314,19 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="2" column="1">
-        <layout class="QFormLayout" name="formLayout_3">
+        <layout class="QFormLayout" name="timeScalingLayout">
          <property name="fieldGrowthPolicy">
           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
          </property>
          <item row="1" column="0">
-          <widget class="QLabel" name="label_6">
+          <widget class="QLabel" name="deltaTLabel">
            <property name="text">
             <string>delta t [ms]</string>
            </property>
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QLineEdit" name="deltaTedit"/>
+          <widget class="QLineEdit" name="deltaTEdit"/>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="scaleLabel">
@@ -341,7 +341,7 @@
         </layout>
        </item>
        <item row="5" column="1">
-        <layout class="QVBoxLayout" name="verticalLayout">
+        <layout class="QVBoxLayout" name="velocityScalingLayout">
          <item>
           <widget class="QRadioButton" name="pixelRadio">
            <property name="text">
@@ -359,7 +359,7 @@
         </layout>
        </item>
        <item row="4" column="1">
-        <widget class="QLabel" name="label_14">
+        <widget class="QLabel" name="velocityScalingLabel">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -443,7 +443,7 @@
         </spacer>
        </item>
        <item row="1" column="1">
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="timeScalingLabel">
          <property name="font">
           <font>
            <weight>75</weight>
@@ -463,14 +463,14 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="1" column="1">
-        <widget class="QLabel" name="label_11">
+        <widget class="QLabel" name="outputDirectoryLabel">
          <property name="text">
           <string>Output directory</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <layout class="QHBoxLayout">
+        <layout class="QHBoxLayout" name="outputLayout">
          <item>
           <widget class="QLineEdit" name="directoryEdit"/>
          </item>
@@ -484,7 +484,7 @@
         </layout>
        </item>
        <item row="4" column="1">
-        <widget class="QLabel" name="label_12">
+        <widget class="QLabel" name="templateLabel">
          <property name="text">
           <string>File template name</string>
          </property>
@@ -496,7 +496,7 @@
           <widget class="QLineEdit" name="templateEdit"/>
          </item>
          <item>
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="templateNoteLabel">
            <property name="text">
             <string>e.g. test%d.txt</string>
            </property>
@@ -583,7 +583,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="1" column="1">
-        <widget class="QLabel" name="label_5">
+        <widget class="QLabel" name="rectangleLabel">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -602,7 +602,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <layout class="QFormLayout" name="formLayout_4">
+        <layout class="QFormLayout" name="rectangleLayout">
          <property name="fieldGrowthPolicy">
           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
          </property>
@@ -720,14 +720,14 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="applyButton">
        <property name="text">
         <string>Apply</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="cancelButton">
        <property name="text">
         <string>Cancel</string>
        </property>
@@ -753,9 +753,9 @@
   <tabstop>directoryButton</tabstop>
   <tabstop>templateEdit</tabstop>
   <tabstop>intAreaCombo</tabstop>
-  <tabstop>textSigMean</tabstop>
-  <tabstop>textSigPeak</tabstop>
-  <tabstop>deltaTedit</tabstop>
+  <tabstop>sigMeanText</tabstop>
+  <tabstop>sigPeakText</tabstop>
+  <tabstop>deltaTEdit</tabstop>
   <tabstop>pixelRadio</tabstop>
   <tabstop>velocityRadio</tabstop>
   <tabstop>xMinEdit</tabstop>
@@ -763,7 +763,7 @@
   <tabstop>xMaxEdit</tabstop>
  </tabstops>
  <resources>
-  <include location="../resources.qrc"/>
+  <include location="../ui_resources.qrc"/>
  </resources>
  <connections/>
 </ui>
