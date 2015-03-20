@@ -94,6 +94,37 @@ class HTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler): #BaseHTTPSe
 	fetchValueDicts.ok = True
 
 #-------------------------------------------------------------------------------
+	## @method continueImportImages
+	# .
+	#
+	# @param form a FieldStorage object containing the data from the request form
+	# @param response a WebServiceResponse object
+	def continueImportImages(self,form,response):
+		'''.'''
+#		parameter = form['parameter'].value.strip()
+#		command                  = form['command'].value.strip()
+		imageimport = self.server.status.imageimport
+		try: imageimport.baseOrder      = form['baseOrder'].value.strip()
+		except KeyError: pass
+		try: imageimport.increment      = form['increment'].value.strip()
+		except KeyError: pass
+		try: imageimport.incrementOrder = form['incrementOrder'].value.strip()
+		except KeyError: pass
+		try: imageimport.firstFrame     = form['firstFrame'].value.strip()
+		except KeyError: pass
+		try: imageimport.secondFrame    = form['secondFrame'].value.strip()
+		except KeyError: pass
+		try: imageimport.frameOrder     = form['frameOrder'].value.strip()
+		except KeyError: pass
+		try: imageimport.suffix         = form['suffix'].value.strip()
+		except KeyError: pass
+		try: imageimport.suffixOrder    = form['suffixOrder'].value.strip()
+		except KeyError: pass
+#		response.addValue('parameter',parameter)
+
+	continueImportImages.ok = True
+
+#-------------------------------------------------------------------------------
 	## @method fetchSetup
 	# .
 	#
@@ -322,4 +353,33 @@ class HTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler): #BaseHTTPSe
 		response.addValue('grayscale',self.server.status.grayscale(x,y))
 
 	fetchPixelInfo.ok = True
+
+#-------------------------------------------------------------------------------
+	## @method zoomIn
+	# Zoom in on the imported frames.
+	#
+	# @param form a FieldStorage object containing the data from the request form
+	# @param response a WebServiceResponse object
+	def zoomIn(self,form,response):
+		'''Zoom in on the imported frames.'''
+		frames = self.server.status.zoom_in()
+		response.addValue('command','reload_frames')
+		response.addValue('frames',frames)
+
+	zoomIn.ok = True
+
+#-------------------------------------------------------------------------------
+	## @method zoomOut
+	# Zoom out on the imported frames.
+	#
+	# @param form a FieldStorage object containing the data from the request form
+	# @param response a WebServiceResponse object
+	def zoomOut(self,form,response):
+		'''Zoom out on the imported frames.'''
+		frames = self.server.status.zoom_out()
+		response.addValue('command','reload_frames')
+		response.addValue('frames',frames)
+
+	zoomOut.ok = True
+
 

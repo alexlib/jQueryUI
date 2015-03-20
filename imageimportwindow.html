@@ -1,8 +1,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>jQuery UI Example Page</title>
-		<link href="jquery-ui.css" rel="stylesheet">
+		<title>OpenPIV Image Import</title>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link href="css/cupertino/jquery-ui.css" rel="stylesheet">
 		<style>
 			#ImageImportWindow{
 				position: absolute;
@@ -12,122 +14,262 @@
 				height: 400px;
 				border: 1px solid black;
 			}
-			#autoConfigButton{
-				position: absolute;
-				top:    100px;
-				left:    70px;
-				width:  184px;
-				height:  27px;
-			}
-			#label_13{
+			#imgimp_autoConfigLabel{
 				position: absolute;
 				top:     30px;
 				left:    30px;
-				width:  113px;
+				width:  203px;
 				height:  18px;
+				font-weight: bold;
+				font-size: 11pt;
 			}
-			#fileSelectButton{
+			#imgimp_fileSelectButton{
 				position: absolute;
 				top:     60px;
 				left:    70px;
-				width:  108px;
+				width:  148px;
 				height:  27px;
+				font-weight: normal;
+				font-size: 11pt;
 			}
-			#applyNameButton{
+			#imgimp_autoConfigButton{
 				position: absolute;
-				top:    340px;
+				top:    100px;
+				left:    70px;
+				width:  224px;
+				height:  27px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#imgimp_manuaConfigLabel{
+				position: absolute;
+				top:    146px;
+				left:    30px;
+				width:  228px;
+				height:  18px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#imgimp_layoutWidget{
+				position: absolute;
+				top:    171px;
+				left:    71px;
+				width:  441px;
+				height: 173px;
+			}
+			#imgimp_manualConfigLayout{
+			}
+			#imgimp_inputColumnLabel{
+				position: absolute;
+				top:      1px;
+				left:    79px;
+				width:  272px;
+				height:  21px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#imgimp_OrderColumnLabel{
+				position: absolute;
+				top:      1px;
+				left:   357px;
+				width:   83px;
+				height:  21px;
+				font-weight: bold;
+				font-size: 11pt;
+			}
+			#imgimp_baseNameLabel{
+				position: absolute;
+				top:     32px;
+				left:     1px;
+				width:   182px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 10pt;
+			}
+			#imgimp_baseNameEdit{
+				position: absolute;
+				top:     28px;
+				left:    79px;
+				width:  272px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#imgimp_baseOrderCombo{
+				position: absolute;
+				top:     30px;
+				left:   357px;
+				width:   83px;
+				height:  29px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#imgimp_incrementLabel{
+				position: absolute;
+				top:     71px;
+				left:     1px;
+				width:   182px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 10pt;
+			}
+			#imgimp_incrementCombo{
+				position: absolute;
+				top:     67px;
+				left:    79px;
+				width:   272px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#imgimp_incrementOrderCombo{
+				position: absolute;
+				top:     67px;
+				left:   357px;
+				width:   83px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#imgimp_frameLabel{
+				position: absolute;
+				top:    106px;
+				left:     1px;
+				width:   182px;
+				height:  35px;
+				font-weight: normal;
+				font-size: 10pt;
+			}
+			#imgimp_frameLayout{
+				position: absolute;
+				top:    102px;
+				left:    67px;
+				width:  272px;
+				height:  33px;
+			}
+			#imgimp_firstFrameLabel{
+				position: absolute;
+				top:      5px;
+				left:     1px;
+				width:   30px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 10pt;
+			}
+			#imgimp_firstFrameEdit{
+				position: absolute;
+				top:      1px;
+				left:    37px;
+				width:   87px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#imgimp_secondFrameLabel{
+				position: absolute;
+				top:      5px;
+				left:   130px;
+				width:   48px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 10pt;
+			}
+			#imgimp_secondFrameEdit{
+				position: absolute;
+				top:      1px;
+				left:   184px;
+				width:   87px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#imgimp_frameOrderCombo{
+				position: absolute;
+				top:    105px;
+				left:   357px;
+				width:   83px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#imgimp_suffixLabel{
+				position: absolute;
+				top:    147px;
+				left:     1px;
+				width:   182px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 10pt;
+			}
+			#imgimp_suffixEdit{
+				position: absolute;
+				top:    143px;
+				left:    79px;
+				width:  272px;
+				height:  33px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#imgimp_suffixOrderCombo{
+				position: absolute;
+				top:    145px;
+				left:   357px;
+				width:   83px;
+				height:  29px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+			#imgimp_applyNameButton{
+				position: absolute;
+				top:    360px;
 				left:   430px;
 				width:   80px;
 				height:  27px;
-			}
-			#layoutWidget{
-				position: absolute;
-				top:    191px;
-				left:    71px;
-				width:  441px;
-				height: 142px;
-			}
-			#label_11{
-			}
-			#label_12{
-			}
-			#label_6{
-			}
-			#baseNameEdit{
-			}
-			#baseOrderCombo{
-			}
-			#label_7{
-			}
-			#incrementCombo{
-			}
-			#incrementOrderCombo{
-			}
-			#label_8{
-			}
-			#label_14{
-			}
-			#firstFrameEdit{
-			}
-			#label_15{
-			}
-			#secondFrameEdit{
-			}
-			#frameOrderCombo{
-			}
-			#label_10{
-			}
-			#suffixEdit{
-			}
-			#suffixOrderCombo{
-			}
-			#label_9{
-				position: absolute;
-				top:    160px;
-				left:    30px;
-				width:  128px;
-				height:  18px;
+				font-weight: normal;
+				font-size: 11pt;
 			}
 		</style>
 	</head>
 	<body>
 		<div id="ImageImportWindow" class="QDialog">
-			<button id="autoConfigButton" class="QPushButton">Attempt Autoconfiguartion...</button>
-			<div id="label_13" class="QLabel">Auto Configuration</div>
-			<button id="fileSelectButton" class="QPushButton">Select Files...</button>
-			<button id="applyNameButton" class="QPushButton">Continue...</button>
-			<div id="layoutWidget" class="QWidget">
-				<div id="label_11" class="QLabel">Input</div>
-				<div id="label_12" class="QLabel">Order</div>
-				<div id="label_6" class="QLabel">Base Name</div>
-				<input type="text" id="baseNameEdit" class="QLineEdit">
-				<select id="baseOrderCombo" class="QComboBox">
-				<option>--</option>
-				</select>
-				<div id="label_7" class="QLabel">Increment</div>
-				<select id="incrementCombo" class="QComboBox">
-				<option>--</option>
-				</select>
-				<select id="incrementOrderCombo" class="QComboBox">
-				<option>--</option>
-				</select>
-				<div id="label_8" class="QLabel">Frame</div>
-				<div id="label_14" class="QLabel">First</div>
-				<input type="text" id="firstFrameEdit" class="QLineEdit">
-				<div id="label_15" class="QLabel">Second</div>
-				<input type="text" id="secondFrameEdit" class="QLineEdit">
-				<select id="frameOrderCombo" class="QComboBox">
-				<option>--</option>
-				</select>
-				<div id="label_10" class="QLabel">Suffix</div>
-				<input type="text" id="suffixEdit" class="QLineEdit">
-				<select id="suffixOrderCombo" class="QComboBox">
-				<option>--</option>
-				</select>
+			<div id="imgimp_autoConfigLabel" class="QLabel">Auto Configuration</div>
+			<button id="imgimp_fileSelectButton" class="QPushButton">Select Files...</button>
+			<button id="imgimp_autoConfigButton" class="QPushButton">Attempt Autoconfiguration...</button>
+			<div id="imgimp_manuaConfigLabel" class="QLabel">Manual Configuration</div>
+			<div id="imgimp_layoutWidget" class="QWidget">
+				<div id="imgimp_manualConfigLayout" class="QGridLayout">
+					<div id="imgimp_inputColumnLabel" class="QLabel">Input</div>
+					<div id="imgimp_OrderColumnLabel" class="QLabel">Order</div>
+					<div id="imgimp_baseNameLabel" class="QLabel">Base Name</div>
+					<input type="text" id="imgimp_baseNameEdit" class="QLineEdit">
+					<select id="imgimp_baseOrderCombo" class="QComboBox">
+					<option>--</option>
+					</select>
+					<div id="imgimp_incrementLabel" class="QLabel">Increment</div>
+					<select id="imgimp_incrementCombo" class="QComboBox">
+					<option>--</option>
+					</select>
+					<select id="imgimp_incrementOrderCombo" class="QComboBox">
+					<option>--</option>
+					</select>
+					<div id="imgimp_frameLabel" class="QLabel">Frame</div>
+					<div id="imgimp_frameLayout" class="QHBoxLayout">
+						<div id="imgimp_firstFrameLabel" class="QLabel">First</div>
+						<input type="text" id="imgimp_firstFrameEdit" class="QLineEdit">
+						<div id="imgimp_secondFrameLabel" class="QLabel">Second</div>
+						<input type="text" id="imgimp_secondFrameEdit" class="QLineEdit">
+					</div>
+					<select id="imgimp_frameOrderCombo" class="QComboBox">
+					<option>--</option>
+					</select>
+					<div id="imgimp_suffixLabel" class="QLabel">Suffix</div>
+					<input type="text" id="imgimp_suffixEdit" class="QLineEdit">
+					<select id="imgimp_suffixOrderCombo" class="QComboBox">
+					<option>--</option>
+					</select>
+				</div>
 			</div>
-			<div id="label_9" class="QLabel">Manual Configuration</div>
+			<button id="imgimp_applyNameButton" class="QPushButton">Continue...</button>
 		</div>
-		<script src="external/jquery/jquery.js"></script>
-		<script src="jquery-ui.js"></script>
 	</body>
 </html>

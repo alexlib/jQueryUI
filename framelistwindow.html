@@ -1,8 +1,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>jQuery UI Example Page</title>
-		<link href="jquery-ui.css" rel="stylesheet">
+		<title>Frame List</title>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link href="css/cupertino/jquery-ui.css" rel="stylesheet">
 		<style>
 			#FrameListWindow{
 				position: absolute;
@@ -12,46 +14,104 @@
 				height: 480px;
 				border: 1px solid black;
 			}
-			#importButton{
+			#frlist_frame1List{
+				position: absolute;
+				top:     18px;
+				left:    16px;
+				width:  266px;
+				height: 385px;
+				border: 1px solid black;
+				list-style-type: none;
+				padding: 0.4em;
+			}
+
+			#frlist_frame1List .ui-selecting {
+				background: #e4f1fb;
+			}
+			#frlist_frame1List .ui-selected {
+				background: #d7ebf9;
+				color: black;
+			}
+			#frlist_frame1List li {
+				margin: 3px;
+				font-size: 10pt;
+			}
+
+			#frlist_frame2List{
+				position: absolute;
+				top:     18px;
+				left:   328px;
+				width:  266px;
+				height: 385px;
+				border: 1px solid black;
+				list-style-type: none;
+				padding: 0.4em;
+			}
+			#frlist_frame2List .ui-selecting {
+				background: #e4f1fb;
+			}
+			#frlist_frame2List .ui-selected {
+				background: #d7ebf9;
+				color: black;
+			}
+
+			#frlist_frame2List li {
+				margin: 3px;
+				font-size: 10pt;
+			}
+			#frlist_buttons{
 				position: absolute;
 				top:    440px;
 				left:   430px;
+				width:  170px;
+				height:  27px;
+			}
+			#frlist_importButton{
+				position: absolute;
+				top:      0px;
+				left:     0px;
 				width:   80px;
 				height:  27px;
 			}
-			#cancelButton{
+			#frlist_cancelButton{
 				position: absolute;
-				top:    440px;
-				left:   520px;
+				top:      0px;
+				left:    90px;
 				width:   80px;
 				height:  27px;
-			}
-			#frame1List{
-				position: absolute;
-				top:     40px;
-				left:    16px;
-				width:  296px;
-				height: 385px;
-			}
-			#frame2List{
-				position: absolute;
-				top:     40px;
-				left:   328px;
-				width:  296px;
-				height: 385px;
 			}
 		</style>
+ <script>
+$(function() {
+$( "#frlist_frame1List" ).selectable();
+$( "#frlist_frame2List" ).selectable();
+});
+</script>
 	</head>
 	<body>
 		<div id="FrameListWindow" class="QDialog">
-			<button id="importButton" class="QPushButton">Import...</button>
-			<button id="cancelButton" class="QPushButton">Cancel</button>
-			<div id="frame1List" class="QListWidget">
-			</div>
-			<div id="frame2List" class="QListWidget">
+			<ol id="frlist_frame1List" class="QListWidget">
+				<li class="ui-widget-content">Item 1</li>
+				<li class="ui-widget-content">Item 2</li>
+				<li class="ui-widget-content">Item 3</li>
+				<li class="ui-widget-content">Item 4</li>
+				<li class="ui-widget-content">Item 5</li>
+				<li class="ui-widget-content">Item 6</li>
+				<li class="ui-widget-content">Item 7</li>
+			</ol>
+			<ol id="frlist_frame2List" class="QListWidget">
+				<li class="ui-widget-content">Item 1</li>
+				<li class="ui-widget-content">Item 2</li>
+				<li class="ui-widget-content">Item 3</li>
+				<li class="ui-widget-content">Item 4</li>
+				<li class="ui-widget-content">Item 5</li>
+				<li class="ui-widget-content">Item 6</li>
+				<li class="ui-widget-content">Item 7</li>
+			</ol>
+			<div id="frlist_buttons">
+				<button id="frlist_importButton" class="QPushButton">Import...</button>
+				<button id="frlist_cancelButton" class="QPushButton">Cancel</button>
 			</div>
 		</div>
-		<script src="external/jquery/jquery.js"></script>
-		<script src="jquery-ui.js"></script>
 	</body>
 </html>

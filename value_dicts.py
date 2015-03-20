@@ -17,6 +17,17 @@ bottomDict = {
 	2:'Bottom Option B',
 }
 
+imgimp_orderDict = {
+	0:'Ascending',
+	1:'Descending',
+}
+
+imgimp_incrementDict = {
+	0:'None',
+	1:'Increment Option A',
+	2:'Increment Option B',
+}
+
 setup_interrogationAreaDict = {
 	0:'None',
 	1:'Int Area Option A',
