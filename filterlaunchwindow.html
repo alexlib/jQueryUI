@@ -1,8 +1,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>jQuery UI Example Page</title>
-		<link href="jquery-ui.css" rel="stylesheet">
+		<title>Launch Filter</title>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link href="css/cupertino/jquery-ui.css" rel="stylesheet">
+		<link href="css/openpiv.css" rel="stylesheet">
 		<style>
 			#FilterLaunchWindow{
 				position: absolute;
@@ -75,17 +78,15 @@
 		</style>
 	</head>
 	<body>
-		<div id="FilterLaunchWindow" class="QDialog">
+		<div id="FilterLaunchWindow" class="op_dialog">
 			<div id="flaunchLayout" class="QWidget">
-				<input type="radio" id="flaunch_allRadio"    class="QRadioButton"><label id="flaunch_allLabel" for="flaunch_allRadio">Filter all processed image pairs</label>
-				<input type="radio" id="flaunch_singleRadio" class="QRadioButton"><label id="flaunch_singleLabel" for="flaunch_singleRadio">Filter current processed image pair</label>
+				<input type="radio" id="flaunch_allRadio"    class="op_radio_button"><label id="flaunch_allLabel" for="flaunch_allRadio">Filter all processed image pairs</label>
+				<input type="radio" id="flaunch_singleRadio" class="op_radio_button"><label id="flaunch_singleLabel" for="flaunch_singleRadio">Filter current processed image pair</label>
 				<div id="flaunch_buttons">
-					<button id="flaunch_okButton" class="QPushButton">Go</button>
-					<button id="flaunch_cancelButton" class="QPushButton">Cancel</button>
+					<button id="flaunch_okButton" class="op_push_button">Go</button>
+					<button id="flaunch_cancelButton" class="op_push_button">Cancel</button>
 				</div>
 			</div>
 		</div>
-		<script src="external/jquery/jquery.js"></script>
-		<script src="jquery-ui.js"></script>
 	</body>
 </html>

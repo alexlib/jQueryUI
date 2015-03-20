@@ -4,8 +4,8 @@
 		<title>OpenPIV Filter</title>
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery-ui.js"></script>
-		<script src="js/filterwindow.js"></script>
-		<link href="css/cupertino/jquery-ui-1.9.0.custom.css" rel="stylesheet">
+		<link href="css/cupertino/jquery-ui.css" rel="stylesheet">
+		<link href="css/openpiv.css" rel="stylesheet">
 		<style>
 			#FilterWindow{
 				position: absolute;
@@ -286,48 +286,48 @@
 		</style>
 	</head>
 	<body>
-		<div id="FilterWindow" class="QDialog">
-			<div id="global_label" class="QLabel">Global</div>
-			<input type="checkbox" id="rangeBox" class="QCheckBox"><label for="rangeBox" id="rangeBox_label">Range</label>
+		<div id="FilterWindow" class="op_dialog">
+			<div id="global_label" class="op_label">Global</div>
+			<input type="checkbox" id="rangeBox" class="op_checkbox"><label for="rangeBox" id="rangeBox_label">Range</label>
 			<div id="minLayout" class="QWidget">
-				<div id="minLabel" class="QLabel">Min</div>
-				<input type="text" id="minEdit" class="QLineEdit">
+				<div id="minLabel" class="op_label">Min</div>
+				<input type="text" id="minEdit" class="op_line_edit">
 			</div>
 			<div id="maxLayout" class="QWidget">
-				<div id="maxLabel" class="QLabel">Max</div>
-				<input type="text" id="maxEdit" class="QLineEdit">
+				<div id="maxLabel" class="op_label">Max</div>
+				<input type="text" id="maxEdit" class="op_line_edit">
 			</div>
-			<input type="checkbox" id="stdBox" class="QCheckBox"><label for="stdBox" id="stdBox_label">Standard Deviation</label>
-			<input type="text" id="stdEdit" class="QLineEdit">
-			<div id="local_label" class="QLabel">Local</div>
-			<input type="checkbox" id="medianBox" class="QCheckBox"><label for="medianBox" id="medianBox_label">Median</label>
-			<input type="text" id="medianEdit" class="QLineEdit">
-			<select id="medianCombo" class="QComboBox">
+			<input type="checkbox" id="stdBox" class="op_checkbox"><label for="stdBox" id="stdBox_label">Standard Deviation</label>
+			<input type="text" id="stdEdit" class="op_line_edit">
+			<div id="local_label" class="op_label">Local</div>
+			<input type="checkbox" id="medianBox" class="op_checkbox"><label for="medianBox" id="medianBox_label">Median</label>
+			<input type="text" id="medianEdit" class="op_line_edit">
+			<select id="medianCombo" class="op_combo_box">
 			<option>--</option>
 			</select>
-			<input type="checkbox" id="meanBox" class="QCheckBox"><label for="meanBox" id="meanBox_label">Mean</label>
-			<input type="text" id="meanEdit" class="QLineEdit">
-			<select id="meanCombo" class="QComboBox">
+			<input type="checkbox" id="meanBox" class="op_checkbox"><label for="meanBox" id="meanBox_label">Mean</label>
+			<input type="text" id="meanEdit" class="op_line_edit">
+			<select id="meanCombo" class="op_combo_box">
 			<option>--</option>
 			</select>
-			<div id="interpolation_label" class="QLabel">Interpolation</div>
-			<input type="checkbox" id="bilinearBox" class="QCheckBox"><label for="bilinearBox" id="bilinearBox_label">Bilinear</label>
-			<select id="bilinearCombo" class="QComboBox">
+			<div id="interpolation_label" class="op_label">Interpolation</div>
+			<input type="checkbox" id="bilinearBox" class="op_checkbox"><label for="bilinearBox" id="bilinearBox_label">Bilinear</label>
+			<select id="bilinearCombo" class="op_combo_box">
 			<option>--</option>
 			</select>
-			<div id="smoothing_label" class="QLabel">Smoothing</div>
-			<input type="checkbox" id="gaussianBox" class="QCheckBox"><label for="gaussianBox" id="gaussianBox_label">Gaussian Kernel</label>
-			<input type="text" id="gaussianEdit" class="QLineEdit">
-			<select id="gaussianCombo" class="QComboBox">
+			<div id="smoothing_label" class="op_label">Smoothing</div>
+			<input type="checkbox" id="gaussianBox" class="op_checkbox"><label for="gaussianBox" id="gaussianBox_label">Gaussian Kernel</label>
+			<input type="text" id="gaussianEdit" class="op_line_edit">
+			<select id="gaussianCombo" class="op_combo_box">
 			<option>--</option>
 			</select>
 			<div id="appliedLayout" class="QWidget">
-				<input type="radio" id="userRadio" name="applied" class="QRadioButton"><label for="userRadio" id="userRadio_label">User applied</label>
-				<input type="radio" id="processRadio" name="applied" class="QRadioButton"><label for="processRadio" id="processRadio_label">Applied to processing step</label>
+				<input type="radio" id="userRadio" name="applied" class="op_radio_button"><label for="userRadio" id="userRadio_label">User applied</label>
+				<input type="radio" id="processRadio" name="applied" class="op_radio_button"><label for="processRadio" id="processRadio_label">Applied to processing step</label>
 			</div>
 			<div id="actionLayout" class="QWidget">
-				<button id="okButton" class="QPushButton">OK</button>
-				<button id="cancelButton" class="QPushButton">Cancel</button>
+				<button id="okButton" class="op_push_button">OK</button>
+				<button id="cancelButton" class="op_push_button">Cancel</button>
 			</div>
 		</div>
 	</body>

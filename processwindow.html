@@ -1,8 +1,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>jQuery UI Example Page</title>
-		<link href="jquery-ui.css" rel="stylesheet">
+		<title>Process Window</title>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link href="css/cupertino/jquery-ui.css" rel="stylesheet">
+		<link href="css/openpiv.css" rel="stylesheet">
 		<style>
 			#ProcessWindow{
 				position: absolute;
@@ -75,17 +78,15 @@
 		</style>
 	</head>
 	<body>
-		<div id="ProcessWindow" class="QDialog">
+		<div id="ProcessWindow" class="op_dialog">
 			<div id="processLayout" class="QWidget">
-				<input type="radio" id="process_allRadio" class="QRadioButton"><label id="process_allLabel">Process all imported image pairs</label>
-				<input type="radio" id="process_singleRadio" class="QRadioButton"><label id="process_singleLabel">Process current image pair</label>
+				<input type="radio" id="process_allRadio" class="op_radio_button"><label id="process_allLabel">Process all imported image pairs</label>
+				<input type="radio" id="process_singleRadio" class="op_radio_button"><label id="process_singleLabel">Process current image pair</label>
 				<div id="process_buttons">
-					<button id="process_okButton" class="QPushButton">Go</button>
-					<button id="process_cancelButton" class="QPushButton">Cancel</button>
+					<button id="process_okButton" class="op_push_button">Go</button>
+					<button id="process_cancelButton" class="op_push_button">Cancel</button>
 				</div>
 			</div>
 		</div>
-		<script src="external/jquery/jquery.js"></script>
-		<script src="jquery-ui.js"></script>
 	</body>
 </html>

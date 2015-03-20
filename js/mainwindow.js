@@ -235,13 +235,13 @@ function filemenuMouseOver(event) {
 
 function filemenuMouseOut(event) {
 //	if (event.relatedTarget.id == 'MainWindow') {
-	if (event.relatedTarget.className != 'QMenuItem ui-menu-item') {
+	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
 		$('#filemenu').hide();
 	}
 //	console.log('filemenuMouseOut');
 //	console.log(event.relatedTarget);
 //	console.log(event);
-//		console.log(event.relatedTarget.className == 'QMenuItem ui-menu-item');
+//		console.log(event.relatedTarget.className == 'op_menu_item ui-menu-item');
 //		console.log(event.target.className);
 //		console.log(event.currentTarget.className);
 //		console.log(event.delegateTarget.className);
@@ -256,7 +256,7 @@ function viewmenuMouseOver(event) {
 };
 
 function viewmenuMouseOut(event) {
-	if (event.relatedTarget.className != 'QMenuItem ui-menu-item') {
+	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
 		$('#viewmenu').hide();
 	}
 //	console.log('viewmenuMouseOut');
@@ -271,7 +271,7 @@ function toolsmenuMouseOver(event) {
 };
 
 function toolsmenuMouseOut(event) {
-	if (event.relatedTarget.className != 'QMenuItem ui-menu-item') {
+	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
 		$('#toolsmenu').hide();
 	}
 //	console.log('toolsmenuMouseOut');
@@ -286,7 +286,7 @@ function helpmenuMouseOver(event) {
 };
 
 function helpmenuMouseOut(event) {
-	if (event.relatedTarget.className != 'QMenuItem ui-menu-item') {
+	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
 		$('#helpmenu').hide();
 	};
 //	console.log('helpmenuMouseOut');
@@ -673,7 +673,7 @@ $(document).ready(function() {
 		$( "#filefmt_dialog" ).dialog({
 			autoOpen: false,
 			width: 536,
-			height: 410
+			height: 350
 		});
 		$( "#setup_dialog" ).dialog({
 			autoOpen: false,

@@ -5,6 +5,7 @@
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery-ui.js"></script>
 		<link href="css/cupertino/jquery-ui.css" rel="stylesheet">
+		<link href="css/openpiv.css" rel="stylesheet">
 		<style>
 			#FrameListWindow{
 				position: absolute;
@@ -89,7 +90,7 @@ $( "#frlist_frame2List" ).selectable();
 </script>
 	</head>
 	<body>
-		<div id="FrameListWindow" class="QDialog">
+		<div id="FrameListWindow" class="op_dialog">
 			<ol id="frlist_frame1List" class="QListWidget">
 				<li class="ui-widget-content">Item 1</li>
 				<li class="ui-widget-content">Item 2</li>
@@ -109,8 +110,8 @@ $( "#frlist_frame2List" ).selectable();
 				<li class="ui-widget-content">Item 7</li>
 			</ol>
 			<div id="frlist_buttons">
-				<button id="frlist_importButton" class="QPushButton">Import...</button>
-				<button id="frlist_cancelButton" class="QPushButton">Cancel</button>
+				<button id="frlist_importButton" class="op_push_button">Import...</button>
+				<button id="frlist_cancelButton" class="op_push_button">Cancel</button>
 			</div>
 		</div>
 	</body>

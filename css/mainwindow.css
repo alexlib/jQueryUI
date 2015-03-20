@@ -286,6 +286,112 @@
 	float:left;
 }
 
+#flfmt_firstFrameLabel{
+	position: absolute;
+	top:     11px;
+	left:    41px;
+	width:  469px;
+	height:  18px;
+}
+#flfmt_firstFrameText{
+	position: absolute;
+	top:     34px;
+	left:    41px;
+	width:  469px;
+	height:  16px;
+}
+#flfmt_secondFrameLabel{
+	position: absolute;
+	top:     55px;
+	left:    41px;
+	width:  469px;
+	height:  18px;
+}
+#flfmt_secondFrameText{
+	position: absolute;
+	top:     78px;
+	left:    41px;
+	width:  469px;
+	height:  16px;
+}
+#flfmt_numberZerosLayout{
+	position: absolute;
+	top:    120px;
+	left:    40px;
+	width:  469px;
+	height:  35px;
+}
+#flfmt_numberZerosLabel{
+	position: absolute;
+	top:      3px;
+	left:     1px;
+	width:  136px;
+	height:  33px;
+}
+#flfmt_numberZeros{
+	position: absolute;
+	top:      0px;
+	left:   144px;
+	width:  115px;
+	height:  33px;
+}
+#flfmt_imagesLayout{
+	position: absolute;
+	top:    172px;
+	left:    40px;
+	width:  302px;
+	height:  70px;
+}
+#flfmt_startingImageLabel{
+	position: absolute;
+	top:      3px;
+	left:     1px;
+	width:  230px;
+	height:  33px;
+}
+#flfmt_startingImage{
+	position: absolute;
+	top:      1px;
+	left:   232px;
+	width:  109px;
+	height:  33px;
+}
+#flfmt_totalImagesLabel{
+	position: absolute;
+	top:     42px;
+	left:     1px;
+	width:  230px;
+	height:  33px;
+}
+#flfmt_totalImages{
+	position: absolute;
+	top:     40px;
+	left:   232px;
+	width:  109px;
+	height:  33px;
+}
+#flfmt_buttonsLayout{
+	position: absolute;
+	top:    250px;
+	left:    40px;
+	width:  471px;
+	height:  33px;
+}
+#flfmt_applyButton{
+	position: absolute;
+	top:      1px;
+	right:  111px;
+	width:   85px;
+	height:  31px;
+}
+#flfmt_cancelButton{
+	position: absolute;
+	top:      1px;
+	right:   20px;
+	width:   85px;
+	height:  31px;
+}
+
 #frlist_frame1List{
 	position: absolute;
 	top:      0px;
