@@ -6,6 +6,7 @@
 		<script src="js/jquery-ui.js"></script>
 		<link href="css/cupertino/jquery-ui.css" rel="stylesheet">
 		<link href="css/openpiv.css" rel="stylesheet">
+
 		<style>
 			#SetupWindow{
 				position: absolute;
@@ -477,7 +478,7 @@
 					<div id="setup_maskTab" class="QWidget">
 						<div id="setup_maskTabLayout" class="QGridLayout">
 							<div id="setup_rectangleLabel" class="op_label">Rectangular box mask</div>
-							<div id="setup_rectangleLayout" class="QFormLayout">
+							 <div id="setup_rectangleLayout" class="QFormLayout">
 								<div id="setup_xMinLabel" class="op_label">X Min</div>
 								<input type="text" id="setup_xMinEdit" class="op_line_edit">
 								<div id="setup_yMinLabel" class="op_label">Y Min</div>
@@ -489,14 +490,23 @@
 							</div>
 					</div>
 				</div>
-				<div id="setup_buttons" class="QHBoxLayout">
+				</div>
+				   <div id="setup_buttons" class="QHBoxLayout">
 					<button id="setup_applyButton" class="op_push_button">Apply</button>
 					<button id="setup_cancelButton" class="op_push_button">Cancel</button>
 				</div>
-			</div>
+<!-- 			</div> -->
 		</div>
+		
+<!-- 
 		<script>
 			$( "#setup_tabWidget" ).tabs();
 		</script>
+ -->
+  <script>
+  $(function() {
+    $( "#accordion" ).accordion();
+  });
+  </script>
 	</body>
 </html>
