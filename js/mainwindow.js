@@ -641,7 +641,7 @@ $(document).ready(function() {
 	$('#zoominmenuitem').click(zoominmenuitem_click);
 	$('#zoomoutmenuitem').click(zoomoutmenuitem_click);
 	$('#importmenuitem').click(importmenuitem_click);
-	$('#setupmenuitem').click(setupmenuitem_click);
+	$('#setupmenuitem').click(actionSetup_click);
 	$('#processmenuitem').click(processmenuitem_click);
 	$('#helpmenuitem').click(helpmenuitem_click);
 	$('#aboutmenuitem').click(aboutmenuitem_click);
