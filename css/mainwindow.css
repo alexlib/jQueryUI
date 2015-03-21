@@ -35,8 +35,6 @@
 	top:      0px;
 	left:     0px;
 	width:   90px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #viewmenu{
 	position: absolute;
@@ -51,8 +49,6 @@
 	top:      0px;
 	left:    60px;
 	width:   90px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #toolsmenu{
 	position: absolute;
@@ -67,16 +63,12 @@
 	top:      0px;
 	left:   120px;
 	width:  133px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #helpmenu{
 	position: absolute;
 	top:     20px;
 	left:   180px;
 	width:   61px;
-	font-weight: normal;
-	font-size: 10pt;
 	visibility: show;
 }
 #helpmenu_label{
@@ -84,8 +76,6 @@
 	top:      0px;
 	left:   180px;
 	width:   61px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #toolBar{
 	position: absolute;
@@ -373,23 +363,18 @@
 #flfmt_buttonsLayout{
 	position: absolute;
 	top:    250px;
-	left:    40px;
-	width:  471px;
-	height:  33px;
+	width:  193px;
+	height:  31px;
 }
 #flfmt_applyButton{
 	position: absolute;
-	top:      1px;
-	right:  111px;
-	width:   85px;
-	height:  31px;
+	top:      0px;
+	left:     0px;
 }
 #flfmt_cancelButton{
 	position: absolute;
-	top:      1px;
-	right:   20px;
-	width:   85px;
-	height:  31px;
+	top:      0px;
+	right:    0px;
 }
 
 #frlist_frame1List{
@@ -440,23 +425,18 @@
 #frlist_buttons{
 	position: absolute;
 	top:    424px;
-	left:   430px;
-	width:  170px;
-	height:  27px;
+	width:  193px;
+	height:  31px;
 }
 #frlist_importButton{
 	position: absolute;
 	top:      0px;
 	left:     0px;
-	width:   80px;
-	height:  27px;
 }
 #frlist_cancelButton{
 	position: absolute;
 	top:      0px;
-	left:    90px;
-	width:   80px;
-	height:  27px;
+	right:    0px;
 }
 
 #imgimp_autoConfigLabel{
@@ -465,8 +445,6 @@
 	left:    30px;
 	width:  203px;
 	height:  18px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #imgimp_fileSelectButton{
 	position: absolute;
@@ -474,8 +452,6 @@
 	left:    70px;
 	width:  148px;
 	height:  27px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_autoConfigButton{
 	position: absolute;
@@ -483,8 +459,6 @@
 	left:    70px;
 	width:  224px;
 	height:  27px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_manuaConfigLabel{
 	position: absolute;
@@ -492,17 +466,13 @@
 	left:    30px;
 	width:  228px;
 	height:  18px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #imgimp_layoutWidget{
 	position: absolute;
 	top:    171px;
 	left:    71px;
 	width:  441px;
-	height: 173px;
-}
-#imgimp_manualConfigLayout{
+	height: 175px;
 }
 #imgimp_inputColumnLabel{
 	position: absolute;
@@ -510,8 +480,6 @@
 	left:    79px;
 	width:  272px;
 	height:  21px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #imgimp_OrderColumnLabel{
 	position: absolute;
@@ -519,8 +487,6 @@
 	left:   357px;
 	width:   83px;
 	height:  21px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #imgimp_baseNameLabel{
 	position: absolute;
@@ -528,8 +494,6 @@
 	left:     1px;
 	width:   182px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 10pt;
 }
 #imgimp_baseNameEdit{
 	position: absolute;
@@ -537,8 +501,6 @@
 	left:    79px;
 	width:  272px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_baseOrderCombo{
 	position: absolute;
@@ -546,8 +508,6 @@
 	left:   357px;
 	width:   83px;
 	height:  29px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_incrementLabel{
 	position: absolute;
@@ -555,8 +515,6 @@
 	left:     1px;
 	width:   182px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 10pt;
 }
 #imgimp_incrementCombo{
 	position: absolute;
@@ -564,8 +522,6 @@
 	left:    79px;
 	width:   272px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_incrementOrderCombo{
 	position: absolute;
@@ -573,8 +529,6 @@
 	left:   357px;
 	width:   83px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_frameLabel{
 	position: absolute;
@@ -582,15 +536,13 @@
 	left:     1px;
 	width:   182px;
 	height:  35px;
-	font-weight: normal;
-	font-size: 10pt;
 }
 #imgimp_frameLayout{
 	position: absolute;
 	top:    102px;
 	left:    67px;
 	width:  272px;
-	height:  33px;
+	height:  35px;
 }
 #imgimp_firstFrameLabel{
 	position: absolute;
@@ -598,8 +550,6 @@
 	left:     1px;
 	width:   30px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 10pt;
 }
 #imgimp_firstFrameEdit{
 	position: absolute;
@@ -607,8 +557,6 @@
 	left:    37px;
 	width:   87px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_secondFrameLabel{
 	position: absolute;
@@ -616,8 +564,6 @@
 	left:   130px;
 	width:   48px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 10pt;
 }
 #imgimp_secondFrameEdit{
 	position: absolute;
@@ -625,8 +571,6 @@
 	left:   184px;
 	width:   87px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_frameOrderCombo{
 	position: absolute;
@@ -634,8 +578,6 @@
 	left:   357px;
 	width:   83px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_suffixLabel{
 	position: absolute;
@@ -643,8 +585,6 @@
 	left:     1px;
 	width:   182px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 10pt;
 }
 #imgimp_suffixEdit{
 	position: absolute;
@@ -652,8 +592,6 @@
 	left:    79px;
 	width:  272px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_suffixOrderCombo{
 	position: absolute;
@@ -661,8 +599,6 @@
 	left:   357px;
 	width:   83px;
 	height:  29px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #imgimp_applyNameButton{
 	position: absolute;
@@ -670,8 +606,6 @@
 	left:   430px;
 	width:   80px;
 	height:  27px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 
 #SetupWindowLayout{
@@ -684,7 +618,7 @@
 	top:      9px;
 	left:     9px;
 	width:  470px;
-	height: 293px;
+	height: 288px;
 }
 #setup_tabList{
 	font-weight: bold;
@@ -694,9 +628,10 @@
 }
 #setup_gridLayout{
 	position: absolute;
-	top:     44px;
-	left:     0px;
-	width:  482px;
+	top:     43px;
+	left:     1px;
+	width:  472px;
+	height: 253px;
 }
 #setup_signalLevelLabel{
 	position: absolute;
@@ -704,51 +639,41 @@
 	left:    59px;
 	width:   96px;
 	height:  21px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #setup_signalLevelLayout{
 	position: absolute;
 	top:     38px;
-	left:   160px;
-	width:  277px;
+	left:    59px;
+	width:  375px;
 	height:  74px;
 }
 #setup_sigMeanLabel{
 	position: absolute;
 	top:      1px;
-	left:    34px;
+	left:   132px;
 	width:   97px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_sigMeanText{
 	position: absolute;
 	top:      1px;
-	left:   137px;
+	left:   235px;
 	width:  140px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_sigPeakLabel{
 	position: absolute;
 	top:     40px;
-	left:     1px;
+	left:    99px;
 	width:  130px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_sigPeakText{
 	position: absolute;
 	top:     40px;
-	left:   137px;
+	left:   235px;
 	width:  140px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_gridSetupLabel{
 	position: absolute;
@@ -756,8 +681,6 @@
 	left:    59px;
 	width:   86px;
 	height:  21px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #setup_gridSetupLayout{
 	position: absolute;
@@ -772,8 +695,6 @@
 	left:   103px;
 	width:  120px;
 	height:  24px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_intAreaCombo{
 	position: absolute;
@@ -781,8 +702,6 @@
 	left:   229px;
 	width:  100px;
 	height:  24px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_xSpacinglabel{
 	position: absolute;
@@ -790,19 +709,13 @@
 	left:    46px;
 	width:  177px;
 	height:  24px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_xSpacing{
 	position: absolute;
 	top:     31px;
 	left:   229px;
-	width:  177px;
-	height:  24px;
 	width:  146px;
 	height:  24px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_ySpacingLabel{
 	position: absolute;
@@ -810,8 +723,6 @@
 	left:    65px;
 	width:  158px;
 	height:  24px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_ySpacing{
 	position: absolute;
@@ -819,24 +730,20 @@
 	left:   229px;
 	width:  146px;
 	height:  24px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_scalingTab{
-}
-#setup_scalingTabLayout{
 }
 #setup_timeScalingLabel{
 	position: absolute;
 	top:      83px;
 	left:    100px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #setup_timeScalingLayout{
 	position: absolute;
 	top:     106px;
 	left:    100px;
+	width:   304px;
+	height:   80px;
 }
 #setup_deltaTLabel{
 	position: absolute;
@@ -844,8 +751,6 @@
 	left:     1px;
 	width:   76px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_deltaTEdit{
 	position: absolute;
@@ -853,8 +758,6 @@
 	left:   157px;
 	width:  146px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_scaleLabel{
 	position: absolute;
@@ -862,8 +765,6 @@
 	left:     1px;
 	width:  150px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_scaleEdit{
 	position: absolute;
@@ -871,20 +772,18 @@
 	left:   157px;
 	width:  146px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_velocityScalingLabel{
 	position: absolute;
 	top:     208px;
 	left:    100px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #setup_velocityScalingLayout{
 	position: absolute;
 	top:    226px;
 	left:   100px;
+	width:  130px;
+	height:  56px;
 }
 #setup_pixelRadio{
 	position: absolute;
@@ -899,8 +798,6 @@
 	left:    30px;
 	width:  100px;
 	height:  26px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_velocityRadio{
 	position: absolute;
@@ -915,29 +812,29 @@
 	left:    30px;
 	width:  100px;
 	height:  26px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_outputTab{
 }
 #setup_outputTabLayout{
 	position: absolute;
-	top:     30px;
-	left:     0px;
+	top:     43px;
+	left:     1px;
+	width:  472px;
+	height: 253px;
 }
 #setup_outputDirectoryLabel{
 	position: absolute;
-	top:     45px;
+	top:     40px;
 	left:   114px;
 	width:  251px;
 	height:  21px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_outputLayout{
 	position: absolute;
-	top:     76px;
+	top:     61px;
 	left:   113px;
+	width:  251px;
+	height:  35px;
 }
 #setup_directoryEdit{
 	position: absolute;
@@ -945,8 +842,6 @@
 	left:     1px;
 	width:  215px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_directoryButton{
 	position: absolute;
@@ -957,17 +852,17 @@
 }
 #setup_templateLabel{
 	position: absolute;
-	top:    149px;
+	top:    136px;
 	left:   114px;
 	width:  251px;
 	height:  21px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_templateEditLayout{
 	position: absolute;
-	top:    170px;
+	top:    157px;
 	left:   113px;
+	width:  251px;
+	height:  35px;
 }
 #setup_templateEdit{
 	position: absolute;
@@ -975,8 +870,6 @@
 	left:     1px;
 	width:  146px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_templateNoteLabel{
 	position: absolute;
@@ -984,29 +877,29 @@
 	left:   153px;
 	width:  215px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_maskTab{
 }
 #setup_maskTabLayout{
 	position: absolute;
-	top:     30px;
-	left:     0px;
+	top:     43px;
+	left:     1px;
+	width:  472px;
+	height: 253px;
 }
 #setup_rectangleLabel{
 	position: absolute;
-	top:     58px;
+	top:     45px;
 	left:   142px;
 	width:  194px;
 	height:  21px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #setup_rectangleLayout{
 	position: absolute;
-	top:     80px;
+	top:     67px;
 	left:   142px;
+	width:  194px;
+	height: 153px;
 }
 #setup_xMinLabel{
 	position: absolute;
@@ -1014,8 +907,6 @@
 	left:     1px;
 	width:   36px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_xMinEdit{
 	position: absolute;
@@ -1023,8 +914,6 @@
 	left:    47px;
 	width:  146px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_yMinLabel{
 	position: absolute;
@@ -1032,8 +921,6 @@
 	left:     1px;
 	width:   35px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_yMinEdit{
 	position: absolute;
@@ -1041,8 +928,6 @@
 	left:    47px;
 	width:  146px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_xMaxLabel{
 	position: absolute;
@@ -1050,8 +935,6 @@
 	left:     1px;
 	width:   40px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_xMaxEdit{
 	position: absolute;
@@ -1059,8 +942,6 @@
 	left:    47px;
 	width:  146px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_yMaxLabel{
 	position: absolute;
@@ -1068,8 +949,6 @@
 	left:     1px;
 	width:   39px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_yMaxEdit{
 	position: absolute;
@@ -1077,23 +956,22 @@
 	left:    47px;
 	width:  146px;
 	height:  33px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #setup_buttons{
 	position: absolute;
 	top:    312px;
-	left:   333px;
 	width:  193px;
 	height:  31px;
 }
 #setup_applyButton{
-	font-weight: bold;
-	font-size: 11pt;
+	position: absolute;
+	top:      0px;
+	left:     0px;
 }
 #setup_cancelButton{
-	font-weight: bold;
-	font-size: 11pt;
+	position: absolute;
+	top:      0px;
+	right:    0px;
 }
 
 #ProcessWindow{
@@ -1106,10 +984,10 @@
 }
 #processLayout{
 	position: absolute;
-	top:     16px;
-	left:    21px;
-	width:  301px;
-	height: 131px;
+	top:     12px;
+	left:    20px;
+	width:  300px;
+	height:  60px;
 }
 #process_allRadio{
 	position: absolute;
@@ -1124,8 +1002,6 @@
 	left:    26px;
 	width:  301px;
 	height:  26px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #process_singleRadio{
 	position: absolute;
@@ -1140,13 +1016,10 @@
 	left:    26px;
 	width:  301px;
 	height:  26px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #process_buttons{
 	position: absolute;
-	top:     65px;
-	left:   102px;
+	top:     75px;
 	width:  193px;
 	height:  31px;
 }
@@ -1154,15 +1027,11 @@
 	position: absolute;
 	top:      0px;
 	left:     0px;
-	width:   85px;
-	height:  31px;
 }
 #process_cancelButton{
 	position: absolute;
 	top:     0px;
 	right:    0px;
-	width:   85px;
-	height:  31px;
 }
 #filter_global_label{
 	position: absolute;
@@ -1170,8 +1039,6 @@
 	left:    20px;
 	width:   56px;
 	height:  18px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #filter_rangeBox{
 	position: absolute;
@@ -1241,7 +1108,6 @@
 	top:     70px;
 	left:    44px;
 	height:  22px;
-	font-size: 11pt;
 }
 #filter_stdEdit{
 	position: absolute;
@@ -1256,8 +1122,6 @@
 	left:    20px;
 	width:   56px;
 	height:  18px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #filter_medianBox{
 	position: absolute;
@@ -1286,8 +1150,6 @@
 	left:   393px;
 	width:  207px;
 	height:  22px;
-	font-weight: normal;
-	font-size: 10pt;
 }
 #filter_meanBox{
 	position: absolute;
@@ -1316,8 +1178,6 @@
 	left:   393px;
 	width:  207px;
 	height:  22px;
-	font-weight: normal;
-	font-size: 10pt;
 }
 #filter_interpolation_label{
 	position: absolute;
@@ -1325,8 +1185,6 @@
 	left:    20px;
 	width:   91px;
 	height:  18px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #filter_bilinearBox{
 	position: absolute;
@@ -1340,7 +1198,6 @@
 	top:    220px;
 	left:    44px;
 	height:  22px;
-	font-size: 11pt;
 }
 #filter_bilinearCombo{
 	position: absolute;
@@ -1348,8 +1205,6 @@
 	left:   180px;
 	width:  207px;
 	height:  22px;
-	font-weight: normal;
-	font-size: 10pt;
 }
 #filter_smoothing_label{
 	position: absolute;
@@ -1357,8 +1212,6 @@
 	left:    20px;
 	width:   81px;
 	height:  18px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #filter_gaussianBox{
 	position: absolute;
@@ -1372,7 +1225,6 @@
 	top:    280px;
 	left:    44px;
 	height:  22px;
-	font-size: 11pt;
 }
 #filter_gaussianEdit{
 	position: absolute;
@@ -1387,14 +1239,12 @@
 	left:   393px;
 	width:  207px;
 	height:  22px;
-	font-weight: normal;
-	font-size: 10pt;
 }
 #filter_appliedLayout{
 	position: absolute;
 	top:    330px;
 	left:    20px;
-	width:  501px;
+	width:  401px;
 	height:  29px;
 }
 #filter_userRadio{
@@ -1406,7 +1256,6 @@
 	position: absolute;
 	top:      0px;
 	left:    22px;
-	font-size: 11pt;
 }
 #filter_processRadio{
 	position: absolute;
@@ -1417,39 +1266,30 @@
 	position: absolute;
 	top:      0px;
 	left:   162px;
-	font-size: 11pt;
 }
 #filter_actionLayout{
 	position: absolute;
 	top:    330px;
 	left:   430px;
-	width:  148px;
-	height:  29px;
+	width:  193px;
+	height:  31px;
 }
 #filter_okButton{
 	position: absolute;
 	top:    0px;
 	left:   0px;
-	width:   63px;
-	height:  31px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #filter_cancelButton{
 	position: absolute;
 	top:      0px;
 	right:    0px;
-	width:   63px;
-	height:  31px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 #flaunchLayout{
 	position: absolute;
-	top:     26px;
-	left:    21px;
-	width:  301px;
-	height: 131px;
+	top:     12px;
+	left:    20px;
+	width:  300px;
+	height:  60px;
 }
 #flaunch_allRadio{
 	position: absolute;
@@ -1464,8 +1304,6 @@
 	left:    26px;
 	width:  301px;
 	height:  26px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #flaunch_singleRadio{
 	position: absolute;
@@ -1480,13 +1318,10 @@
 	left:    26px;
 	width:  301px;
 	height:  26px;
-	font-weight: normal;
-	font-size: 11pt;
 }
 #flaunch_buttons{
 	position: absolute;
-	top:     65px;
-	left:   102px;
+	top:     75px;
 	width:  193px;
 	height:  31px;
 }
@@ -1494,15 +1329,11 @@
 	position: absolute;
 	top:      0px;
 	left:     0px;
-	width:   85px;
-	height:  31px;
 }
 #flaunch_cancelButton{
 	position: absolute;
-	top:     0px;
+	top:      0px;
 	right:    0px;
-	width:   85px;
-	height:  31px;
 }
 #AboutWindow{
 	position: absolute;
@@ -1510,86 +1341,54 @@
 	left:     0px;
 	width:  395px;
 	height: 268px;
-	border: 1px solid black;
 }
 #aboutLayoutWidget{
 	position: absolute;
 	top:     4px;
-	left:    10px;
-	width:  379px;
-	height: 237px;
+	margin-left: auto;
+	margin-right: auto;
+	width:  380px;
+	height: 217px;
 }
-#about_001{
+#urapiv_logo{
 	position: absolute;
-	top:      0px;
+	top:     10px;
+	left:    90px;
+	width:  200px;
+}
+#about_label_1{
+	position: absolute;
+	top:     78px;
 	left:     0px;
-	width:  395px;
-	height:  46px;
+	width:  100%;
+	height:  20px;
 	text-align: center;
 }
-#about_002{
+#about_label_2{
 	position: absolute;
-	top:     46px;
+	top:    154px;
 	left:     0px;
-	width:  395px;
-	height:  30px;
+	width:  100%;
+	height:  20px;
 	text-align: center;
 }
-#aboutlogo{
-	font-weight: bold;
-	font-size: 11pt;
-}
-#about_003{
+#about_label_3{
 	position: absolute;
-	top:     92px;
+	top:    188px;
 	left:     0px;
-	width:  395px;
-	height:  30px;
+	width:  100%;
+	height:  20px;
 	text-align: center;
 }
-#aboutlabel_1{
-	font-weight: bold;
-	font-size: 11pt;
-}
-#about_004{
+#about_buttonBox{
 	position: absolute;
-	top:    138px;
-	left:     0px;
+	top:    224px;
 	width:  395px;
 	height:  30px;
-	text-align: center;
-}
-#aboutlabel_3{
-	font-weight: bold;
-	font-size: 10pt;
-}
-#about_005{
-	position: absolute;
-	top:    184px;
-	left:     0px;
-	width:  395px;
-	height:  30px;
-	text-align: center;
-}
-#aboutlabel_4{
-	font-weight: bold;
-	font-size: 10pt;
-}
-#buttonBox{
-	position: absolute;
-	top:    220px;
-	left:     0px;
-	width:  395px;
-	height:  30px;
-	text-align: center;
 }
 #about_cancelButton{
 	position: absolute;
 	top:      0px;
 	right:    0px;
-	width:   63px;
-	height:  31px;
-	font-weight: bold;
-	font-size: 11pt;
 }
 

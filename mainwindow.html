@@ -116,50 +116,48 @@
 					<li class="ui-widget-content">Item 6</li>
 					<li class="ui-widget-content">Item 7</li>
 				</ol>
-				<div id="frlist_buttons">
-					<button id="frlist_importButton" class="op_push_button">Import...</button>
-					<button id="frlist_cancelButton" class="op_push_button">Cancel</button>
+				<div id="frlist_buttons" class="op_button_box_right">
+					<button id="frlist_importButton" class="op_std_button">Import...</button>
+					<button id="frlist_cancelButton" class="op_std_button">Cancel</button>
 				</div>
 			</div>
 			<div id="imgimp_dialog" title="Import Images">
-				<div id="imgimp_autoConfigLabel" class="op_label">Auto Configuration</div>
+				<div id="imgimp_autoConfigLabel" class="op_label_bold">Auto Configuration</div>
 				<button id="imgimp_fileSelectButton" class="op_push_button">Select Files...</button>
 				<button id="imgimp_autoConfigButton" class="op_push_button">Attempt Autoconfiguration...</button>
-				<div id="imgimp_manuaConfigLabel" class="op_label">Manual Configuration</div>
-				<div id="imgimp_layoutWidget" class="QWidget">
-					<div id="imgimp_manualConfigLayout" class="QGridLayout">
-						<div id="imgimp_inputColumnLabel" class="op_label">Input</div>
-						<div id="imgimp_OrderColumnLabel" class="op_label">Order</div>
-						<div id="imgimp_baseNameLabel" class="op_label">Base Name</div>
-						<input type="text" id="imgimp_baseNameEdit" class="op_line_edit">
-						<select id="imgimp_baseOrderCombo" class="op_combo_box">
-						<option>--</option>
-						</select>
-						<div id="imgimp_incrementLabel" class="op_label">Increment</div>
-						<select id="imgimp_incrementCombo" class="op_combo_box">
-						<option>--</option>
-						</select>
-						<select id="imgimp_incrementOrderCombo" class="op_combo_box">
-						<option>--</option>
-						</select>
-						<div id="imgimp_frameLabel" class="op_label">Frame</div>
-						<div id="imgimp_frameLayout" class="QHBoxLayout">
-							<div id="imgimp_firstFrameLabel" class="op_label">First</div>
-							<input type="text" id="imgimp_firstFrameEdit" class="op_line_edit">
-							<div id="imgimp_secondFrameLabel" class="op_label">Second</div>
-							<input type="text" id="imgimp_secondFrameEdit" class="op_line_edit">
-						</div>
-						<select id="imgimp_frameOrderCombo" class="op_combo_box">
-						<option>--</option>
-						</select>
-						<div id="imgimp_suffixLabel" class="op_label">Suffix</div>
-						<input type="text" id="imgimp_suffixEdit" class="op_line_edit">
-						<select id="imgimp_suffixOrderCombo" class="op_combo_box">
-						<option>--</option>
-						</select>
+				<div id="imgimp_manuaConfigLabel" class="op_label_bold">Manual Configuration</div>
+				<div id="imgimp_layoutWidget" class="op_panel">
+					<div id="imgimp_inputColumnLabel" class="op_label_bold">Input</div>
+					<div id="imgimp_OrderColumnLabel" class="op_label_bold">Order</div>
+					<div id="imgimp_baseNameLabel" class="op_label">Base Name</div>
+					<input type="text" id="imgimp_baseNameEdit" class="op_line_edit">
+					<select id="imgimp_baseOrderCombo" class="op_combo_box">
+					<option>--</option>
+					</select>
+					<div id="imgimp_incrementLabel" class="op_label">Increment</div>
+					<select id="imgimp_incrementCombo" class="op_combo_box">
+					<option>--</option>
+					</select>
+					<select id="imgimp_incrementOrderCombo" class="op_combo_box">
+					<option>--</option>
+					</select>
+					<div id="imgimp_frameLabel" class="op_label">Frame</div>
+					<div id="imgimp_frameLayout" class="op_panel">
+						<div id="imgimp_firstFrameLabel" class="op_label">First</div>
+						<input type="text" id="imgimp_firstFrameEdit" class="op_line_edit">
+						<div id="imgimp_secondFrameLabel" class="op_label">Second</div>
+						<input type="text" id="imgimp_secondFrameEdit" class="op_line_edit">
 					</div>
+					<select id="imgimp_frameOrderCombo" class="op_combo_box">
+					<option>--</option>
+					</select>
+					<div id="imgimp_suffixLabel" class="op_label">Suffix</div>
+					<input type="text" id="imgimp_suffixEdit" class="op_line_edit">
+					<select id="imgimp_suffixOrderCombo" class="op_combo_box">
+					<option>--</option>
+					</select>
 				</div>
-				<button id="imgimp_applyNameButton" class="op_push_button">Continue...</button>
+				<button id="imgimp_applyNameButton" class="op_std_button">Continue...</button>
 			</div>
 			<div id="filefmt_dialog" title="File Format">
 				<div id="flfmt_firstFrameLabel" class="op_label">First Frame</div>
@@ -176,178 +174,162 @@
 					<div id="flfmt_totalImagesLabel" class="op_label">Total Number of Image Pairs</div>
 					<input type="text" id="flfmt_totalImages" class="op_line_edit">
 				</div>
-				<div id="flfmt_buttonsLayout" class="QHBoxLayout">
-					<button id="flfmt_applyButton" class="op_push_button">Apply</button>
-					<button id="flfmt_cancelButton" class="op_push_button">Cancel</button>
+				<div id="flfmt_buttonsLayout" class="op_button_box_right">
+					<button id="flfmt_applyButton" class="op_std_button">Apply</button>
+					<button id="flfmt_cancelButton" class="op_std_button">Cancel</button>
 				</div>
 			</div>
 			<div id="setup_dialog" title="Setup">
-				<div id="SetupWindowLayout" class="QVBoxLayout">
-					<div id="setup_tabWidget" class="op_tabbed_panel">
-						<ul id="setup_tabList">
-							<li><a href="#setup_correlationTab">Correlation</a></li>
-							<li><a href="#setup_scalingTab">Velocity Scaling</a></li>
-							<li><a href="#setup_outputTab">Output</a></li>
-							<li><a href="#setup_maskTab">Image Mask</a></li>
-						</ul>
-						<div id="setup_correlationTab" class="QWidget">
-							<div id="setup_gridLayout" class="QGridLayout">
-								<div id="setup_signalLevelLabel" class="op_label">Signal Level</div>
-								<div id="setup_signalLevelLayout" class="QFormLayout">
-									<div id="setup_sigMeanLabel" class="op_label">Signal to Mean</div>
-									<input type="text" id="setup_sigMeanText" class="op_line_edit">
-									<div id="setup_sigPeakLabel" class="op_label">Signal to Next Peak</div>
-									<input type="text" id="setup_sigPeakText" class="op_line_edit">
-								</div>
-								<div id="setup_gridSetupLabel" class="op_label">Grid setup</div>
-								<div id="setup_gridSetupLayout" class="QFormLayout">
-									<div id="setup_intArealLabel" class="op_label">Interrogation Area</div>
-									<select id="setup_intAreaCombo" class="op_combo_box">
-									<option>--</option>
-									</select>
-									<div id="setup_xSpacinglabel" class="op_label">Horizontal Spacing [pixels]</div>
-									<input type="text" id="setup_xSpacing" class="op_line_edit">
-									<div id="setup_ySpacingLabel" class="op_label">Vertical Spacing [pixels]</div>
-									<input type="text" id="setup_ySpacing" class="op_line_edit">
-								</div>
+				<div id="setup_tabWidget" class="op_tabbed_panel">
+					<ul id="setup_tabList">
+						<li><a href="#setup_correlationTab">Correlation</a></li>
+						<li><a href="#setup_scalingTab">Velocity Scaling</a></li>
+						<li><a href="#setup_outputTab">Output</a></li>
+						<li><a href="#setup_maskTab">Image Mask</a></li>
+					</ul>
+					<div id="setup_correlationTab">
+						<div id="setup_gridLayout" class="op_panel">
+							<div id="setup_signalLevelLabel" class="op_label_bold">Signal Level</div>
+							<div id="setup_signalLevelLayout" class="op_panel">
+								<div id="setup_sigMeanLabel" class="op_label">Signal to Mean</div>
+								<input type="text" id="setup_sigMeanText" class="op_line_edit">
+								<div id="setup_sigPeakLabel" class="op_label">Signal to Next Peak</div>
+								<input type="text" id="setup_sigPeakText" class="op_line_edit">
 							</div>
-						</div>
-						<div id="setup_scalingTab" class="QWidget">
-							<div id="setup_scalingTabLayout" class="QGridLayout">
-								<div id="setup_timeScalingLabel" class="op_label">Time delay and scaling factor</div>
-								<div id="setup_timeScalingLayout" class="QFormLayout">
-									<div id="setup_deltaTLabel" class="op_label">delta t [ms]</div>
-									<input type="text" id="setup_deltaTEdit" class="op_line_edit">
-									<div id="setup_scaleLabel" class="op_label">scale factor [mm/pixel]</div>
-									<input type="text" id="setup_scaleEdit" class="op_line_edit">
-								</div>
-								<div id="setup_velocityScalingLabel" class="op_label">Velocity scaling</div>
-								<div id="setup_velocityScalingLayout" class="QVBoxLayout">
-									<input type="radio" id="setup_pixelRadio" name="setup_vscaling" class="op_radio_button"><label id="setup_pixelRadioLabel">Pixel</label>
-									<input type="radio" id="setup_velocityRadio" name="setup_vscaling" class="op_radio_button"><label id="setup_velocityRadioLabel">Velocity</label>
-								</div>
+							<div id="setup_gridSetupLabel" class="op_label_bold">Grid setup</div>
+							<div id="setup_gridSetupLayout" class="op_panel">
+								<div id="setup_intArealLabel" class="op_label">Interrogation Area</div>
+								<select id="setup_intAreaCombo" class="op_combo_box">
+								<option>--</option>
+								</select>
+								<div id="setup_xSpacinglabel" class="op_label">Horizontal Spacing [pixels]</div>
+								<input type="text" id="setup_xSpacing" class="op_line_edit">
+								<div id="setup_ySpacingLabel" class="op_label">Vertical Spacing [pixels]</div>
+								<input type="text" id="setup_ySpacing" class="op_line_edit">
 							</div>
-						</div>
-						<div id="setup_outputTab" class="QWidget">
-							<div id="setup_outputTabLayout" class="QGridLayout">
-								<div id="setup_outputDirectoryLabel" class="op_label">Output directory</div>
-								<div id="setup_outputLayout" class="QHBoxLayout">
-									<input type="text" id="setup_directoryEdit" class="op_line_edit">
-									<button id="setup_directoryButton" class="op_tool_button">...</button>
-								</div>
-								<div id="setup_templateLabel" class="op_label">File template name</div>
-								<div id="setup_templateEditLayout" class="QHBoxLayout">
-									<input type="text" id="setup_templateEdit" class="op_line_edit">
-									<div id="setup_templateNoteLabel" class="op_label">e.g. test%d.txt</div>
-								</div>
-							</div>
-						</div>
-						<div id="setup_maskTab" class="QWidget">
-							<div id="setup_maskTabLayout" class="QGridLayout">
-								<div id="setup_rectangleLabel" class="op_label">Rectangular box mask</div>
-								<div id="setup_rectangleLayout" class="QFormLayout">
-									<div id="setup_xMinLabel" class="op_label">X Min</div>
-									<input type="text" id="setup_xMinEdit" class="op_line_edit">
-									<div id="setup_yMinLabel" class="op_label">Y Min</div>
-									<input type="text" id="setup_yMinEdit" class="op_line_edit">
-									<div id="setup_xMaxLabel" class="op_label">X Max</div>
-									<input type="text" id="setup_xMaxEdit" class="op_line_edit">
-									<div id="setup_yMaxLabel" class="op_label">Y Max</div>
-									<input type="text" id="setup_yMaxEdit" class="op_line_edit">
-								</div>
 						</div>
 					</div>
-					<div id="setup_buttons" class="QHBoxLayout">
-						<button id="setup_applyButton" class="op_push_button">Apply</button>
-						<button id="setup_cancelButton" class="op_push_button">Cancel</button>
+					<div id="setup_scalingTab">
+						<div id="setup_timeScalingLabel" class="op_label_bold">Time delay and scaling factor</div>
+						<div id="setup_timeScalingLayout" class="op_panel">
+							<div id="setup_deltaTLabel" class="op_label">delta t [ms]</div>
+							<input type="text" id="setup_deltaTEdit" class="op_line_edit">
+							<div id="setup_scaleLabel" class="op_label">scale factor [mm/pixel]</div>
+							<input type="text" id="setup_scaleEdit" class="op_line_edit">
+						</div>
+						<div id="setup_velocityScalingLabel" class="op_label_bold">Velocity scaling</div>
+						<div id="setup_velocityScalingLayout" class="op_panel">
+							<input type="radio" id="setup_pixelRadio" name="setup_vscaling" class="op_radio_button"><label id="setup_pixelRadioLabel">Pixel</label>
+							<input type="radio" id="setup_velocityRadio" name="setup_vscaling" class="op_radio_button"><label id="setup_velocityRadioLabel">Velocity</label>
+						</div>
 					</div>
-				</div>
+					<div id="setup_outputTab">
+						<div id="setup_outputTabLayout" class="op_panel">
+							<div id="setup_outputDirectoryLabel" class="op_label_bold">Output directory</div>
+							<div id="setup_outputLayout" class="op_panel">
+								<input type="text" id="setup_directoryEdit" class="op_line_edit">
+								<button id="setup_directoryButton" class="op_tool_button">...</button>
+							</div>
+							<div id="setup_templateLabel" class="op_label_bold">File template name</div>
+							<div id="setup_templateEditLayout" class="op_panel">
+								<input type="text" id="setup_templateEdit" class="op_line_edit">
+								<div id="setup_templateNoteLabel" class="op_label">e.g. test%d.txt</div>
+							</div>
+						</div>
+					</div>
+					<div id="setup_maskTab">
+						<div id="setup_maskTabLayout" class="op_panel">
+							<div id="setup_rectangleLabel" class="op_label_bold">Rectangular box mask</div>
+							<div id="setup_rectangleLayout" class="op_panel">
+								<div id="setup_xMinLabel" class="op_label">X Min</div>
+								<input type="text" id="setup_xMinEdit" class="op_line_edit">
+								<div id="setup_yMinLabel" class="op_label">Y Min</div>
+								<input type="text" id="setup_yMinEdit" class="op_line_edit">
+								<div id="setup_xMaxLabel" class="op_label">X Max</div>
+								<input type="text" id="setup_xMaxEdit" class="op_line_edit">
+								<div id="setup_yMaxLabel" class="op_label">Y Max</div>
+								<input type="text" id="setup_yMaxEdit" class="op_line_edit">
+							</div>
+						</div>
+					</div>
+					<div id="setup_buttons" class="op_button_box_right">
+						<button id="setup_applyButton" class="op_std_button">Apply</button>
+						<button id="setup_cancelButton" class="op_std_button">Cancel</button>
+					</div>
 			</div>
 			<div id="process_dialog" title="Process Images">
-				<div id="processLayout" class="QWidget">
+				<div id="processLayout" class="op_panel">
 					<input type="radio" name="process" id="process_allRadio" class="op_radio_button"><label id="process_allLabel">Process all imported image pairs</label>
 					<input type="radio" name="process" id="process_singleRadio" class="op_radio_button"><label id="process_singleLabel">Process current image pair</label>
-					<div id="process_buttons">
-						<button id="process_okButton" class="op_push_button">Go</button>
-						<button id="process_cancelButton" class="op_push_button">Cancel</button>
-					</div>
+				</div>
+				<div id="process_buttons" class="op_button_box_right">
+					<button id="process_okButton" class="op_std_button">Go</button>
+					<button id="process_cancelButton" class="op_std_button">Cancel</button>
 				</div>
 			</div>
 			<div id="filter_dialog" title="Filter Settings">
-			<!--div id="filter_FilterWindow" class="op_dialog"-->
-				<div id="filter_global_label" class="op_label">Global</div>
-				<input type="checkbox" id="filter_rangeBox" class="op_checkbox"><label for="rangeBox" id="filter_rangeBox_label" class="op_checkbox_label>Range</label>
-				<div id="filter_minLayout" class="QWidget">
+				<div id="filter_global_label" class="op_label_bold">Global</div>
+				<input type="checkbox" id="filter_rangeBox" class="op_checkbox"><label for="rangeBox" id="filter_rangeBox_label" class="op_checkbox_label">Range</label>
+				<div id="filter_minLayout" class="op_panel">
 					<div id="filter_minLabel" class="op_label">Min</div>
 					<input type="text" id="filter_minEdit" class="op_line_edit">
 				</div>
-				<div id="filter_maxLayout" class="QWidget">
+				<div id="filter_maxLayout" class="op_panel">
 					<div id="filter_maxLabel" class="op_label">Max</div>
 					<input type="text" id="filter_maxEdit" class="op_line_edit">
 				</div>
 				<input type="checkbox" id="filter_stdBox" class="op_checkbox"><label for="stdBox" id="filter_stdBox_label" class="op_checkbox_label">Standard Deviation</label>
 				<input type="text" id="filter_stdEdit" class="op_line_edit">
-				<div id="filter_local_label" class="op_label">Local</div>
-				<input type="checkbox" id="filter_medianBox" class="op_checkbox"><label for="medianBox" id="filter_medianBox_label" class="op_checkbox_label>Median</label>
+				<div id="filter_local_label" class="op_label_bold">Local</div>
+				<input type="checkbox" id="filter_medianBox" class="op_checkbox"><label for="medianBox" id="filter_medianBox_label" class="op_checkbox_label">Median</label>
 				<input type="text" id="filter_medianEdit" class="op_line_edit">
 				<select id="filter_medianCombo" class="op_combo_box">
 				<option>--</option>
 				</select>
-				<input type="checkbox" id="filter_meanBox" class="op_checkbox"><label for="meanBox" id="filter_meanBox_label" class="op_checkbox_label>Mean</label>
+				<input type="checkbox" id="filter_meanBox" class="op_checkbox"><label for="meanBox" id="filter_meanBox_label" class="op_checkbox_label">Mean</label>
 				<input type="text" id="filter_meanEdit" class="op_line_edit">
 				<select id="filter_meanCombo" class="op_combo_box">
 				<option>--</option>
 				</select>
-				<div id="filter_interpolation_label" class="op_label">Interpolation</div>
-				<input type="checkbox" id="filter_bilinearBox" class="op_checkbox"><label for="bilinearBox" id="filter_bilinearBox_label" class="op_checkbox_label>Bilinear</label>
+				<div id="filter_interpolation_label" class="op_label_bold">Interpolation</div>
+				<input type="checkbox" id="filter_bilinearBox" class="op_checkbox"><label for="bilinearBox" id="filter_bilinearBox_label" class="op_checkbox_label">Bilinear</label>
 				<select id="filter_bilinearCombo" class="op_combo_box">
 				<option>--</option>
 				</select>
-				<div id="filter_smoothing_label" class="op_label">Smoothing</div>
-				<input type="checkbox" id="filter_gaussianBox" class="op_checkbox"><label for="gaussianBox" id="filter_gaussianBox_label" class="op_checkbox_label>Gaussian Kernel</label>
+				<div id="filter_smoothing_label" class="op_label_bold">Smoothing</div>
+				<input type="checkbox" id="filter_gaussianBox" class="op_checkbox"><label for="gaussianBox" id="filter_gaussianBox_label" class="op_checkbox_label">Gaussian Kernel</label>
 				<input type="text" id="filter_gaussianEdit" class="op_line_edit">
 				<select id="filter_gaussianCombo" class="op_combo_box">
 				<option>--</option>
 				</select>
-				<div id="filter_appliedLayout" class="QWidget">
+				<div id="filter_appliedLayout" class="op_panel">
 					<input type="radio" id="filter_userRadio" name="applied" class="op_radio_button"><label for="userRadio" id="filter_userRadio_label">User applied</label>
 					<input type="radio" id="filter_processRadio" name="applied" class="op_radio_button"><label for="processRadio" id="filter_processRadio_label">Applied to processing step</label>
 				</div>
-				<div id="filter_actionLayout" class="QWidget">
-					<button id="filter_okButton" class="op_push_button">OK</button>
-					<button id="filter_cancelButton" class="op_push_button">Cancel</button>
+				<div id="filter_actionLayout" class="op_button_box_right">
+					<button id="filter_okButton" class="op_std_button">OK</button>
+					<button id="filter_cancelButton" class="op_std_button">Cancel</button>
 				</div>
 			</div>
-			<!--/div-->
 			<div id="flaunch_dialog" title="Launch Filter">
-				<div id="flaunchLayout" class="QWidget">
+				<div id="flaunchLayout" class="op_panel">
 					<input type="radio" name="flaunch" id="flaunch_allRadio" class="op_radio_button"><label id="flaunch_allLabel" for="flaunch_allRadio">Filter all processed image pairs</label>
 					<input type="radio" name="flaunch" id="flaunch_singleRadio" class="op_radio_button"><label id="flaunch_singleLabel" for="flaunch_singleRadio">Filter current processed image pair</label>
-					<div id="flaunch_buttons">
-						<button id="flaunch_okButton" class="op_push_button">Go</button>
-						<button id="flaunch_cancelButton" class="op_push_button">Cancel</button>
-					</div>
+				</div>
+				<div id="flaunch_buttons" class="op_button_box_right">
+					<button id="flaunch_okButton" class="op_std_button">Go</button>
+					<button id="flaunch_cancelButton" class="op_std_button">Cancel</button>
 				</div>
 			</div>
 			<div id="about_dialog" title="About OpenPIV">
-				<div id="aboutLayoutWidget" class="QWidget">
-					<div id="about_001" class="QVBoxLayout">
-						<div id="about_002" class="QHBoxLayout">
-							<div id="aboutlogo" class="op_label"><img id="urapiv_logo" src="icons/urapiv_small.png" /></div>
-						</div>
-						<div id="about_003" class="QHBoxLayout">
-							<div id="aboutlabel_1" class="op_label">URAPIV for HTML - Version 0.0</div>
-						</div>
-						<div id="about_004" class="QHBoxLayout">
-							<div id="aboutlabel_3" class="op_label">Adapted to HTML by Brian Ames</div>
-						</div>
-						<div id="about_005" class="QHBoxLayout">
-							<div id="aboutlabel_4" class="op_label">Original version by Alex Liberzon and Roi Gurka</div>
-						</div>
-						<div id="buttonBox" class="QDialogButtonBox">
-							<button id="about_okButton" class="op_push_button">OK</button>
-						</div>
-					</div>
+				<div id="aboutLayoutWidget" class="op_panel">
+					<img id="urapiv_logo" src="icons/urapiv_small.png" />
+					<div id="about_label_1" class="op_label_bold">URAPIV for HTML - Version 0.0</div>
+					<div id="about_label_2" class="op_label_bold">Adapted to HTML by Brian Ames</div>
+					<div id="about_label_3" class="op_label_bold">Original version by Alex Liberzon and Roi Gurka</div>
+				</div>
+				<div id="about_buttonBox" class="op_button_box_center">
+					<button id="about_okButton" class="op_std_button">OK</button>
 				</div>
 			</div>
 		</div>
