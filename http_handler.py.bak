@@ -1,20 +1,20 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import http.server
-import http.server
+import BaseHTTPServer
+import SimpleHTTPServer
 import cgi
 import os
 import time
 import struct
 import uuid
-import urllib.parse
+import urlparse
 
 from json_serializer import WebServiceResponse
 import value_dicts
 
 #===============================================================================
-class HTTPRequestHandler(http.server.SimpleHTTPRequestHandler): #BaseHTTPServer.BaseHTTPRequestHandler
+class HTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler): #BaseHTTPServer.BaseHTTPRequestHandler
 #-------------------------------------------------------------------------------
 	def __getitem__(self,key):
 		try:
@@ -46,7 +46,7 @@ class HTTPRequestHandler(http.server.SimpleHTTPRequestHandler): #BaseHTTPServer.
 		response = WebServiceResponse()
 		try:
 			command = form['command'].value.strip()
-			print(command)
+			print command
 		except:
 			response.addErrorMessage('No Command sent to POST')
 		else:
@@ -54,22 +54,22 @@ class HTTPRequestHandler(http.server.SimpleHTTPRequestHandler): #BaseHTTPServer.
 			method = self[command]
 			if method is None:
 #				print command
-				print('#-------------------------------------------------------------------------------')
-				print('\t## @method %s' % command)
-				print('\t# .')
-				print('\t#')
-				print('\t# @param form a FieldStorage object containing the data from the request form')
-				print('\t# @param response a WebServiceResponse object')
-				print('\tdef %s(self,form,response):' % command)
-				print('\t\t\'\'\'.\'\'\'')
-				print('\t\tparameter = form[\'parameter\'].value.strip()')
+				print '#-------------------------------------------------------------------------------'
+				print '\t## @method %s' % command
+				print '\t# .'
+				print '\t#'
+				print '\t# @param form a FieldStorage object containing the data from the request form'
+				print '\t# @param response a WebServiceResponse object'
+				print '\tdef %s(self,form,response):' % command
+				print '\t\t\'\'\'.\'\'\''
+				print '\t\tparameter = form[\'parameter\'].value.strip()'
 				for key in sorted(form.keys()):
-					print("\t\t%-24s = form[\'%s\'].value.strip()" % (key,key))
+					print "\t\t%-24s = form[\'%s\'].value.strip()" % (key,key)
 				
-				print("\t\tresponse.addValue('parameter',parameter)")
+				print "\t\tresponse.addValue('parameter',parameter)"
 #				print '		getattr(self.server.proxy, \'%%s.%s\' %% module_name)(channel_name,segment_name)' % command
-				print()
-				print('\t%s.ok = True' % command)
+				print
+				print '\t%s.ok = True' % command
 
 			done = method(form,response)
 			if done:
@@ -317,7 +317,7 @@ class HTTPRequestHandler(http.server.SimpleHTTPRequestHandler): #BaseHTTPServer.
 			path   = frame_info.frame_a_path
 			width  = frame_info.frame_a_width
 			height = frame_info.frame_a_height
-		print(path)
+		print path
 		response.addValue('path',path)
 		response.addValue('width',width)
 		response.addValue('height',height)

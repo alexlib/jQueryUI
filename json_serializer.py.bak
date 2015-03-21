@@ -45,7 +45,7 @@ class JsonSerializer():
             obj = cls()
             for k,v in list(dct.items()):
             	if k != 'py/object':
-            		print((dir(obj)))
+            		print(dir(obj))
             		obj.__dict__[k] = v
             return obj
         return dct
@@ -173,8 +173,8 @@ if __name__ == '__main__':
     sys.exit('Enough!')
     webServiceReponse2 = JsonSerializer.deserialize(jsonString)
     
-    print((repr(webServiceReponse2)))
-    print((repr(webServiceReponse2.errorMessages)))
+    print(repr(webServiceReponse2))
+    print(repr(webServiceReponse2.errorMessages))
     for message in webServiceReponse2.errorMessages:
         print(message)
         
@@ -193,7 +193,7 @@ if __name__ == '__main__':
     jsonString = webServiceResponse.serialize()
     print(jsonString)
     webServiceReponse2 = JsonSerializer.deserialize(jsonString)
-    print((repr(webServiceReponse2)))
+    print(repr(webServiceReponse2))
     for key,value in list(webServiceReponse2.values.items()):
-        print((repr(key) + ' : ' + repr(value)))
+        print(repr(key) + ' : ' + repr(value))
 

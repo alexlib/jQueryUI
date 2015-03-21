@@ -59,10 +59,10 @@ filter_gaussianDict = {
 }
 
 toJSON = {}
-for k in list(globals().keys()):
+for k in globals().keys():
 	if k.endswith('Dict'):
 		d = globals()[k]
-		keys = list(d.keys())
+		keys = d.keys()
 		keys.sort()
 		toJSON['%sSelect' % k[0:-4]] = [[key,d[key]] for key in keys]
 

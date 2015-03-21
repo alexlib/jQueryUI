@@ -15,8 +15,8 @@ import socketserver #SocketServer
 import struct
 import sys
 import time
-import urllib.parse
-from queue import Empty
+import urlparse
+from Queue import Empty
 
 #import exception
 import http_handler
@@ -75,7 +75,7 @@ class Server(object):
 		response_queue = manager.Queue()
 		# http process thread
 		def httptarget(handler,namespace,command_queue):
-			print(('Starting HTTP server on %s.' % port))
+			print('Starting HTTP server on %s.' % port)
 			server = HTTPServer((host, port), handler)
 #			server.status = status.StatusManager(namespace,command_queue,response_queue)
 			server.status = status.Status()

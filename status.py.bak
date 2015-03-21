@@ -187,7 +187,7 @@ class Filter(object):
 
 	@rangeBox.setter
 	def rangeBox(self,rangeBox):
-		if isinstance(rangeBox,str):
+		if isinstance(rangeBox,basestring):
 			rangeBox = rangeBox.lower() == 'true'
 		self._rangeBox = rangeBox
 
@@ -216,7 +216,7 @@ class Filter(object):
 
 	@stdBox.setter
 	def stdBox(self,stdBox):
-		if isinstance(stdBox,str):
+		if isinstance(stdBox,basestring):
 			stdBox = stdBox.lower() == 'true'
 		self._stdBox = stdBox
 
@@ -236,7 +236,7 @@ class Filter(object):
 
 	@medianBox.setter
 	def medianBox(self,medianBox):
-		if isinstance(medianBox,str):
+		if isinstance(medianBox,basestring):
 			medianBox = medianBox.lower() == 'true'
 		self._medianBox = medianBox
 
@@ -265,7 +265,7 @@ class Filter(object):
 
 	@meanBox.setter
 	def meanBox(self,meanBox):
-		if isinstance(meanBox,str):
+		if isinstance(meanBox,basestring):
 			meanBox = meanBox.lower() == 'true'
 		self._meanBox = meanBox
 
@@ -294,7 +294,7 @@ class Filter(object):
 
 	@bilinearBox.setter
 	def bilinearBox(self,bilinearBox):
-		if isinstance(bilinearBox,str):
+		if isinstance(bilinearBox,basestring):
 			bilinearBox = bilinearBox.lower() == 'true'
 		self._bilinearBox = bilinearBox
 
@@ -314,7 +314,7 @@ class Filter(object):
 
 	@gaussianBox.setter
 	def gaussianBox(self,gaussianBox):
-		if isinstance(gaussianBox,str):
+		if isinstance(gaussianBox,basestring):
 			gaussianBox = gaussianBox.lower() == 'true'
 		self._gaussianBox = gaussianBox
 
@@ -343,7 +343,7 @@ class Filter(object):
 
 	@userRadio.setter
 	def userRadio(self,userRadio):
-		if isinstance(userRadio,str):
+		if isinstance(userRadio,basestring):
 			userRadio = userRadio.lower() == 'true'
 		self._userRadio = userRadio
 
@@ -354,7 +354,7 @@ class Filter(object):
 
 	@processRadio.setter
 	def processRadio(self,processRadio):
-		if isinstance(processRadio,str):
+		if isinstance(processRadio,basestring):
 			processRadio = processRadio.lower() == 'true'
 		self._processRadio = processRadio
 
@@ -733,7 +733,7 @@ def check_members():
 #		except AttributeError:
 #			print 'to_json',g
 		try:
-			init_fc = getattr(obj,'__init__').__func__.__code__
+			init_fc = getattr(obj,'__init__').im_func.func_code
 		except: pass
 		else:
 			args = init_fc.co_varnames[1:init_fc.co_argcount]
@@ -743,9 +743,9 @@ def check_members():
 				try:
 					getattr(obj,arg)
 				except:
-					print('#-------------------------------------------------------------------------------')
-					print('\t@property\n\tdef %s(self):\n\t\treturn self._%s\n' % (arg,arg))
-					print('\t@%s.setter\n\tdef %s(self,%s):\n\t\tself._%s = %s\n' % (arg,arg,arg,arg,arg))
+					print '#-------------------------------------------------------------------------------'
+					print '\t@property\n\tdef %s(self):\n\t\treturn self._%s\n' % (arg,arg)
+					print '\t@%s.setter\n\tdef %s(self,%s):\n\t\tself._%s = %s\n' % (arg,arg,arg,arg,arg)
 
 if __name__ == '__main__':
 	check_members()
