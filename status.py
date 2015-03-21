@@ -19,12 +19,26 @@ class Status(object):
 		self.process      = Process()
 		self.setup   = Setup()
 		self.frame_info   = FrameInfo()
+		self._zoom_factor = 0
 
 #-------------------------------------------------------------------------------
 	def grayscale(self,x,y):
 		'''Return the grayscale intensity of the pixel at x,y.'''
 		#TODO
 		return (x*y) % 256
+
+#-------------------------------------------------------------------------------
+	def zoom_in(self):
+		self._zoom_factor += 1
+		#TODO
+		return [self._zoom_factor]
+
+#-------------------------------------------------------------------------------
+	def zoom_out(self):
+		if self._zoom_factor:
+			self._zoom_factor -= 1
+		#TODO
+		return [self._zoom_factor]
 
 #-------------------------------------------------------------------------------
 	@property
@@ -353,8 +367,87 @@ class FrameList(object):
 #===============================================================================
 class ImageImport(object):
 #-------------------------------------------------------------------------------
-	def __init__(self):
-		pass
+	def __init__(self,baseOrder=None,increment=None,incrementOrder=None,firstFrame=None,secondFrame=None,frameOrder=None,suffix=None,suffixOrder=None):
+		self.baseOrder      = baseOrder
+		self.increment      = increment
+		self.incrementOrder = incrementOrder
+		self.firstFrame     = firstFrame
+		self.secondFrame    = secondFrame
+		self.frameOrder     = frameOrder
+		self.suffix         = suffix
+		self.suffixOrder    = suffixOrder
+
+#-------------------------------------------------------------------------------
+	@property
+	def baseOrder(self):
+		return self._baseOrder
+
+	@baseOrder.setter
+	def baseOrder(self,baseOrder):
+		self._baseOrder = baseOrder
+
+#-------------------------------------------------------------------------------
+	@property
+	def increment(self):
+		return self._increment
+
+	@increment.setter
+	def increment(self,increment):
+		self._increment = increment
+
+#-------------------------------------------------------------------------------
+	@property
+	def incrementOrder(self):
+		return self._incrementOrder
+
+	@incrementOrder.setter
+	def incrementOrder(self,incrementOrder):
+		self._incrementOrder = incrementOrder
+
+#-------------------------------------------------------------------------------
+	@property
+	def firstFrame(self):
+		return self._firstFrame
+
+	@firstFrame.setter
+	def firstFrame(self,firstFrame):
+		self._firstFrame = firstFrame
+
+#-------------------------------------------------------------------------------
+	@property
+	def secondFrame(self):
+		return self._secondFrame
+
+	@secondFrame.setter
+	def secondFrame(self,secondFrame):
+		self._secondFrame = secondFrame
+
+#-------------------------------------------------------------------------------
+	@property
+	def frameOrder(self):
+		return self._frameOrder
+
+	@frameOrder.setter
+	def frameOrder(self,frameOrder):
+		self._frameOrder = frameOrder
+
+#-------------------------------------------------------------------------------
+	@property
+	def suffix(self):
+		return self._suffix
+
+	@suffix.setter
+	def suffix(self,suffix):
+		self._suffix = suffix
+
+#-------------------------------------------------------------------------------
+	@property
+	def suffixOrder(self):
+		return self._suffixOrder
+
+	@suffixOrder.setter
+	def suffixOrder(self,suffixOrder):
+		self._suffixOrder = suffixOrder
 
 #===============================================================================
 class MainWindow(object):

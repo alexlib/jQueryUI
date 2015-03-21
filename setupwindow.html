@@ -5,6 +5,7 @@
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery-ui.js"></script>
 		<link href="css/cupertino/jquery-ui.css" rel="stylesheet">
+		<link href="css/openpiv.css" rel="stylesheet">
 		<style>
 			#SetupWindow{
 				position: absolute;
@@ -412,9 +413,9 @@
 		</style>
 	</head>
 	<body>
-		<div id="SetupWindow" class="QDialog">
+		<div id="SetupWindow" class="op_dialog">
 			<div id="SetupWindowLayout" class="QVBoxLayout">
-				<div id="setup_tabWidget" class="QTabWidget">
+				<div id="setup_tabWidget" class="op_tabbed_panel">
 					<ul id="setup_tabList">
 						<li><a href="#setup_correlationTab">Correlation</a></li>
 						<li><a href="#setup_scalingTab">Velocity Scaling</a></li>
@@ -423,74 +424,74 @@
 					</ul>
 					<div id="setup_correlationTab" class="QWidget">
 						<div id="setup_gridLayout" class="QGridLayout">
-							<div id="setup_signalLevelLabel" class="QLabel">Signal Level</div>
+							<div id="setup_signalLevelLabel" class="op_label">Signal Level</div>
 							<div id="setup_signalLevelLayout" class="QFormLayout">
-								<div id="setup_sigMeanLabel" class="QLabel">Signal to Mean</div>
-								<input type="text" id="setup_sigMeanText" class="QLineEdit">
-								<div id="setup_sigPeakLabel" class="QLabel">Signal to Next Peak</div>
-								<input type="text" id="setup_sigPeakText" class="QLineEdit">
+								<div id="setup_sigMeanLabel" class="op_label">Signal to Mean</div>
+								<input type="text" id="setup_sigMeanText" class="op_line_edit">
+								<div id="setup_sigPeakLabel" class="op_label">Signal to Next Peak</div>
+								<input type="text" id="setup_sigPeakText" class="op_line_edit">
 							</div>
-							<div id="setup_gridSetupLabel" class="QLabel">Grid setup</div>
+							<div id="setup_gridSetupLabel" class="op_label">Grid setup</div>
 							<div id="setup_gridSetupLayout" class="QFormLayout">
-								<div id="setup_intArealLabel" class="QLabel">Interrogation Area</div>
-								<select id="setup_intAreaCombo" class="QComboBox">
+								<div id="setup_intArealLabel" class="op_label">Interrogation Area</div>
+								<select id="setup_intAreaCombo" class="op_combo_box">
 								<option>--</option>
 								</select>
-								<div id="setup_xSpacinglabel" class="QLabel">Horizontal Spacing [pixels]</div>
-								<input type="text" id="setup_xSpacing" class="QLineEdit">
-								<div id="setup_ySpacingLabel" class="QLabel">Vertical Spacing [pixels]</div>
-								<input type="text" id="setup_ySpacing" class="QLineEdit">
+								<div id="setup_xSpacinglabel" class="op_label">Horizontal Spacing [pixels]</div>
+								<input type="text" id="setup_xSpacing" class="op_line_edit">
+								<div id="setup_ySpacingLabel" class="op_label">Vertical Spacing [pixels]</div>
+								<input type="text" id="setup_ySpacing" class="op_line_edit">
 							</div>
 						</div>
 					</div>
 					<div id="setup_scalingTab" class="QWidget">
 						<div id="setup_scalingTabLayout" class="QGridLayout">
-							<div id="setup_timeScalingLabel" class="QLabel">Time delay and scaling factor</div>
+							<div id="setup_timeScalingLabel" class="op_label">Time delay and scaling factor</div>
 							<div id="setup_timeScalingLayout" class="QFormLayout">
-								<div id="setup_deltaTLabel" class="QLabel">delta t [ms]</div>
-								<input type="text" id="setup_deltaTEdit" class="QLineEdit">
-								<div id="setup_scaleLabel" class="QLabel">scale factor [mm/pixel]</div>
-								<input type="text" id="setup_scaleEdit" class="QLineEdit">
+								<div id="setup_deltaTLabel" class="op_label">delta t [ms]</div>
+								<input type="text" id="setup_deltaTEdit" class="op_line_edit">
+								<div id="setup_scaleLabel" class="op_label">scale factor [mm/pixel]</div>
+								<input type="text" id="setup_scaleEdit" class="op_line_edit">
 							</div>
-							<div id="setup_velocityScalingLabel" class="QLabel">Velocity scaling</div>
+							<div id="setup_velocityScalingLabel" class="op_label">Velocity scaling</div>
 							<div id="setup_velocityScalingLayout" class="QVBoxLayout">
-								<input type="radio" id="setup_pixelRadio" class="QRadioButton"><label id="setup_pixelRadioLabel">Pixel</label>
-								<input type="radio" id="setup_velocityRadio" class="QRadioButton"><label id="setup_velocityRadioLabel">Velocity</label>
+								<input type="radio" id="setup_pixelRadio" class="op_radio_button"><label id="setup_pixelRadioLabel">Pixel</label>
+								<input type="radio" id="setup_velocityRadio" class="op_radio_button"><label id="setup_velocityRadioLabel">Velocity</label>
 							</div>
 						</div>
 					</div>
 					<div id="setup_outputTab" class="QWidget">
 						<div id="setup_outputTabLayout" class="QGridLayout">
-							<div id="setup_outputDirectoryLabel" class="QLabel">Output directory</div>
+							<div id="setup_outputDirectoryLabel" class="op_label">Output directory</div>
 							<div id="setup_outputLayout" class="QHBoxLayout">
-								<input type="text" id="setup_directoryEdit" class="QLineEdit">
-								<button id="setup_directoryButton" class="QToolButton">...</button>
+								<input type="text" id="setup_directoryEdit" class="op_line_edit">
+								<button id="setup_directoryButton" class="op_tool_button">...</button>
 							</div>
-							<div id="setup_templateLabel" class="QLabel">File template name</div>
+							<div id="setup_templateLabel" class="op_label">File template name</div>
 							<div id="setup_templateEditLayout" class="QHBoxLayout">
-								<input type="text" id="setup_templateEdit" class="QLineEdit">
-								<div id="setup_templateNoteLabel" class="QLabel">e.g. test%d.txt</div>
+								<input type="text" id="setup_templateEdit" class="op_line_edit">
+								<div id="setup_templateNoteLabel" class="op_label">e.g. test%d.txt</div>
 							</div>
 						</div>
 					</div>
 					<div id="setup_maskTab" class="QWidget">
 						<div id="setup_maskTabLayout" class="QGridLayout">
-							<div id="setup_rectangleLabel" class="QLabel">Rectangular box mask</div>
+							<div id="setup_rectangleLabel" class="op_label">Rectangular box mask</div>
 							<div id="setup_rectangleLayout" class="QFormLayout">
-								<div id="setup_xMinLabel" class="QLabel">X Min</div>
-								<input type="text" id="setup_xMinEdit" class="QLineEdit">
-								<div id="setup_yMinLabel" class="QLabel">Y Min</div>
-								<input type="text" id="setup_yMinEdit" class="QLineEdit">
-								<div id="setup_xMaxLabel" class="QLabel">X Max</div>
-								<input type="text" id="setup_xMaxEdit" class="QLineEdit">
-								<div id="setup_yMaxLabel" class="QLabel">Y Max</div>
-								<input type="text" id="setup_yMaxEdit" class="QLineEdit">
+								<div id="setup_xMinLabel" class="op_label">X Min</div>
+								<input type="text" id="setup_xMinEdit" class="op_line_edit">
+								<div id="setup_yMinLabel" class="op_label">Y Min</div>
+								<input type="text" id="setup_yMinEdit" class="op_line_edit">
+								<div id="setup_xMaxLabel" class="op_label">X Max</div>
+								<input type="text" id="setup_xMaxEdit" class="op_line_edit">
+								<div id="setup_yMaxLabel" class="op_label">Y Max</div>
+								<input type="text" id="setup_yMaxEdit" class="op_line_edit">
 							</div>
 					</div>
 				</div>
 				<div id="setup_buttons" class="QHBoxLayout">
-					<button id="setup_applyButton" class="QPushButton">Apply</button>
-					<button id="setup_cancelButton" class="QPushButton">Cancel</button>
+					<button id="setup_applyButton" class="op_push_button">Apply</button>
+					<button id="setup_cancelButton" class="op_push_button">Cancel</button>
 				</div>
 			</div>
 		</div>

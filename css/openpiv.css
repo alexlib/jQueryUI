@@ -1,0 +1,102 @@
+.op_button_box_center {
+	margin-left: auto;
+	margin-right: auto;
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_button_box_right {
+	margin-left: auto;
+	margin-right: auto;
+	font-size:   11pt;
+	font-weight: normal;
+	right: 20;
+}
+.op_std_button {
+	width:   85px;
+	height:  31px;
+	font-size:   11pt;
+	font-weight: normal;
+}
+
+.op_checkbox {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_checkbox_label {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_combo_box {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_dialog {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_label {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_label_bold {
+	font-size:   11pt;
+	font-weight: bold;
+}
+.op_layout {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_layout_grid {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_layout_horizontal {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_layout_vertical {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_line_edit {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_menu {
+	font-size:   11pt;
+	font-weight: bold;
+}
+.op_menu_item {
+	font-size:   10pt;
+	font-weight: normal;
+}
+.op_panel {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_push_button {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_radio_button {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_radio_button_label {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_tabbed_panel {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.op_tool_button {
+	font-size:   11pt;
+	font-weight: normal;
+}
+.QWidget {
+	font-size:   11pt;
+	font-weight: normal;
+	border: 1px solid black;
+}
+

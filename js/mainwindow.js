@@ -31,6 +31,11 @@ function updateComboBoxesCallBack(jdata) {
 	console.log(value_dicts);
 	updateComboBox($('#topCombo'),value_dicts.topSelect);
 	updateComboBox($('#bottomCombo'),value_dicts.bottomSelect);
+	updateComboBox($('#imgimp_baseOrderCombo'),value_dicts.imgimp_orderSelect);
+	updateComboBox($('#imgimp_incrementCombo'),value_dicts.imgimp_incrementSelect);
+	updateComboBox($('#imgimp_incrementOrderCombo'),value_dicts.imgimp_orderSelect);
+	updateComboBox($('#imgimp_frameOrderCombo'),value_dicts.imgimp_orderSelect);
+	updateComboBox($('#imgimp_suffixOrderCombo'),value_dicts.imgimp_orderSelect);
 	updateComboBox($('#setup_intAreaCombo'),value_dicts.setup_interrogationAreaSelect);
 	updateComboBox($('#filter_medianCombo'),value_dicts.filter_medianSelect);
 	updateComboBox($('#filter_meanCombo'),value_dicts.filter_meanSelect);
@@ -61,6 +66,9 @@ function saveasmenuitem_click(event) {
 function quitmenuitem_click(event) {
 	//console.log(event);
 	console.log('quitmenuitem_click');
+	//window.close();
+	$('#filemenu').hide();
+	alert("There is no quitting now.");
 }; // end quitmenuitem_click
 
 function zoominmenuitem_click(event) {
@@ -89,13 +97,12 @@ function processmenuitem_click(event) {
 }; // end processmenuitem_click
 
 function helpmenuitem_click(event) {
-	//console.log(event);
-	console.log('helpmenuitem_click');
+	//console.log('helpmenuitem_click');
+	window.open("help.html");
+	$('#helpmenu').hide();
 }; // end helpmenuitem_click
 
 function aboutmenuitem_click(event) {
-	//console.log(event);
-	//console.log('aboutmenuitem_click');
 	$( "#about_dialog" ).dialog( "open" );
 }; // end aboutmenuitem_click
 
@@ -143,11 +150,14 @@ function endButton_click(event) {
 function actionNew_click(event) {
 	//console.log(event);
 	console.log('actionNew_click');
+	$( "#filefmt_dialog" ).dialog( "open" );
 }; // end actionNew_click
 
 function actionOpen_click(event) {
 	//console.log(event);
 	console.log('actionOpen_click');
+	$( "#framelist_dialog" ).dialog( "open" );
+	event.preventDefault();
 }; // end actionOpen_click
 
 function actionSave_click(event) {
@@ -158,17 +168,35 @@ function actionSave_click(event) {
 function actionImageIn_click(event) {
 	//console.log(event);
 	console.log('actionImageIn_click');
+	$( "#imgimp_dialog" ).dialog( "open" );
 }; // end actionImageIn_click
 
 function actionZoomIn_click(event) {
 	//console.log(event);
-	console.log('actionZoomIn_click');
+	//console.log('actionZoomIn_click');
+	jdata = {
+					'command' : 'zoomIn',
+	};
+//		console.log(jdata);
+  $.post('', jdata,
+      zoomCallBack, 'json');
 }; // end actionZoomIn_click
 
 function actionZoomOut_click(event) {
 	//console.log(event);
-	console.log('actionZoomOut_click');
+	//console.log('actionZoomOut_click');
+	jdata = {
+					'command' : 'zoomOut',
+	};
+//		console.log(jdata);
+  $.post('', jdata,
+      zoomCallBack, 'json');
 }; // end actionZoomOut_click
+
+function zoomCallBack(jdata) {
+	values = jdata.values;
+	console.log(values);
+}; //end zoomCallBack
 
 function actionSetup_click(event) {
 	//console.log(event);
@@ -207,13 +235,13 @@ function filemenuMouseOver(event) {
 
 function filemenuMouseOut(event) {
 //	if (event.relatedTarget.id == 'MainWindow') {
-	if (event.relatedTarget.className != 'QMenuItem ui-menu-item') {
+	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
 		$('#filemenu').hide();
 	}
 //	console.log('filemenuMouseOut');
 //	console.log(event.relatedTarget);
 //	console.log(event);
-//		console.log(event.relatedTarget.className == 'QMenuItem ui-menu-item');
+//		console.log(event.relatedTarget.className == 'op_menu_item ui-menu-item');
 //		console.log(event.target.className);
 //		console.log(event.currentTarget.className);
 //		console.log(event.delegateTarget.className);
@@ -228,7 +256,7 @@ function viewmenuMouseOver(event) {
 };
 
 function viewmenuMouseOut(event) {
-	if (event.relatedTarget.className != 'QMenuItem ui-menu-item') {
+	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
 		$('#viewmenu').hide();
 	}
 //	console.log('viewmenuMouseOut');
@@ -243,7 +271,7 @@ function toolsmenuMouseOver(event) {
 };
 
 function toolsmenuMouseOut(event) {
-	if (event.relatedTarget.className != 'QMenuItem ui-menu-item') {
+	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
 		$('#toolsmenu').hide();
 	}
 //	console.log('toolsmenuMouseOut');
@@ -258,7 +286,7 @@ function helpmenuMouseOver(event) {
 };
 
 function helpmenuMouseOut(event) {
-	if (event.relatedTarget.className != 'QMenuItem ui-menu-item') {
+	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
 		$('#helpmenu').hide();
 	};
 //	console.log('helpmenuMouseOut');
@@ -387,6 +415,48 @@ function graphicsViewMouseClickCallBack(jdata) {
 //	console.log('x='+x+',y='+y);
 };
 
+function frlist_importButtonAction(event) {
+	console.log('frlist_importButtonAction');
+}; // end frlist_importButtonAction
+
+function frlist_cancelButtonAction(event) {
+	//console.log('frlist_cancelButtonAction');
+	$( "#framelist_dialog" ).dialog( "close" );
+}; // end frlist_cancelButtonAction
+
+
+// Import images dialog event handlers
+function imgimp_fileSelectAction(event) {
+	console.log('imgimp_fileSelectAction');
+}; // end imgimp_fileSelectAction
+
+function imgimp_autoConfigAction(event) {
+	console.log('imgimp_autoConfigAction');
+}; // end imgimp_autoConfigAction
+
+function imgimp_applyNameAction(event) {
+	console.log('imgimp_applyNameAction');
+	jdata = {
+					'command'        : 'continueImportImages',
+					'baseOrder'      : $('imgimp_baseOrderCombo').val(),
+					'increment'      : $('imgimp_incrementCombo').val(),
+					'incrementOrder' : $('imgimp_incrementOrderCombo').val(),
+					'firstFrame'     : $('imgimp_firstFrameEdit').val(),
+					'secondFrame'    : $('imgimp_secondFrameEdit').val(),
+					'frameOrder'     : $('imgimp_frameOrderCombo').val(),
+					'suffix'         : $('imgimp_suffixEdit').val(),
+					'suffixOrder'    : $('imgimp_suffixOrderCombo').val(),
+			};
+//	$( "#imgimp_dialog" ).dialog( "close" );
+  $.post('', jdata,
+      imgimp_applyNameActionCallBack, 'json');
+
+}; // end imgimp_applyNameAction
+
+function imgimp_applyNameActionCallBack(jdata) {
+}; // end imgimp_applyNameAction
+
+// Setup dialog event handlers
 function setup_directoryButtonClick() {
 	console.log('directoryButtonClick');
 };
@@ -400,11 +470,9 @@ function setup_changedAction() {
 function setup_updateView() {
   $.post('', {'command':'fetchSetup'},
   		setup_updateViewCallBack, 'json');
-//	console.log('updateView()')
 }; // end setup_updateView
 
 function setup_updateViewCallBack(jdata) {
-//	console.log(jdata);
 	values = jdata.values;
 	$('#setup_sigMeanText').val(values.sigMean);
 	$('#setup_sigPeakText').val(values.sigPeak);
@@ -446,13 +514,11 @@ function setup_applyAction() {
 					'yMax'     : $('#setup_yMaxEdit').val(),
 			};
 //	$( "#setup_dialog" ).dialog( "close" );
-//	console.log(jdata);
   $.post('', jdata,
       setup_applyActionCallBack, 'json');
 }; // end setup_applyAction
 
 function setup_applyActionCallBack(jdata) {
-//	console.log(jdata);
 	$('#setup_applyButton').css('color','#000000');
 }; // end setup_applyActionCallBack
 
@@ -460,6 +526,7 @@ function setup_cancelAction() {
 	$( "#setup_dialog" ).dialog( "close" );
 }; // end setup_applyAction
 
+// Process dialog event handlers
 function process_okAction() {
 	jdata = {
 					'command'      : 'processImages',
@@ -467,7 +534,6 @@ function process_okAction() {
 					'single'       : $('#process_singleRadio').prop("checked"),
 			};
 	$( "#process_dialog" ).dialog( "close" );
-//	console.log(jdata);
   $.post('', jdata,
       process_okActionCallBack, 'json');
 }; // end process_okAction
@@ -480,8 +546,9 @@ function process_cancelAction() {
 	$( "#process_dialog" ).dialog( "close" );
 }; // end process_okAction
 
+// Filter dialog event handlers
 var filter_changed = false;
-function filter_changedAction() {
+function filter_changedAction(event) {
 	filter_changed = true;
 	$( '#filter_okButton').css('color','#ff0000');
 }; // end filter_changed
@@ -489,11 +556,9 @@ function filter_changedAction() {
 function filter_updateView() {
   $.post('', {'command':'fetchFilter'},
   		filter_updateViewCallBack, 'json');
-//	console.log('updateView()')
 }; // end filter_updateView
 
 function filter_updateViewCallBack(jdata) {
-//	console.log(jdata);
 	values = jdata.values;
 	$('#filter_rangeBox').prop("checked",values.rangeBox);
 	$('#filter_minEdit').val(values.minEdit);
@@ -518,7 +583,7 @@ function filter_updateViewCallBack(jdata) {
 	
 }; // end filter_updateViewCallBack
 
-function filter_okAction() {
+function filter_okAction(event) {
 	jdata = {
 					'command'            : 'storeFilter',
 					'rangeBox'           : $('#filter_rangeBox').prop("checked"),
@@ -551,11 +616,12 @@ function filter_okActionCallBack(jdata) {
 	filter_changed = false;
 }; // end filter_okActionCallBack
 
-function filter_cancelAction() {
+function filter_cancelAction(event) {
   filter_updateView();
 }; // end filter_cancelAction
 
-function flaunch_okAction() {
+// Filter launch dialog event handlers
+function flaunch_okAction(event) {
 	jdata = {
 					'command'      : 'launchFilter',
 					'all'          : $('#flaunch_allRadio').prop("checked"),
@@ -571,20 +637,137 @@ function flaunch_okActionCallBack(jdata) {
 //	console.log(jdata);
 }; // end flaunch_okActionCallBack
 
-function flaunch_cancelAction() {
+function flaunch_cancelAction(event) {
 	$( "#flaunch_dialog" ).dialog( "close" );
 }; // end flaunch_okAction
 
-function about_okAction() {
+// About dialog event handlers.
+function about_okAction(event) {
 	$( "#about_dialog" ).dialog( "close" );
 }
 
+/*
+	All the things that should happen after the document is completely loaded
+	should be here.
+*/
 $(document).ready(function() {
+	$(function() {
+		var frameSpinBox = $( "#frameSpinBox" ).spinner();
+		$( "#filemenu" ).menu();
+		$( "#viewmenu" ).menu();
+		$( "#toolsmenu" ).menu();
+		$( "#helpmenu" ).menu();
+
+		$( "#frlist_frame1List" ).selectable();
+		$( "#frlist_frame2List" ).selectable();
+		$( "#framelist_dialog" ).dialog({
+			autoOpen: false,
+			width: 640,
+			height: 500
+		});
+		$( "#imgimp_dialog" ).dialog({
+			autoOpen: false,
+			width: 536,
+			height: 460
+		});
+		$( "#filefmt_dialog" ).dialog({
+			autoOpen: false,
+			width: 536,
+			height: 350
+		});
+		$( "#setup_dialog" ).dialog({
+			autoOpen: false,
+			width: 556,
+			height: 410
+		});
+		$( "#process_dialog" ).dialog({
+			autoOpen: false,
+			width: 370,
+			height: 210
+		});
+		$( "#filter_dialog" ).dialog({
+			autoOpen: false,
+			width: 639,
+			height: 419
+		});
+		$( "#flaunch_dialog" ).dialog({
+			autoOpen: false,
+			width: 370,
+			height: 210
+		});
+		$( "#about_dialog" ).dialog({
+			autoOpen: false,
+			width: 415,
+			height: 288
+		});
+	});
+	$( "#setup_tabWidget" ).tabs();
 	updateComboBoxes();
   updateView();
 	loadFrameA();
 	loadFrameB();
 
+	// Associate click event handlers with menu items
+	$('#newmenuitem').click(actionNew_click);
+	$('#openmenuitem').click(actionOpen_click);
+	$('#savemenuitem').click(actionSave_click);
+	$('#saveasmenuitem').click(saveasmenuitem_click);
+	$('#quitmenuitem').click(quitmenuitem_click);
+	$('#zoominmenuitem').click(actionZoomIn_click);
+	$('#zoomoutmenuitem').click(actionZoomOut_click);
+	$('#importmenuitem').click(actionImageIn_click);
+	$('#setupmenuitem').click(actionSetup_click);
+	$('#processmenuitem').click(actionProcessImages_click);
+	$('#helpmenuitem').click(helpmenuitem_click);
+	$('#aboutmenuitem').click(aboutmenuitem_click);
+
+	// Associate mouse event handlers with menu items
+  $('#filemenu_label').mouseover(filemenuMouseOver);
+  $('#filemenu').mouseout(filemenuMouseOut);
+  $('#viewmenu_label').mouseover(viewmenuMouseOver);
+  $('#viewmenu').mouseout(viewmenuMouseOut);
+  $('#toolsmenu_label').mouseover(toolsmenuMouseOver);
+  $('#toolsmenu').mouseout(toolsmenuMouseOut);
+  $('#helpmenu_label').mouseover(helpmenuMouseOver);
+  $('#helpmenu').mouseout(helpmenuMouseOut);
+
+	// Set initial menu state
+	$('#filemenu').hide();
+	$('#viewmenu').hide();
+	$('#toolsmenu').hide();
+	$('#helpmenu').hide();
+
+	// Associate click event handlers with toolbar items
+	$('#actionNew').click(actionNew_click);
+	$('#actionOpen').click(actionOpen_click);
+	$('#actionSave').click(actionSave_click);
+	$('#actionImageIn').click(actionImageIn_click);
+	$('#actionZoomIn').click(actionZoomIn_click);
+	$('#actionZoomOut').click(actionZoomOut_click);
+	$('#actionSetup').click(actionSetup_click);
+	$('#actionProcessImages').click(actionProcessImages_click);
+	$('#actionFilterSet').click(actionFilterSet_click);
+	$('#actionFilter').click(actionFilter_click);
+
+	// Associate click event handlers with main window buttons
+	$('#aFrameButton').click(aFrameButton_click);
+	$('#bFrameButton').click(bFrameButton_click);
+	$('#redrawButton').click(redrawButton_click);
+	$('#startButton').click(startButton_click);
+	$('#backButton').click(backButton_click);
+	$('#forwardButton').click(forwardButton_click);
+	$('#endButton').click(endButton_click);
+
+	// Associate event handlers with frame list dialog buttons
+	$('#frlist_importButton').click(frlist_importButtonAction);
+  $('#frlist_cancelButton').click(frlist_cancelButtonAction);
+
+	// Associate event handlers with import images dialog controls
+	$('#imgimp_fileSelectButton').click(imgimp_fileSelectAction);
+  $('#imgimp_autoConfigButton').click(imgimp_autoConfigAction);
+  $('#imgimp_applyNameButton').click(imgimp_applyNameAction);
+
+	// Associate event handlers with setup dialog controls
 	$('#setup_directoryButton').click(setup_directoryButtonClick);
   $('#setup_applyButton').click(setup_applyAction);
   $('#setup_cancelButton').click(setup_cancelAction);
@@ -604,9 +787,11 @@ $(document).ready(function() {
 	$('#setup_xMaxEdit').change(setup_changedAction);
 	$('#setup_yMaxEdit').change(setup_changedAction);
 
+	// Associate event handlers with process dialog controls
   $('#process_okButton').click(process_okAction);
   $('#process_cancelButton').click(process_cancelAction);
 
+	// Associate event handlers with filtet dialog controls
   $('#filter_okButton').click(filter_okAction);
   $('#filter_cancelButton').click(filter_cancelAction);
 	$('#filter_rangeBox').change(filter_changedAction);
@@ -628,58 +813,17 @@ $(document).ready(function() {
 	$('#filter_userRadio').change(filter_changedAction);
 	$('#filter_processRadio').change(filter_changedAction);
 
+	// Associate event handlers with filter launch dialog controls
   $('#flaunch_okButton').click(flaunch_okAction);
   $('#flaunch_cancelButton').click(flaunch_cancelAction);
 
+	// Associate event handlers with about dialog controls
   $('#about_okButton').click(about_okAction);
 
-	$('#newmenuitem').click(newmenuitem_click);
-	$('#openmenuitem').click(openmenuitem_click);
-	$('#savemenuitem').click(savemenuitem_click);
-	$('#saveasmenuitem').click(saveasmenuitem_click);
-	$('#quitmenuitem').click(quitmenuitem_click);
-	$('#zoominmenuitem').click(zoominmenuitem_click);
-	$('#zoomoutmenuitem').click(zoomoutmenuitem_click);
-	$('#importmenuitem').click(importmenuitem_click);
-	$('#setupmenuitem').click(actionSetup_click);
-	$('#processmenuitem').click(processmenuitem_click);
-	$('#helpmenuitem').click(helpmenuitem_click);
-	$('#aboutmenuitem').click(aboutmenuitem_click);
-
-	$('#aFrameButton').click(aFrameButton_click);
-	$('#bFrameButton').click(bFrameButton_click);
-	$('#redrawButton').click(redrawButton_click);
-	$('#startButton').click(startButton_click);
-	$('#backButton').click(backButton_click);
-	$('#forwardButton').click(forwardButton_click);
-	$('#endButton').click(endButton_click);
-
-	$('#actionNew').click(actionNew_click);
-	$('#actionOpen').click(actionOpen_click);
-	$('#actionSave').click(actionSave_click);
-	$('#actionImageIn').click(actionImageIn_click);
-	$('#actionZoomIn').click(actionZoomIn_click);
-	$('#actionZoomOut').click(actionZoomOut_click);
-	$('#actionSetup').click(actionSetup_click);
-	$('#actionProcessImages').click(actionProcessImages_click);
-	$('#actionFilterSet').click(actionFilterSet_click);
-	$('#actionFilter').click(actionFilter_click);
-
-  $('#filemenu_label').mouseover(filemenuMouseOver);
-  $('#filemenu').mouseout(filemenuMouseOut);
-  $('#viewmenu_label').mouseover(viewmenuMouseOver);
-  $('#viewmenu').mouseout(viewmenuMouseOut);
-  $('#toolsmenu_label').mouseover(toolsmenuMouseOver);
-  $('#toolsmenu').mouseout(toolsmenuMouseOut);
-  $('#helpmenu_label').mouseover(helpmenuMouseOver);
-  $('#helpmenu').mouseout(helpmenuMouseOut);
   $('#graphicsView').mousemove(graphicsViewMouseMove);
   $('#graphicsView').hover(graphicsViewMouseEnter,graphicsViewMouseLeave);
   $('#graphicsView').click(graphicsViewMouseClick);
-	$('#filemenu').hide();
-	$('#viewmenu').hide();
-	$('#toolsmenu').hide();
-	$('#helpmenu').hide();
+
 	$('#marker').hide();
 	graphicsView_offset = $('#graphicsView').offset();
 //	console.log(graphicsView_offset);

@@ -15,13 +15,13 @@ To exit, use Ctrl-C (^C)
 
 Open your browser and type the address: 
 
-        http://localhost:8080/mainwindow.html
+        http://localhost:8080/index.html
 
 
 ### What is implemented:
 
-about menu item
-filter setup toolbar item
+menu items
+toolbar items
 Frame A/B
 Marker on frame; click to set/release.
 
