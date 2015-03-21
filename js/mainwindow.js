@@ -677,7 +677,7 @@ $(document).ready(function() {
 		});
 		$( "#setup_dialog" ).dialog({
 			autoOpen: false,
-			width: 536,
+			width: 556,
 			height: 410
 		});
 		$( "#process_dialog" ).dialog({
