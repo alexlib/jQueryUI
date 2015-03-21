@@ -617,7 +617,7 @@
 	position: absolute;
 	top:      9px;
 	left:     9px;
-	width:  470px;
+	width:  490px;
 	height: 288px;
 }
 #setup_tabList{
@@ -630,7 +630,7 @@
 	position: absolute;
 	top:     43px;
 	left:     1px;
-	width:  472px;
+	width:  492px;
 	height: 253px;
 }
 #setup_signalLevelLabel{
@@ -819,7 +819,7 @@
 	position: absolute;
 	top:     43px;
 	left:     1px;
-	width:  472px;
+	width:  492px;
 	height: 253px;
 }
 #setup_outputDirectoryLabel{
@@ -884,7 +884,7 @@
 	position: absolute;
 	top:     43px;
 	left:     1px;
-	width:  472px;
+	width:  492px;
 	height: 253px;
 }
 #setup_rectangleLabel{

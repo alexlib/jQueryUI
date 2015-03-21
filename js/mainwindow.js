@@ -697,8 +697,8 @@ $(document).ready(function() {
 		});
 		$( "#about_dialog" ).dialog({
 			autoOpen: false,
-			width: 395,
-			height: 268
+			width: 415,
+			height: 288
 		});
 	});
 	$( "#setup_tabWidget" ).tabs();
