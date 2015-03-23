@@ -10,102 +10,73 @@
 			#AboutWindow{
 				position: absolute;
 				top:      0px;
+				height: 254px;
 				left:     0px;
 				width:  395px;
-				height: 268px;
 				border: 1px solid black;
-			}
-			#aboutLayoutWidget{
-				position: absolute;
-				top:     4px;
-				left:    10px;
-				width:  379px;
-				height: 237px;
 			}
 			#about_001{
 				position: absolute;
 				top:      0px;
-				left:     0px;
 				width:  395px;
-				height:  46px;
-				text-align: center;
-			}
-			#about_002{
-				position: absolute;
-				top:     46px;
-				left:     0px;
-				width:  395px;
-				height:  30px;
 				text-align: center;
 			}
 			#aboutlogo{
-				font-weight: bold;
-				font-size: 11pt;
+				top:      0px;
+				height: 119px;
+				width:  365px;
+				margin-top: 8px;
+				margin-left: auto;
+				margin-right: auto;
 			}
-			#about_003{
+			#about_labels{
 				position: absolute;
-				top:     92px;
+				top:     135px;
 				left:     0px;
 				width:  395px;
-				height:  30px;
-				text-align: center;
 			}
 			#aboutlabel_1{
-				font-weight: bold;
-				font-size: 11pt;
-			}
-			#about_004{
 				position: absolute;
-				top:    138px;
+				top:      0px;
 				left:     0px;
 				width:  395px;
 				height:  30px;
+				font-weight: bold;
+				font-size: 11pt;
+				text-align: center;
+			}
+			#aboutlabel_2{
+				position: absolute;
+				top:    40px;
+				left:     0px;
+				width:  395px;
+				height:  30px;
+				font-weight: bold;
+				font-size: 11pt;
 				text-align: center;
 			}
 			#aboutlabel_3{
-				font-weight: bold;
-				font-size: 10pt;
-			}
-			#about_005{
 				position: absolute;
-				top:    184px;
+				top:     80px;
 				left:     0px;
 				width:  395px;
 				height:  30px;
-				text-align: center;
-			}
-			#aboutlabel_4{
 				font-weight: bold;
 				font-size: 10pt;
-			}
-			#buttonBox{
-				position: absolute;
-				top:    220px;
-				left:     0px;
-				width:  395px;
-				height:  30px;
 				text-align: center;
 			}
 		</style>
 	</head>
 	<body>
-		<div id="AboutWindow" class="op_dialog">
-			<div id="aboutLayoutWidget" class="QWidget">
-				<div id="about_001" class="QVBoxLayout">
-					<div id="about_002" class="QHBoxLayout">
-						<div id="aboutlogo" class="op_label"><img id="urapiv_logo" src="icons/openpiv_arrow.png" /></div>
-					</div>
-					<div id="about_003" class="QHBoxLayout">
-						<div id="aboutlabel_1" class="op_label">OpenPIV-Python with jQueryUI - Version 0.0</div>
-					</div>
-					<div id="about_004" class="QHBoxLayout">
-						<div id="aboutlabel_3" class="op_label">Adapted to HTML by Brian Ames</div>
-					</div>
-					<div id="about_005" class="QHBoxLayout">
-						<div id="aboutlabel_4" class="op_label">Original version by Alex Liberzon and Roi Gurka</div>
-					</div>
-				</div>
+		<div id="AboutWindow">
+			<div id="aboutlogo" class="op_label"><img id="urapiv_logo" src="icons/openpiv_arrow.png" /></div>
+			<div id="about_labels">
+				<div id="aboutlabel_1" class="op_label">OpenPIV-Python with jQueryUI - Version 0.0</div>
+				<div id="aboutlabel_2" class="op_label">Adapted to jQueryUI by Brian Ames</div>
+				<div id="aboutlabel_3" class="op_label">Original version by Alex Liberzon and Roi Gurka</div>
 			</div>
+		</div>
+		<div>
 		</div>
 	</body>
 </html>

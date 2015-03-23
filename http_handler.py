@@ -382,4 +382,17 @@ class HTTPRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler): #BaseHTTPSe
 
 	zoomOut.ok = True
 
+#-------------------------------------------------------------------------------
+	## @method fetchUpdate
+	# .
+	#
+	# @param form a FieldStorage object containing the data from the request form
+	# @param response a WebServiceResponse object
+	def fetchUpdate(self,form,response):
+		'''.'''
+#		parameter = form['parameter'].value.strip()
+#		command                  = form['command'].value.strip()
+		response.addValue('parameter',time.ctime())
+
+	fetchUpdate.ok = True
 

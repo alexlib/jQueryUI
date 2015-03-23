@@ -4,6 +4,7 @@ buttons = ['aFrameButton','bFrameButton','redrawButton','startButton','backButto
 var frameAPreload;
 var frameBPreload;
 var graphicsView_offset;
+var intervalTimer;
 
 function updateView() {
   setup_updateView();
@@ -28,7 +29,7 @@ function updateComboBoxes() {
 
 function updateComboBoxesCallBack(jdata) {
 	value_dicts = jdata.values.valueDicts;
-	console.log(value_dicts);
+//	console.log(value_dicts);
 	updateComboBox($('#topCombo'),value_dicts.topSelect);
 	updateComboBox($('#bottomCombo'),value_dicts.bottomSelect);
 	updateComboBox($('#imgimp_baseOrderCombo'),value_dicts.imgimp_orderSelect);
@@ -168,6 +169,7 @@ function actionSave_click(event) {
 function actionImageIn_click(event) {
 	//console.log(event);
 	console.log('actionImageIn_click');
+	console.log($('#imgimp_autoConfigButton'));
 	$( "#imgimp_dialog" ).dialog( "open" );
 }; // end actionImageIn_click
 
@@ -225,72 +227,25 @@ function actionFilter_click(event) {
 	event.preventDefault();
 }; // end actionFilter_click
 
-function filemenuMouseOver(event) {
-	$('#filemenu').show();
-	$('#viewmenu').hide();
-	$('#toolsmenu').hide();
-	$('#helpmenu').hide();
-//	console.log('filemenuMouseOver');
-};
-
-function filemenuMouseOut(event) {
-//	if (event.relatedTarget.id == 'MainWindow') {
-	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
-		$('#filemenu').hide();
+// Show and hide menus
+var menu_selectors = ['#filemenu','#viewmenu','#toolsmenu','#helpmenu'];
+function menuMouseOver(event) {
+	selector = event.data[0];
+	for (var i=0;i<menu_selectors.length;i++) {
+		menu_selector = menu_selectors[i];
+		if (menu_selector == selector) {
+			$(menu_selector).show();
+		} else {
+			$(menu_selector).hide();
+		}
 	}
-//	console.log('filemenuMouseOut');
-//	console.log(event.relatedTarget);
-//	console.log(event);
-//		console.log(event.relatedTarget.className == 'op_menu_item ui-menu-item');
-//		console.log(event.target.className);
-//		console.log(event.currentTarget.className);
-//		console.log(event.delegateTarget.className);
 };
 
-function viewmenuMouseOver(event) {
-	$('#filemenu').hide();
-	$('#viewmenu').show();
-	$('#toolsmenu').hide();
-	$('#helpmenu').hide();
-//	console.log('viewmenuMouseOver');
-};
-
-function viewmenuMouseOut(event) {
-	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
-		$('#viewmenu').hide();
+function menuMouseOut(event) {
+	if (!/op_menu_item/.test(event.relatedTarget.className)) {
+		$(event.data[0]).hide();
 	}
-//	console.log('viewmenuMouseOut');
 };
-
-function toolsmenuMouseOver(event) {
-	$('#filemenu').hide();
-	$('#viewmenu').hide();
-	$('#toolsmenu').show();
-	$('#helpmenu').hide();
-//	console.log('toolsmenuMouseOver');
-};
-
-function toolsmenuMouseOut(event) {
-	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
-		$('#toolsmenu').hide();
-	}
-//	console.log('toolsmenuMouseOut');
-};
-
-function helpmenuMouseOver(event) {
-	$('#filemenu').hide();
-	$('#viewmenu').hide();
-	$('#toolsmenu').hide();
-	$('#helpmenu').show();
-//	console.log('helpmenuMouseOver');
-};
-
-function helpmenuMouseOut(event) {
-	if (event.relatedTarget.className != 'op_menu_item ui-menu-item') {
-		$('#helpmenu').hide();
-	};
-//	console.log('helpmenuMouseOut');
-}
 
 function loadFrameA() {
 	jdata = {
@@ -454,6 +409,7 @@ function imgimp_applyNameAction(event) {
 }; // end imgimp_applyNameAction
 
 function imgimp_applyNameActionCallBack(jdata) {
+	reverse_style_classes();
 }; // end imgimp_applyNameAction
 
 // Setup dialog event handlers
@@ -628,7 +584,6 @@ function flaunch_okAction(event) {
 					'single'       : $('#flaunch_singleRadio').prop("checked"),
 			};
 	$( "#flaunch_dialog" ).dialog( "close" );
-//	console.log(jdata);
   $.post('', jdata,
       flaunch_okActionCallBack, 'json');
 }; // end flaunch_okAction
@@ -644,62 +599,82 @@ function flaunch_cancelAction(event) {
 // About dialog event handlers.
 function about_okAction(event) {
 	$( "#about_dialog" ).dialog( "close" );
-}
+};
+
+function pollServer() {
+	jdata = {
+					'command'      : 'fetchUpdate',
+			};
+  $.post('', jdata,
+      pollServerCallBack, 'json');
+};
+
+// Procedures for polling the server for data.
+function pollServerCallBack(jdata) {
+	values = jdata.values;
+	console.log(values.parameter);
+};
+
+function startPolling() {
+	intervalTimer = setInterval(pollServer, 1000);
+};
+
+function stopPolling() {
+    clearInterval(intervalTimer);
+};
 
 /*
 	All the things that should happen after the document is completely loaded
 	should be here.
 */
 $(document).ready(function() {
-	$(function() {
-		var frameSpinBox = $( "#frameSpinBox" ).spinner();
-		$( "#filemenu" ).menu();
-		$( "#viewmenu" ).menu();
-		$( "#toolsmenu" ).menu();
-		$( "#helpmenu" ).menu();
+	var frameSpinBox = $( "#frameSpinBox" ).spinner();
+	$( "#filemenu" ).menu();
+	$( "#viewmenu" ).menu();
+	$( "#toolsmenu" ).menu();
+	$( "#helpmenu" ).menu();
 
-		$( "#frlist_frame1List" ).selectable();
-		$( "#frlist_frame2List" ).selectable();
-		$( "#framelist_dialog" ).dialog({
-			autoOpen: false,
-			width: 640,
-			height: 500
-		});
-		$( "#imgimp_dialog" ).dialog({
-			autoOpen: false,
-			width: 536,
-			height: 460
-		});
-		$( "#filefmt_dialog" ).dialog({
-			autoOpen: false,
-			width: 536,
-			height: 350
-		});
-		$( "#setup_dialog" ).dialog({
-			autoOpen: false,
-			width: 556,
-			height: 410
-		});
-		$( "#process_dialog" ).dialog({
-			autoOpen: false,
-			width: 370,
-			height: 210
-		});
-		$( "#filter_dialog" ).dialog({
-			autoOpen: false,
-			width: 639,
-			height: 419
-		});
-		$( "#flaunch_dialog" ).dialog({
-			autoOpen: false,
-			width: 370,
-			height: 210
-		});
-		$( "#about_dialog" ).dialog({
-			autoOpen: false,
-			width: 415,
-			height: 288
-		});
+	$( "#frlist_frame1List" ).selectable();
+	$( "#frlist_frame2List" ).selectable();
+	$( "#framelist_dialog" ).dialog({
+		autoOpen: false,
+		width: 640,
+		height: 500
+	});
+	$( "#imgimp_dialog" ).dialog({
+		autoOpen: false,
+		width: 536,
+		height: 460
+	});
+	$( "#filefmt_dialog" ).dialog({
+		autoOpen: false,
+		width: 536,
+		height: 350
+	});
+	$( "#setup_dialog" ).dialog({
+		autoOpen: false,
+		width: 556,
+		height: 410
+	});
+	$( "#process_dialog" ).dialog({
+		autoOpen: false,
+		width: 370,
+		height: 210
+	});
+	$( "#filter_dialog" ).dialog({
+		autoOpen: false,
+		width: 639,
+		height: 419
+	});
+	$( "#flaunch_dialog" ).dialog({
+		autoOpen: false,
+		width: 370,
+		height: 210
+	});
+	$( "#about_dialog" ).dialog({
+		autoOpen: false,
+		width: 425,
+		height: 308
 	});
 	$( "#setup_tabWidget" ).tabs();
 	updateComboBoxes();
@@ -722,14 +697,14 @@ $(document).ready(function() {
 	$('#aboutmenuitem').click(aboutmenuitem_click);
 
 	// Associate mouse event handlers with menu items
-  $('#filemenu_label').mouseover(filemenuMouseOver);
-  $('#filemenu').mouseout(filemenuMouseOut);
-  $('#viewmenu_label').mouseover(viewmenuMouseOver);
-  $('#viewmenu').mouseout(viewmenuMouseOut);
-  $('#toolsmenu_label').mouseover(toolsmenuMouseOver);
-  $('#toolsmenu').mouseout(toolsmenuMouseOut);
-  $('#helpmenu_label').mouseover(helpmenuMouseOver);
-  $('#helpmenu').mouseout(helpmenuMouseOut);
+  $('#filemenu_label').mouseover(['#filemenu'],menuMouseOver);
+  $('#filemenu').mouseout(['#filemenu'],menuMouseOut);
+  $('#viewmenu_label').mouseover(['#viewmenu'],menuMouseOver);
+  $('#viewmenu').mouseout(['#viewmenu'],menuMouseOut);
+  $('#toolsmenu_label').mouseover(['#toolsmenu'],menuMouseOver);
+  $('#toolsmenu').mouseout(['#toolsmenu'],menuMouseOut);
+  $('#helpmenu_label').mouseover(['#helpmenu'],menuMouseOver);
+  $('#helpmenu').mouseout(['#helpmenu'],menuMouseOut);
 
 	// Set initial menu state
 	$('#filemenu').hide();
@@ -826,7 +801,8 @@ $(document).ready(function() {
 
 	$('#marker').hide();
 	graphicsView_offset = $('#graphicsView').offset();
-//	console.log(graphicsView_offset);
+	reverse_style_classes();
+
 }); // end document ready
 
 
